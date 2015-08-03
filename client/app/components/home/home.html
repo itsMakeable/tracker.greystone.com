@@ -1,0 +1,191 @@
+<!--if you'd like to have the navbar and or header on every page, move it up a level to app.html!-->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Task 4</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-bottom: 2rem;">
+    <div class="row">
+        <form name='vm.task4' class="col-md-6" novalidate>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Project: Wynmoor Gardens Application #3</p>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <span style="font-size: 3.5rem" class="glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div style="flex-grow: 2;">
+                    <h4>2014 Property Financials</h4>
+                    <h6>Scheduled Complete: Tuesday (August 4th)  <span style="margin-left: 5px;" class="glyphicon glyphicon-pencil"></span></h6>
+                    <h6>Status: Waiting For XYZ to confirm.  <span style="margin-left: 5px;" class="glyphicon glyphicon-pencil"></span></h6>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>Team:</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <h6 ng-repeat="user in vm.users">{{ user.name }} - {{ user.username }} - {{ user.email }} - {{ user.id }}</h6>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                </div>
+                <div style="flex-grow: 2;">
+                    <h4 style="float: right;">History / Chat >></h4>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                </div>
+                <div style="flex-grow: 2;">
+                    <h6>Task Instructions and Details. consectetur adipiscing elit. Fusce nec molestie quam. Vestibulum ut malesuada dui, vitae bibendum nulla. Aliquam mollis mattis commodo. Mauris ut pulvinar dui, in suscipit nisl.</h6>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>1</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <div class="flex-row">
+                        <div style="flex-basis: 70%;">
+                            <div class="form-group">
+                                <label class="control-label" for="field1">Net Revenue</label>
+                                <input name='field1' id='field1' type="text" class="form-control" placeholder="" ng-model='vm.data.field1' required ng-maxlength="30" ng-minlength="5">
+                                <div ng-messages='vm.task4.field1.$error' , ng-if='vm.task4.field1.$dirty || vm.task4.$submitted'>
+                                    <em ng-message='required' class='help-block error-message'>Field 1 is required</em>
+                                    <em ng-message='minlength' class='help-block error-message'>Field 1 too short</em>
+                                    <em ng-message='maxlength' class='help-block error-message'>Field 1 too long</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div>
+                                <span tooltip="Help 1" tooltip-placement="top" tooltip-trigger="mouseenter" style="font-size: 2.5rem; margin-right: 1rem;" class="glyphicon glyphicon-question-sign"></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>2</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <div class="flex-row">
+                        <div style="flex-basis: 70%;">
+                            <div class="form-group">
+                                <label class="control-label" for="field2">Net Operating Expenses</label>
+                                <input name='field2' type="text" class="form-control" id="field2" placeholder="" ng-model='vm.data.field2' required ng-maxlength="30" ng-minlength="5">
+                                <div ng-messages='vm.task4.field2.$error' , ng-if='vm.task4.field2.$dirty || vm.task4.$submitted'>
+                                    <em ng-message='required' class='help-block error-message'>Field 2 is required</em>
+                                    <em ng-message='minlength' class='help-block error-message'>Field 2 too short</em>
+                                    <em ng-message='maxlength' class='help-block error-message'>Field 2 too long</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span tooltip="Help 2" tooltip-placement="top" tooltip-trigger="mouseenter" style="font-size: 2.5rem; margin-right: 1rem;" class="glyphicon glyphicon-question-sign"></span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>3</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <div class="flex-row">
+                        <div style="flex-basis: 70%;">
+                            <div class="form-group">
+                                <label class="control-label">Tax Status</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" ng-model='vm.data.field3' name="inlineRadioOptions" id="inlineRadio1" value="option1"> Option 1
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" ng-model='vm.data.field3' name="inlineRadioOptions" id="inlineRadio2" value="option2"> Option 2
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <span tooltip="Help 3" tooltip-placement="top" tooltip-trigger="mouseenter" style="font-size: 2.5rem; margin-right: 1rem;" class="glyphicon glyphicon-question-sign"></span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>4</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <div class="flex-row">
+                        <div style="flex-basis: 70%;">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputFile">2014 Property Financials (View Sample)</label>
+                                <input type="file" id="exampleInputFile">
+                            </div>
+                        </div>
+                        <div class="">
+                            <span tooltip="Help 4" tooltip-placement="top" tooltip-trigger="mouseenter" style="font-size: 2.5rem; margin-right: 1rem;" class="glyphicon glyphicon-question-sign"></span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                    <p>5</p>
+                </div>
+                <div style="flex-grow: 2;">
+                    <div class="flex-row">
+                        <div style="flex-basis: 70%;">
+                            <div class="form-group">
+                                <label class="control-label" for="textarea1">Details:</label>
+                                <textarea id='textarea1' ng-model='vm.data.field5' class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="">
+                            <span tooltip="Help 5" tooltip-placement="top" tooltip-trigger="mouseenter" style="font-size: 2.5rem; margin-right: 1rem;" class="glyphicon glyphicon-question-sign"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-row">
+                <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
+                </div>
+                <div style="flex-grow: 2;" style="text-align: center;">
+                    <button type="submit" class="btn btn-primary" ng-click="vm.update()">Update</button>
+                    <button class="btn btn-primary" ng-click="vm.undo()">Undo</button>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-6">
+            <div id="scrollit" class="scrollit" style="padding: 2rem;">
+                <div class="row" ng-repeat="(key, value) in vm.viewLogs">
+                    <h5 style="text-align: center;">{{ key }}</h5>
+                    <div ng-repeat="log in value">
+                        <div>
+                            <p style='display: inline-block;'> {{ log.name + vm.getTypeOfMessage(log.type)}}: </p>
+                            <p style='display: inline-block; float: right; right: 0;'> {{ log.date | date: 'shortTime'}} </p>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row" ng-repeat="update in log.updates">
+                                <p ng-click='vm.rollBackValue(update)' style="margin-left: 20px;"> {{ update.message }} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="textarea2">Leave a comment</label>
+                    <textarea ng-trim="false" ng-model="vm.newComment" id='textarea2' class="form-control" rows="3" autocomplete="false"></textarea>
+                </div>
+                <button style='width: 100%; margin-bottom: 2rem;' ng-click="vm.submitComment()" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
