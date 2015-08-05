@@ -9,7 +9,7 @@ import jsDataAngular from 'js-data-angular';
 require('../../node_modules/angular-toastr/dist/angular-toastr.css');
 
 import io from 'socket.io-client';
-var socket = io('http://localhost:8080');
+var socket = io('http://69.164.209.184:8080');
 
 socket.on('connect', function() {});
 socket.on('event', function(data) {});
@@ -33,7 +33,7 @@ angular.module('app', [
 	])
 	.config((DSProvider, DSHttpAdapterProvider, $httpProvider, $locationProvider) => {
 
-		DSProvider.defaults.basePath = 'http://localhost:8080/api';
+		DSProvider.defaults.basePath = 'http://69.164.209.184:8080/api';
 		$httpProvider.useApplyAsync(true);
 
 	})
