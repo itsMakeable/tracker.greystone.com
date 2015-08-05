@@ -54,12 +54,12 @@
                     <div class="flex-row">
                         <div style="flex-basis: 70%;">
                             <div class="form-group">
-                                <label class="control-label" for="field1">Net Revenue</label>
-                                <input name='field1' id='field1' type="text" class="form-control" placeholder="" ng-model='vm.data.field1' required ng-maxlength="30" ng-minlength="5">
-                                <div ng-messages='vm.task4.field1.$error' , ng-if='vm.task4.field1.$dirty || vm.task4.$submitted'>
-                                    <em ng-message='required' class='help-block error-message'>Field 1 is required</em>
-                                    <em ng-message='minlength' class='help-block error-message'>Field 1 too short</em>
-                                    <em ng-message='maxlength' class='help-block error-message'>Field 1 too long</em>
+                                <label class="control-label" for="1">Net Revenue</label>
+                                <input name='1' id='1' type="text" class="form-control" placeholder="" ng-model='vm.data["1"]' required ng-maxlength="30" ng-minlength="5">
+                                <div ng-messages='vm.task4["1"].$error' , ng-if='vm.task4["1"].$dirty || vm.task4.$submitted'>
+                                    <em ng-message='required' class='help-block error-message'>Net Revenue is required</em>
+                                    <em ng-message='minlength' class='help-block error-message'>Net Revenue too short</em>
+                                    <em ng-message='maxlength' class='help-block error-message'>Net Revenue too long</em>
                                 </div>
                             </div>
                         </div>
@@ -78,12 +78,12 @@
                     <div class="flex-row">
                         <div style="flex-basis: 70%;">
                             <div class="form-group">
-                                <label class="control-label" for="field2">Net Operating Expenses</label>
-                                <input name='field2' type="text" class="form-control" id="field2" placeholder="" ng-model='vm.data.field2' required ng-maxlength="30" ng-minlength="5">
-                                <div ng-messages='vm.task4.field2.$error' , ng-if='vm.task4.field2.$dirty || vm.task4.$submitted'>
-                                    <em ng-message='required' class='help-block error-message'>Field 2 is required</em>
-                                    <em ng-message='minlength' class='help-block error-message'>Field 2 too short</em>
-                                    <em ng-message='maxlength' class='help-block error-message'>Field 2 too long</em>
+                                <label class="control-label" for="2">Net Operating Expenses</label>
+                                <input name='2' type="text" class="form-control" id="2" placeholder="" ng-model='vm.data["2"]' required ng-maxlength="30" ng-minlength="5">
+                                <div ng-messages='vm.task4["2"].$error' , ng-if='vm.task4["2"].$dirty || vm.task4.$submitted'>
+                                    <em ng-message='required' class='help-block error-message'>Net Operating Expenses is required</em>
+                                    <em ng-message='minlength' class='help-block error-message'>Net Operating Expenses too short</em>
+                                    <em ng-message='maxlength' class='help-block error-message'>Net Operating Expenses too long</em>
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,12 @@
                                 <label class="control-label">Tax Status</label>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" ng-model='vm.data.field3' name="inlineRadioOptions" id="inlineRadio1" value="option1"> Option 1
+                                        <input type="radio" ng-model='vm.data["4"]' name="inlineRadioOptions" id="inlineRadio1" value="option1"> Option 1
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" ng-model='vm.data.field3' name="inlineRadioOptions" id="inlineRadio2" value="option2"> Option 2
+                                        <input type="radio" ng-model='vm.data["4"]' name="inlineRadioOptions" id="inlineRadio2" value="option2"> Option 2
                                     </label>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                         <div style="flex-basis: 70%;">
                             <div class="form-group">
                                 <label class="control-label" for="textarea1">Details:</label>
-                                <textarea id='textarea1' ng-model='vm.data.field5' class="form-control" rows="3"></textarea>
+                                <textarea id='textarea1' ng-model='vm.data["5"]' class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="">

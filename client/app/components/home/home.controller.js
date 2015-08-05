@@ -27,16 +27,8 @@ class HomeController {
 		}];
 		this.scrollableContent = angular.element(document.getElementById('scrollit'));
 		this.newComment = '';
-		this.data = {
-			field1: '',
-			field2: '',
-			field3: '',
-			field5: '',
-			file1: '',
-			checkbox1: '',
-			checkbox2: ''
-		};
-		this.previousData = angular.copy(this.data);
+		this.data = {};
+		this.loadData(this.task);
 		this.formModel = formModel;
 		this.logs = [{
 			name: 'Todd Lynch',
@@ -96,13 +88,18 @@ class HomeController {
 		}];
 		this.updateViewData();
 	}
+	loadData(task) {
+		angular.forEach(task.fields, field => {
+			this.data[field.field_id] = field.active_response.data;
+		});
+		this.previousData = angular.copy(this.data);
+	}
 	updateViewData() {
 		this.viewLogs = groupBy(this.logs, (log) => {
 			return this.$filter('date')(log.date, 'MMMM d');
 		});
 	}
 	update() {
-		console.log(this.task4);
 		if (this.task4.$valid) {
 			let element = angular.element(document.getElementById('exampleInputFile'));
 			if (element[0].files[0]) {

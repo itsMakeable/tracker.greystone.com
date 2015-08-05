@@ -6,21 +6,24 @@ var port = process.env.PORT || 8080;
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var mysql = require('mysql');
 
-var connectionpool = mysql.createPool({
-	host: 'dev.shifteight.com',
-	user: 'root',
-	password: 'shift',
-	database: 'tracker_greystone_com'
+var knex = require('knex')({
+	client: 'mysql',
+	connection: {
+		host: 'dev.shifteight.com',
+		user: 'root',
+		password: 'shift',
+		database: 'tracker_greystone_com'
+	}
 });
+var bookshelf = require('bookshelf')(knex);
+
+bookshelf.plugin('registry');
+bookshelf.plugin('virtuals');
+app.set('bookshelf', bookshelf);
 
 app.use(function(req, res, next) {
 	req.io = io;
-	next();
-});
-app.use(function(req, res, next) {
-	req.mysql = connectionpool;
 	next();
 });
 app.use(express.static(__dirname + '/../client', {
@@ -42,7 +45,6 @@ app.use(bodyParser.json({
 app.use(methodOverride());
 
 require('./routes.js')(app);
-
 
 io.on('connection', function(socket) {
 	console.log('connection');

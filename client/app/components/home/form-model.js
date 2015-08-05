@@ -1,16 +1,16 @@
 export default [{
-  "key": '1',
-  "type": 'input',
+  "key": "1",
+  "type": "input",
   "templateOptions": {
-    "label": 'Net Income',
-    "placeholder": ''
+    "label": "Net Income",
+    "placeholder": ""
   }
 }, {
-  "key": '2',
-  "type": 'input',
+  "key": "2",
+  "type": "input",
   "templateOptions": {
-    "label": 'Net Operating Expenses',
-    "placeholder": ''
+    "label": "Net Operating Expenses",
+    "placeholder": ""
   }
 }, {
   "key": "3",
@@ -26,16 +26,16 @@ export default [{
     }]
   }
 }, {
-  "key": '4',
-  "type": 'file',
+  "key": "4",
+  "type": "file",
   "templateOptions": {
-    "label": '2014 Property Financials (View Sample)'
+    "label": "2014 Property Financials (View Sample)"
   }
 }, {
-  "key": '5',
-  "type": 'textarea',
+  "key": "5",
+  "type": "textarea",
   "templateOptions": {
-    "label": 'Details:',
-    "placeholder": ''
+    "label": "Details:",
+    "placeholder": ""
   }
 }];
