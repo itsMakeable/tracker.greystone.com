@@ -11,7 +11,7 @@
         <form name='vm.task4' class="col-md-6" novalidate>
             <div class="row">
                 <div class="col-md-12">
-                    <p>Project: Wynmoor Gardens Application #3</p>
+                    <p>Project: {{ vm.project.name }}</p>
                 </div>
             </div>
             <div class="row flex-row">
@@ -19,9 +19,9 @@
                     <span style="font-size: 3.5rem" class="glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div style="flex-grow: 2;">
-                    <h4>2014 Property Financials</h4>
+                    <h4>{{ vm.task.name }}</h4>
                     <h6>Scheduled Complete: Tuesday (August 4th)  <span style="margin-left: 5px;" class="glyphicon glyphicon-pencil"></span></h6>
-                    <h6>Status: Waiting For XYZ to confirm.  <span style="margin-left: 5px;" class="glyphicon glyphicon-pencil"></span></h6>
+                    <h6>Status: {{ vm.task.status }}  <span style="margin-left: 5px;" class="glyphicon glyphicon-pencil"></span></h6>
                 </div>
             </div>
             <div class="row flex-row">
@@ -43,7 +43,7 @@
                 <div style="flex-basis: 20%; flex-shrink: 0; text-align: center;">
                 </div>
                 <div style="flex-grow: 2;">
-                    <h6>Task Instructions and Details. consectetur adipiscing elit. Fusce nec molestie quam. Vestibulum ut malesuada dui, vitae bibendum nulla. Aliquam mollis mattis commodo. Mauris ut pulvinar dui, in suscipit nisl.</h6>
+                    <h6>{{ vm.task.description }}</h6>
                 </div>
             </div>
             <div class="row flex-row">

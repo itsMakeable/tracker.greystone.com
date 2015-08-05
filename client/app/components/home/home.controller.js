@@ -1,7 +1,12 @@
 import groupBy from 'lodash.groupby';
+import formModel from './form-model';
+console.log(formModel);
 
 class HomeController {
-	constructor($timeout, $filter, toastr, $q) {
+	constructor($timeout, $filter, toastr, $q, socket, project, task, Response) {
+		console.log(socket);
+		this.project = project;
+		this.task = task;
 		this.$q = $q;
 		this.name = 'Leandro Zubrezki';
 		this.toastr = toastr;
@@ -32,29 +37,7 @@ class HomeController {
 			checkbox2: ''
 		};
 		this.previousData = angular.copy(this.data);
-		this.formModel = {
-			field1: {
-				name: 'Field 1'
-			},
-			field2: {
-				name: 'Field 2'
-			},
-			field3: {
-				name: 'Field 3'
-			},
-			checkbox1: {
-				name: 'Checkbox 1'
-			},
-			checkbox2: {
-				name: 'Checkbox 2'
-			},
-			file1: {
-				name: 'File 1'
-			},
-			field5: {
-				name: 'Field 5'
-			}
-		};
+		this.formModel = formModel;
 		this.logs = [{
 			name: 'Todd Lynch',
 			updates: [{

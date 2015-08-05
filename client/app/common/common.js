@@ -1,12 +1,10 @@
 import angular from 'angular';
-import Navbar from './navbar/navbar';
-import Hero from './hero/hero';
-import User from './user/user';
+import Services from './services/services';
+import Directives from './directives/directives';
 
-let commonModule = angular.module('app.common', [
-	Navbar.name,
-	Hero.name,
-	User.name
+let commonModule = angular.module('roomho.common', [
+	Services.name,
+	Directives.name,
 ]);
 
 export default commonModule;
