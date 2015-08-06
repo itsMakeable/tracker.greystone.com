@@ -3,7 +3,7 @@ let ProjectFactory = function(DS) {
 	let projectResource = DS.defineResource({
 		name: 'project',
 		idAttribute: 'project_id',
-		endpoint: '/projects',
+		endpoint: '/api/projects',
 	});
 
 	return projectResource;

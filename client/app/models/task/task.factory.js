@@ -3,7 +3,7 @@ let TaskFactory = function(DS) {
 	let taskResource = DS.defineResource({
 		name: 'task',
 		idAttribute: 'task_id',
-		endpoint: '/tasks',
+		endpoint: '/api/tasks',
 	});
 
 	return taskResource;

@@ -6,6 +6,7 @@ module.exports = function(app) {
     app.get('/api/projects', function(req, res) {
         Project.fetchAll({})
             .then(function(model) {
+                console.log(model);
                 console.log(model.toJSON());
                 res.json(model.toJSON());
             })

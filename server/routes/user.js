@@ -23,10 +23,6 @@ module.exports = function(app) {
 
     });
 
-    app.post('/api/users', function(req, res) {
-
-    });
-
     app.delete('/api/users/:id', function(req, res) {
 
 

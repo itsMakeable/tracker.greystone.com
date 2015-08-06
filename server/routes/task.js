@@ -11,7 +11,6 @@ module.exports = function(app) {
                 console.log(model);
                 var tasks = model.toJSON();
                 console.log(tasks);
-
                 res.json(tasks);
             })
             .catch(function(err) {

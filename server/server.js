@@ -6,6 +6,10 @@ var port = process.env.PORT || 8080;
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
+
+var SECRET = 'shhhhhhared-secret';
 
 var knex = require('knex')({
 	client: 'mysql',
@@ -21,7 +25,10 @@ var bookshelf = require('bookshelf')(knex);
 bookshelf.plugin('registry');
 bookshelf.plugin('virtuals');
 app.set('bookshelf', bookshelf);
-
+app.set('SECRET', SECRET);
+app.use('/api', expressJwt({
+	secret: SECRET
+}));
 app.use(function(req, res, next) {
 	req.io = io;
 	next();

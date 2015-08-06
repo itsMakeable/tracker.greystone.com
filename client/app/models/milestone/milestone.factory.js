@@ -3,7 +3,7 @@ let MilestoneFactory = function(DS) {
 	let milestoneResource = DS.defineResource({
 		name: 'milestone',
 		idAttribute: 'milestone_id',
-		endpoint: '/milestones',
+		endpoint: '/api/milestones',
 	});
 
 	return milestoneResource;

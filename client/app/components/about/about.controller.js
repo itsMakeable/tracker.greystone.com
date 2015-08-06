@@ -1,8 +1,13 @@
 class AboutController {
-	constructor(){
-		this.name = 'about';
+	constructor(User) {
+		this.User = User;
+	}
+	signup() {
+		this.User.signup();
+	}
+	signin() {
+		this.User.signin();
 	}
 }
-
 
 export default AboutController;

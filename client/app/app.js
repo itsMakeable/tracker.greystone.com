@@ -36,7 +36,7 @@ angular.module('app', [
 	])
 	.config((DSProvider, DSHttpAdapterProvider, $httpProvider, $locationProvider) => {
 
-		DSProvider.defaults.basePath = local + '/api';
+		DSProvider.defaults.basePath = local;
 		$httpProvider.useApplyAsync(true);
 
 	})

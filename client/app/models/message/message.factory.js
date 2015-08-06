@@ -3,7 +3,7 @@ let MessageFactory = function(DS) {
 	let messageResource = DS.defineResource({
 		name: 'message',
 		idAttribute: 'message_id',
-		endpoint: '/messages',
+		endpoint: '/api/messages',
 	});
 
 	return messageResource;
