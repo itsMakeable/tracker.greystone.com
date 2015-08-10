@@ -1,0 +1,19 @@
+nav.navbar.navbar-default.navbar-static-top(style="text-align: center;")
+	div.container-fluid
+		div.navbar-header
+			a.navbar-brand Home Screen
+
+div.container-fluid
+	div.row
+		div.col-md-10.col-md-offset-1
+			div.panel.panel-default
+				div.panel-heading {{ vm.project.name }}
+				div.panel-body
+					div(style='display: flex; justify-content: space-around;')
+						div(ng-repeat='milestone in vm.project.milestones track by milestone.milestone_id')
+							h4(style='text-align: center;' ng-click='vm.goToMilestone(milestone)') {{ milestone.name }}
+							p(style='text-align: center;' ng-click='vm.goToMilestone(milestone)') {{ milestone.target_date | date: 'shortDate' }}
+							div.list-group
+								button.list-group-item(ng-repeat='task in milestone.tasks track by task.task_id' ng-click='vm.goToMilestone(milestone)')
+									| {{ task.name }}
+									span.glyphicon.glyphicon-chevron-right(style='margin-left: 1.5rem; float: right;')
