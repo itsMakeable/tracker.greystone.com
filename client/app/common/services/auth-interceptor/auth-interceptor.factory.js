@@ -11,7 +11,7 @@ let authInterceptorFactory = function($q, $injector) {
       responseError(response) {
         if (response.status === 401 || response.status === 403) {
           window.localStorage.removeItem('auth_token');
-          $injector.get('$state').go('about');
+          $injector.get('$state').go('login');
         }
         return $q.reject(response);
       }
