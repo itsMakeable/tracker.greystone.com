@@ -4,7 +4,9 @@ module.exports = function(app) {
     var Project = require('./../models/project')(bookshelf);
 
     app.get('/api/projects', function(req, res) {
-        Project.fetchAll({})
+        Project.fetchAll({
+                withRelated: ['milestones', 'milestones.tasks', 'milestones.tasks.fields', 'milestones.tasks.fields.files']
+            })
             .then(function(model) {
                 console.log(model);
                 console.log(model.toJSON());
