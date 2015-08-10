@@ -1,5 +1,6 @@
 import angular from 'angular';
 import Field from './field/field';
+import File from './file/file';
 import Message from './message/message';
 import Milestone from './milestone/milestone';
 import Project from './project/project';
@@ -9,6 +10,7 @@ import User from './user/user';
 
 let modelsModule = angular.module('models.common', [
 	Field.name,
+	File.name,
 	Message.name,
 	Milestone.name,
 	Project.name,
