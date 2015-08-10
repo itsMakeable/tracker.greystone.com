@@ -1,6 +1,6 @@
 module.exports = function(bookshelf) {
 
-    var Response = require('./response')(bookshelf);
+    var File = require('./file')(bookshelf);
 
     if (bookshelf.model('Field')) {
         return bookshelf.model('Field');
@@ -10,14 +10,12 @@ module.exports = function(bookshelf) {
             idAttribute: 'field_id',
             virtuals: {
                 model: function() {
-                    return JSON.parse(this.get("data"));
+                    // return JSON.parse(this.get("data"));
+                    return 'Model';
                 }
             },
-            active_response: function() {
-                return this.belongsTo(Response, 'active_response_id');
-            },
-            responses: function() {
-                return this.hasMany(Response, ['field_id']);
+            files: function() {
+                return this.hasMany(File, ['field_id']);
             }
         });
         return bookshelf.model('Field', Field);
