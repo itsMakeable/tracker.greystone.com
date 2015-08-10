@@ -21,6 +21,11 @@ var resolveToApp = function(glob) {
 
 var resolveToComponents = function(glob) {
 	glob = glob || '';
+	return path.join(root, 'app/components', glob); // app/components/{glob}
+};
+
+var resolveToApp = function(glob) {
+	glob = glob || '';
 	return path.join(root, 'app', glob); // app/components/{glob}
 };
 
@@ -28,10 +33,10 @@ var root = 'client';
 
 // map of all our paths
 var paths = {
-	js: resolveToComponents('**/*!(.spec.js).js'), // don't include spec files
+	js: resolveToApp('**/*!(.spec.js).js'), // don't include spec files
 	styl: resolveToApp('**/*.styl'), // our stylus files
 	html: [
-		resolveToApp('**/*.html'),
+		resolveToApp('**/*.jade'),
 		path.join(root, 'index.html')
 	],
 
