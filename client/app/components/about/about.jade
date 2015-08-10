@@ -1,0 +1,8 @@
+<div class="button" ngf-select ng-model="vm.file">Upload using model $watch</div>
+<div class="button" ngf-select ng-model="vm.files" ngf-multiple="true">Upload multiple using model $watch</div>
+<div class="button" ngf-select ngf-change="vm.upload($file)">Upload on file change</div>
+<div class="button" ngf-select ngf-change="vm.upload($files)" ngf-multiple="true">Upload multiple on file change</div>
+Drop File:
+<div class="drop-box" ngf-drop ng-model="vm.files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*,application/pdf'">Drop Images or PDFs files here</div>
+<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+<button class="btn btn-default" ng-click="vm.uploadMulti()">Upload Files</button>
