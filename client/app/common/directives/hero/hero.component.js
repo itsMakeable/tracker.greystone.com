@@ -1,15 +1,15 @@
-import template from './hero.html';
+import template from './hero.jade';
 import controller from './hero.controller';
 import './hero.styl';
 
-let heroComponent = function(){
+let heroComponent = function() {
 	return {
 		template,
 		controller,
 		restrict: 'E',
-		controllerAs: 'vm',
-		scope: {},
-		bindToController: true
+			controllerAs: 'vm',
+			scope: {},
+			bindToController: true
 	};
 };
 
