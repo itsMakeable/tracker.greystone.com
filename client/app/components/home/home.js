@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import template from './home.html';
+import template from './home.jade';
 import controller from './home.controller';
 import './home.styl';
 
@@ -8,7 +8,6 @@ let homeModule = angular.module('home', [
 		uiRouter
 	])
 	.config(($stateProvider, $urlRouterProvider) => {
-		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('home', {
@@ -17,19 +16,15 @@ let homeModule = angular.module('home', [
 				controller,
 				controllerAs: 'vm',
 				resolve: {
-					project: (Project) => {
-						console.log(Project);
-						return Project.findAll({})
-							.then(projects => {
-								console.log(projects);
-								return projects[0];
-							});
-					},
-					task: Task => {
-						return Task.findAll({})
-							.then(tasks => {
-								console.log(tasks);
-								return tasks[0];
+					authentication: (User, $q) => {
+						return User.checkLogin()
+							.then(() => {
+								return true;
+							})
+							.catch(() => {
+								return $q.reject({
+									notAuthenticated: true
+								});
 							});
 					}
 				}
