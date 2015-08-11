@@ -2,6 +2,9 @@ module.exports = function(app) {
 
 	var multer = require('multer');
 	var path = require('path');
+	var Promise = require('bluebird');
+	var bookshelf = app.get('bookshelf');
+	var File = require('./models/file')(bookshelf);
 
 	var storage = multer.diskStorage({
 		destination: function(req, file, cb) {
@@ -9,6 +12,7 @@ module.exports = function(app) {
 		},
 		filename: function(req, file, cb) {
 			console.log('File');
+			console.log(file);
 			var fileInformation = path.parse(file.originalname);
 			cb(null, fileInformation.name + '-' + new Date().getTime() + fileInformation.ext);
 		}
@@ -19,7 +23,35 @@ module.exports = function(app) {
 	});
 
 	app.post('/api/upload', upload.array('file', 3), function(req, res, next) {
-		res.json(req.files);
+		console.log('/api/upload');
+		// check field_id present.
+		var filesPromises = [];
+		console.log(req.files);
+		req.files.forEach(function(file) {
+			console.log(file);
+			var newFile = new File({
+				name: file.originalname,
+				user_id: req.user.user_id,
+				field_id: Number(req.body.field_id),
+				is_active: true,
+				path: file.path
+			});
+			filesPromises.push(newFile.save());
+		});
+		Promise.all(filesPromises)
+			.then(function(files) {
+				console.log("all the files were created");
+				console.log(files);
+				res.json(files);
+			})
+			.catch(function(error) {
+				console.log(error);
+				res.statusCode = 503;
+				res.json(503, {
+					result: 'error',
+					error: error.code
+				});
+			});
 	});
 
 	require('./routes/field.js')(app);
