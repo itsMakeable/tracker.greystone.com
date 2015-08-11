@@ -1,8 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import template from './<%= name %>.jade';
-import controller from './<%= name %>.controller';
-import './<%= name %>.styl';
+import template from './<%= dashName %>.jade';
+import controller from './<%= dashName %>.controller';
+import './<%= dashName %>.styl';
 
 let <%= name %>
 Module = angular.module('<%= name %>', [

@@ -1,9 +1,9 @@
 import <%= upCaseName %>
-Module from './<%= name %>'
+Module from './<%= dashName %>'
 import <%= upCaseName %>
-Controller from './<%= name %>.controller';
+Controller from './<%= dashName %>.controller';
 import <%= upCaseName %>
-Template from './<%= name %>.jade';
+Template from './<%= dashName %>.jade';
 
 describe('<%= upCaseName %>', () => {
 	let $rootScope,
