@@ -39,7 +39,7 @@ angular.module('app', [
 	.config((DSProvider, DSHttpAdapterProvider, $httpProvider, $urlRouterProvider) => {
 
 		if (window.localStorage.auth_token) {
-			$urlRouterProvider.otherwise('/homeScreen');
+			$urlRouterProvider.otherwise('/property');
 		} else {
 			$urlRouterProvider.otherwise('/login');
 		}
