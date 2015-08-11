@@ -1,0 +1,7 @@
+h1 {{ vm.project.name }}
+
+ul
+	li(ng-repeat="task in vm.milestone.tasks track by task.task_id" ng-click="vm.goToTask(task)")
+		h3 {{ task.status }}
+		h4 {{ task.name }}
+		h5(ng-if='task.current_user.name') {{ task.current_user.name }}

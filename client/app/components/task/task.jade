@@ -1,0 +1,9 @@
+h1 {{ vm.project.name }}
+h3 {{ vm.task.name }}
+p {{ vm.task.description}}
+div(ng-repeat="field in vm.task.fields track by field.field_id")
+	div.drop-box(ngf-change="vm.fileDropped($files, $file, $event, $rejectedFiles, field)" ngf-select ngf-drop ng-model="field._files" ngf-drag-over-class="dragover" ngf-multiple="field.type == 'MULTIPLE_FILE'" ngf-allow-dir="true" ngf-accept="'image/*,application/pdf'")
+		p(ng-if="field.type == 'MULTIPLE_FILE'") Upload Documents
+		p(ng-if="field.type == 'SINGLE_FILE'") Upload Document			
+
+

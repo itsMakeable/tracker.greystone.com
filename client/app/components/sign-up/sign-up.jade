@@ -1,0 +1,26 @@
+h1 Sign Up
+
+form(name='vm.signUpForm' novalidate)
+	div
+		label(for="firstName") First Name
+		input(type="text" id="firstName" name="firstName" placeholder="First Name" ng-model="vm.userModel.first_name" required)
+		div(ng-messages='vm.signUpForm.firstName.$error', ng-if='vm.signUpForm.firstName.$dirty || vm.signUpForm.$submitted')
+			em.error-message(ng-message='required') First Name is Required
+	div
+		label(for="lastName") Last Name
+		input(type="text" id="lastName" name="lastName" placeholder="Last Name" ng-model="vm.userModel.last_name" required)
+		div(ng-messages='vm.signUpForm.lastName.$error', ng-if='vm.signUpForm.lastName.$dirty || vm.signUpForm.$submitted')
+			em.error-message(ng-message='required') Last Name is Required
+	div
+		label(for="email") Email address
+		input(type="email" id="email" name="email" placeholder="Email" ng-model="vm.userModel.email" required)
+		div(ng-messages='vm.signUpForm.email.$error', ng-if='vm.signUpForm.email.$dirty || vm.signUpForm.$submitted')
+			em.error-message(ng-message='required') Email is Required
+			em.error-message(ng-message='email') Must be a valid email
+	div
+		label(for="password") Password
+		input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.userModel.password" required)
+		div(ng-messages='vm.signUpForm.password.$error', ng-if='vm.signUpForm.password.$dirty || vm.signUpForm.$submitted')
+			em.error-message(ng-message='required') Password is Required
+	
+	button(ng-click="vm.submit()") Sign Up

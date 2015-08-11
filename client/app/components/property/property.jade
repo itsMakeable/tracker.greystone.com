@@ -1,0 +1,15 @@
+h1 {{ vm.project.name }}
+
+ul
+	li(ng-repeat="milestone in vm.project.milestones track by milestone.milestone_id" ng-click="vm.goToMilestone(milestone)")
+		h4 {{ milestone.name }}
+		p {{ milestone.target_date | date: 'shortDate' }}
+		ul
+			li(ng-repeat='task in milestone.tasks track by task.task_id')
+				p {{ task.name }}
+
+h4 Team
+ul
+	li(ng-repeat="teamMember in vm.project.members track by teamMember.user_id")
+		h4 {{ teamMember.name }}
+							
