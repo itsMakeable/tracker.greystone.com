@@ -1,6 +1,7 @@
 module.exports = function(bookshelf) {
 
     var Field = require('./field')(bookshelf);
+    var User = require('./user')(bookshelf);
 
     if (bookshelf.model('Task')) {
         return bookshelf.model('Task');
@@ -10,6 +11,9 @@ module.exports = function(bookshelf) {
             idAttribute: 'task_id',
             fields: function() {
                 return this.hasMany(Field, ['task_id']);
+            },
+            current_user: function() {
+                return this.belongsTo(User, ['user_id']);
             }
         });
 
