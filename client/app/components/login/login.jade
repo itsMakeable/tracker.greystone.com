@@ -1,22 +1,18 @@
-nav.navbar.navbar-default.navbar-fixed-top(style="text-align: center;")
-	div.container
-		p.navbar-text Login
-		button.btn.btn-default.navbar-btn.navbar-right(type="button" ui-sref="signUp") Sign Up
+h1 Login
 
-div.container-fluid(style='padding-bottom: 70px; padding-top: 70px;')
-	div.row
-		div.col-md-12
-			form(name='vm.loginForm' novalidate)
-				div.form-group
-					label(for="email") Email address
-					input.form-control(type="email" id="email" name="email" placeholder="Email" ng-model="vm.email" required)
-					div(ng-messages='vm.loginForm.email.$error', ng-if='vm.loginForm.email.$dirty || vm.loginForm.$submitted')
-						em.error-message(ng-message='required') Email is Required
-						em.error-message(ng-message='email') Must be a valid email
-				div.form-group
-					label(for="password") Password
-					input.form-control(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password" required)
-					div(ng-messages='vm.loginForm.password.$error', ng-if='vm.loginForm.password.$dirty || vm.loginForm.$submitted')
-						em.error-message(ng-message='required') Password is Required
-				
-				button.btn.btn-default(ng-click="vm.login()") Login
+button(type="button" ui-sref="signUp") Sign Up
+
+form(name='vm.loginForm' novalidate)
+	div
+		label(for="email") Email address
+		input(type="email" id="email" name="email" placeholder="Email" ng-model="vm.email" required)
+		div(ng-messages='vm.loginForm.email.$error', ng-if='vm.loginForm.email.$dirty || vm.loginForm.$submitted')
+			em.error-message(ng-message='required') Email is Required
+			em.error-message(ng-message='email') Must be a valid email
+	div
+		label(for="password") Password
+		input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password" required)
+		div(ng-messages='vm.loginForm.password.$error', ng-if='vm.loginForm.password.$dirty || vm.loginForm.$submitted')
+			em.error-message(ng-message='required') Password is Required
+	
+	button(ng-click="vm.login()") Login
