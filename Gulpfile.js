@@ -12,6 +12,8 @@ var gulp = require('gulp'),
 		return serve.reload();
 	};
 
+var dasherize = require("underscore.string/dasherize");
+
 
 // helper method to resolveToApp paths
 var resolveToApp = function(glob) {
@@ -83,15 +85,16 @@ gulp.task('component', function() {
 
 	var name = yargs.name;
 	var parentPath = yargs.parent || '';
-	var destPath = path.join(resolveToComponents(), parentPath, name);
+	var destPath = path.join(resolveToComponents(), parentPath, dasherize(name));
 
 	return gulp.src(paths.blankTemplates)
 		.pipe(template({
 			name: name,
-			upCaseName: cap(name)
+			upCaseName: cap(name),
+			dashName: dasherize(name)
 		}))
 		.pipe(rename(function(path) {
-			path.basename = path.basename.replace('temp', name);
+			path.basename = path.basename.replace('temp', dasherize(name));
 		}))
 		.pipe(gulp.dest(destPath));
 });
