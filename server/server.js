@@ -24,7 +24,9 @@ var bookshelf = require('bookshelf')(knex);
 
 bookshelf.plugin('registry');
 bookshelf.plugin('virtuals');
+bookshelf.plugin('visibility');
 app.set('bookshelf', bookshelf);
+
 app.set('SECRET', SECRET);
 app.use('/api', expressJwt({
 	secret: SECRET

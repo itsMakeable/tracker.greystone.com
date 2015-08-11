@@ -9,6 +9,7 @@ module.exports = function(bookshelf) {
 		var User = bookshelf.Model.extend({
 			tableName: 'users',
 			idAttribute: 'user_id',
+			hidden: ['password']
 		}, {
 			login: Promise.method(function(email, password) {
 				if (!email || !password) throw new Error('Email and password are both required');
