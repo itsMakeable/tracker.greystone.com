@@ -11,7 +11,7 @@ let userProfileModule = angular.module('userProfile', [
 
 		$stateProvider
 			.state('userProfile', {
-				url: '/userProfile',
+				url: '/userProfile/:userId',
 				template,
 				controller,
 				controllerAs: 'vm',
@@ -26,6 +26,9 @@ let userProfileModule = angular.module('userProfile', [
 									notAuthenticated: true
 								});
 							});
+					},
+					user: ($stateParams, User, $q) => {
+						return $q.when(User.get($stateParams.userId));
 					}
 				}
 			});

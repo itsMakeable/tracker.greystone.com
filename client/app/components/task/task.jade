@@ -1,4 +1,7 @@
 h1 {{ vm.project.name }}
+
+user-profile-button
+	
 h3 {{ vm.task.name }}
 p {{ vm.task.description}}
 div(ng-repeat="field in vm.task.fields track by field.field_id")

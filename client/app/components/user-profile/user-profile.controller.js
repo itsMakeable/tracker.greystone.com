@@ -1,11 +1,11 @@
 class UserProfileController {
-	constructor(LocalStorage, $state, User) {
-		this.LocalStorage = LocalStorage;
+	constructor($state, User, user) {
 		this.$state = $state;
 		this.User = User;
+		this.user = user;
 	}
 	logout() {
-		this.LocalStorage.removeItem('auth_token');
+		this.User.logout();
 		this.$state.go('login');
 	}
 }

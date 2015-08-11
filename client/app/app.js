@@ -52,7 +52,6 @@ angular.module('app', [
 
 		$rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
 			console.log('$stateChangeError');
-			console.log(error);
 			if (error.notAuthenticated) {
 				$state.go('login');
 			}

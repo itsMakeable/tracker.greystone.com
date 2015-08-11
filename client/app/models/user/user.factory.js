@@ -6,14 +6,29 @@ let UserFactory = function(DS, $http, LocalStorage, $q) {
 		endpoint: '/api/users',
 	});
 
-	let currentUser = null;
+	let currentUser = LocalStorage.getObject('user');
+	if (currentUser && currentUser.user_id) {
+		userResource.inject(currentUser);
+	}
+
+	userResource.setCurrentUser = function(user) {
+		LocalStorage.setObject('user', user);
+		currentUser = user;
+		this.inject(user);
+	};
+
+	userResource.logout = function() {
+		this.LocalStorage.removeItem('auth_token');
+		this.LocalStorage.removeItem('user');
+		currentUser = null;
+	};
 
 	userResource.signup = function(user) {
 		return $http.post(DS.defaults.basePath + '/auth/signup', user)
 			.then(response => {
 				console.log(response);
 				LocalStorage.set('auth_token', response.data.token);
-				currentUser = response.data.user;
+				this.setCurrentUser(response.data.user);
 				return response.data;
 			})
 			.catch(response => {
@@ -30,7 +45,7 @@ let UserFactory = function(DS, $http, LocalStorage, $q) {
 			.then(response => {
 				console.log(response);
 				LocalStorage.set('auth_token', response.data.token);
-				currentUser = response.data.user;
+				this.setCurrentUser(response.data.user);
 				return response.data;
 			})
 			.catch(response => {
@@ -60,7 +75,9 @@ let UserFactory = function(DS, $http, LocalStorage, $q) {
 			});
 	};
 
-	userResource.getCurrentUser = () => currentUser;
+	userResource.getCurrentUser = function() {
+		return this.get(currentUser.user_id);
+	};
 
 	return userResource;
 

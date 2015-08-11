@@ -1,10 +1,10 @@
 import angular from 'angular';
 import Navbar from './navbar/navbar';
-import Hero from './hero/hero';
+import UserProfileButton from './user-profile-button/user-profile-button';
 
 let directivesModule = angular.module('directives.common', [
 	Navbar.name,
-	Hero.name,
+	UserProfileButton.name,
 ]);
 
 export default directivesModule;
