@@ -5,10 +5,15 @@ module.exports = function(app) {
 
     app.get('/api/projects', function(req, res) {
         Project.fetchAll({
-                withRelated: ['milestones', 'milestones.tasks', 'milestones.tasks.fields', 'milestones.tasks.fields.files']
+                withRelated: [
+                    'milestones',
+                    'milestones.tasks',
+                    'milestones.tasks.fields',
+                    'milestones.tasks.current_user',
+                    'milestones.tasks.fields.files'
+                ]
             })
             .then(function(model) {
-                console.log(model);
                 console.log(model.toJSON());
                 res.json(model.toJSON());
             })
