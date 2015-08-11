@@ -12,6 +12,9 @@ class AboutController {
 		if (file) {
 			this.Upload.upload({
 				url: 'http://localhost:8080/api/upload',
+				fields: {
+					'field_id': 2
+				},
 				file: file
 			}).progress(evt => {
 				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -26,7 +29,10 @@ class AboutController {
 	uploadMulti() {
 		this.Upload.upload({
 			url: 'http://localhost:8080/api/upload',
-			file: this.files
+			file: this.files,
+			fields: {
+				'field_id': 2
+			},
 		}).progress(evt => {
 			var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
 			console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
