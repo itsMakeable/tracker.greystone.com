@@ -6,7 +6,7 @@ class LoginController {
 	login() {
 		this.User.signin(this.email, this.password)
 			.then(() => {
-				this.$state.go('homeScreen');
+				this.$state.go('property');
 			})
 			.catch(() => {
 
