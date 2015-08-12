@@ -11,8 +11,6 @@ module.exports = function(app) {
 			cb(null, 'uploads/');
 		},
 		filename: function(req, file, cb) {
-			console.log('File');
-			console.log(file);
 			var fileInformation = path.parse(file.originalname);
 			cb(null, fileInformation.name + '-' + new Date().getTime() + fileInformation.ext);
 		}
@@ -25,10 +23,10 @@ module.exports = function(app) {
 	app.post('/api/upload', upload.array('file', 3), function(req, res, next) {
 		console.log('/api/upload');
 		// check field_id present.
+		// check if field is single or multiple to update 
+		// is_active
 		var filesPromises = [];
-		console.log(req.files);
 		req.files.forEach(function(file) {
-			console.log(file);
 			var newFile = new File({
 				name: file.originalname,
 				user_id: req.user.user_id,
@@ -40,13 +38,9 @@ module.exports = function(app) {
 		});
 		Promise.all(filesPromises)
 			.then(function(files) {
-				console.log("all the files were created");
-				console.log(files);
 				res.json(files);
 			})
 			.catch(function(error) {
-				console.log(error);
-				res.statusCode = 503;
 				res.json(503, {
 					result: 'error',
 					error: error.code

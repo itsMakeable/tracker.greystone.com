@@ -6,13 +6,10 @@ module.exports = function(app) {
     app.get('/api/files', function(req, res) {
         File.fetchAll({})
             .then(function(model) {
-                console.log(model.toJSON());
                 res.json(model.toJSON());
             })
             .catch(function(err) {
-                console.error(err);
-                res.statusCode = 503;
-                res.send({
+                res.json(503, {
                     result: 'error',
                     err: err.code
                 });
@@ -23,6 +20,8 @@ module.exports = function(app) {
 
     });
 
+
+    // move the upload logic here.
     app.post('/api/files', function(req, res) {
         var file = req.body;
         var newFile = new File({
@@ -37,14 +36,27 @@ module.exports = function(app) {
                 res.json(model.toJSON());
             })
             .catch(function(err) {
-                console.error(err);
-                res.statusCode = 503;
-                res.send({
+                res.json(503, {
                     result: 'error',
                     err: err.code
                 });
             });
 
+    });
+
+    // for renaming a file is just a change in the name.
+
+    // for updating a file, set the current file_id to update,
+    // set it to is_active false and create the new one and set
+    // active.
+
+    // should also be able to upload a new file here for replacing an
+    // existing one. 
+    app.put('/api/files', function(req, res) {
+
+        res.json({
+            response: 'Put to files'
+        });
     });
 
     app.delete('/api/files/:id', function(req, res) {

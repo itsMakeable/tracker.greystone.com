@@ -6,13 +6,10 @@ module.exports = function(app) {
     app.get('/api/users', function(req, res) {
         User.fetchAll({})
             .then(function(model) {
-                console.log(model.toJSON());
                 res.json(model.toJSON());
             })
             .catch(function(err) {
-                console.error(err);
-                res.statusCode = 503;
-                res.send({
+                res.json(503, {
                     result: 'error',
                     err: err.code
                 });

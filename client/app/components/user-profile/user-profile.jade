@@ -1,1 +1,5 @@
-p {{ vm.user | json }}
+p {{ vm.user.first_name }} {{ vm.user.last_name }}
+
+button(ng-click="vm.goToSettings()") Settings
+
+button(ng-click="vm.logout()") Logout

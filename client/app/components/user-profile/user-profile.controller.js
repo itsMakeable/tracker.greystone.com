@@ -8,6 +8,9 @@ class UserProfileController {
 		this.User.logout();
 		this.$state.go('login');
 	}
+	goToSettings() {
+		this.$state.go('settings');
+	}
 }
 
 

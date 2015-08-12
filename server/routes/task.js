@@ -5,18 +5,17 @@ module.exports = function(app) {
 
     app.get('/api/tasks', function(req, res) {
         Task.fetchAll({
-                withRelated: ['responses', 'fields.active_response', 'fields.responses']
+                withRelated: [
+                    'responses',
+                    'fields.active_response',
+                    'fields.responses'
+                ]
             })
             .then(function(model) {
-                console.log(model);
-                var tasks = model.toJSON();
-                console.log(tasks);
-                res.json(tasks);
+                res.json(model.toJSON());
             })
             .catch(function(err) {
-                console.error(err);
-                res.statusCode = 503;
-                res.send({
+                res.json(503, {
                     result: 'error',
                     err: err.code
                 });

@@ -14,13 +14,10 @@ module.exports = function(app) {
                 ]
             })
             .then(function(model) {
-                console.log(model.toJSON());
                 res.json(model.toJSON());
             })
             .catch(function(err) {
-                console.error(err);
-                res.statusCode = 503;
-                res.send({
+                res.json(503, {
                     result: 'error',
                     err: err.code
                 });

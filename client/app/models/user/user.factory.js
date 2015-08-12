@@ -18,8 +18,8 @@ let UserFactory = function(DS, $http, LocalStorage, $q) {
 	};
 
 	userResource.logout = function() {
-		this.LocalStorage.removeItem('auth_token');
-		this.LocalStorage.removeItem('user');
+		LocalStorage.removeItem('auth_token');
+		LocalStorage.removeItem('user');
 		currentUser = null;
 	};
 
