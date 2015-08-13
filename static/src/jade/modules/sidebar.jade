@@ -1,0 +1,99 @@
+aside.main-sidebar
+		
+	.spacer
+	.spacer
+
+	header.main-header
+		h1.h1 101 MAIN STREET
+		h2.h2 Concept
+	section
+		.sidebar-container
+			img.main-chart(src="svg/chart.svg", alt="")
+	section
+		.sidebar-container
+			.sidebar-list__container
+				h6.h6 Recently Completed
+				hr
+				ul.sidebar-list.is-completed
+					li.sidebar-list__item
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Tax Return
+							small: em.sidebar-small Approved by Todd
+					//- hr(style='margin-top:0;margin-bottom:0;')
+					li.sidebar-list__item
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Property Financials
+							small: em.sidebar-small Approved by Gardenia
+			.sidebar-list__container
+				h6.h6 Active
+				hr
+				ul.sidebar-list
+
+					li.sidebar-list__item.is-highlighted
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Tax Return
+							small: em.sidebar-small Bob is checking over Section 5
+						.alert-circle.is-purple: span.center 1
+					//- hr(style='margin-top:0;margin-bottom:0;')
+					li.sidebar-list__item.is-active.is-gray.is-highlighted
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Property Financials
+							small: em.sidebar-small Gardenia is filing the tax form
+						.alert-circle.is-purple: span.center 3
+					li.sidebar-list__item
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Tax Return
+							small: em.sidebar-small Bob is checking over Section 5
+						.alert-circle.is-purple: span.center 1
+					//- hr(style='margin-top:0;margin-bottom:0;')
+					li.sidebar-list__item.is-active
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Property Financials
+							small: em.sidebar-small Gardenia is filing the tax form
+						.alert-circle.is-purple: span.center 3
+					li.sidebar-list__item
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Tax Return
+							small: em.sidebar-small Bob is checking over Section 5
+						.alert-circle.is-purple: span.center 1
+					//- hr(style='margin-top:0;margin-bottom:0;')
+					li.sidebar-list__item.is-active
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Property Financials
+							small: em.sidebar-small Gardenia is filing the tax form
+						.alert-circle.is-purple: span.center 3
+					li.sidebar-list__item.is-highlighted
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Tax Return
+							small: em.sidebar-small Bob is checking over Section 5
+						.alert-circle.is-purple: span.center 1
+					//- hr(style='margin-top:0;margin-bottom:0;')
+					li.sidebar-list__item.is-active
+						.sidebar-list__center
+							span.sidebar-list__item__indicator
+							| 2013 Property Financials
+							small: em.sidebar-small Gardenia is filing the tax form
+						.alert-circle.is-purple: span.center 3
+			.sidebar-list__container
+				h6.h6 Remaining
+				hr
+				ul.sidebar-list.is-pending
+					each val, index in [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+						li.sidebar-list__item
+							.sidebar-list__center
+								span.sidebar-list__item__indicator
+								| 2013 Tax Return
+						//- hr(style='margin-top:0;margin-bottom:0;')
+						li.sidebar-list__item
+							.sidebar-list__center
+								span.sidebar-list__item__indicator
+								| 2013 Property Financials

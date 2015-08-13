@@ -1,0 +1,88 @@
+// TASK HEADER //////////////////////////////////
+
+.task__row
+	// col(1/2)
+	position relative
+	.alert-circle
+		position absolute
+		right px(10rem)
+		background-color darkgray
+		top px(1rem)
+
+.task-header
+	color yellow
+	.h3
+		color yellow
+		fs(3rem)
+	.h4
+		color black
+	.h6
+		color darkgray
+	.task-box__circle
+		ilb(top)
+		absolute left px(-45rem)
+		
+
+// TASK BOX //////////////////////////////////
+
+.task-box
+	border-bottom 1px solid mantle
+	position relative
+	height px(40)
+	padding-left px(15)
+	max-width px(400)
+	
+.task-box--yellow
+	// background-color yellow
+	color yellow
+	border-bottom 1px solid yellow
+	.taskbox__dropdown
+		color blue
+
+.task-box__center
+	align(vertical)
+
+// TASK BOX TEXT ////////////////////////////
+
+.taskbox__right-text
+	position absolute
+	right 0
+
+.task-box__title
+	ilb()
+
+// TASK BOX CHECKBOX ////////////////////////////
+
+.task-box__circle
+	background-color white
+	border 2px solid currentColor
+	ilb()
+	border-radius 50%
+	size px(30)
+	margin-right px(5)
+
+
+	
+// TASK BOX DROPDOWN ////////////////////////////
+
+.taskbox__dropdown
+	background-color white
+	position absolute
+	width px(80)
+	top 0
+	bottom 0
+	fs(1.2rem)
+	
+.taskbox__dropdown__center
+	align(vertical)
+	right px(16rem)
+
+.taskbox__dropdown--right
+	right 0
+	
+.taskbox__dropdown__caret
+	size px(10)
+	position absolute
+	align(vertical)
+	right 0
+	margin auto

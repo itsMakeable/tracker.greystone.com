@@ -1,0 +1,129 @@
+// edit()
+.user-notification
+	position relative	
+	color darkgray
+	font-family f-reg
+	overflow hidden
+	padding 0 0 px(5rem) 0
+	background url(../svg/vr.svg) no-repeat
+	background-position 25px 0
+	&.has-padding
+		padding 0 0 px(22rem) 0
+	&:not(.has-padding) + .has-padding
+		padding px(10rem) 0 px(22rem) 0
+	&:first-of-type
+		background url(../svg/vr.svg) no-repeat
+		background-position 25px 14px
+	&:nth-last-of-type(2)
+		background url(../svg/vr-small.svg) no-repeat
+		background-position 25px 0
+	&.is-comment-box
+		background none
+	&.is-comment-box
+		padding-top px(20rem)
+		.user-notification__box
+			background-color mantle
+			color white
+		hr
+			border-color white
+	// .profile-pic
+	// 	margin-right px(10rem)
+	a
+		color blue
+	
+.user-notification__box
+	padding 2rem
+	position relative
+	width 100%
+	max-width 90%
+	max-width calc(100% - 57px)
+	ilb()
+	background-color lightgray
+	hr
+		margin px(10rem) 0
+
+	&.is-white
+		background-color white
+
+.user-notification__top-right
+	position absolute
+	top 2rem
+	right 2rem
+
+.user-notification__h1
+	upcase()
+	fs(1.4rem)
+	color black
+	padding-bottom px(10rem)
+	
+.user-notification__p
+	fs(1.2rem)
+	.is-yellow
+		color yellow
+
+.user-notification__textarea
+	width calc(100% - 100px)
+	background-color transparent
+	overflow: auto
+	color white
+	&::placeholder
+		color white
+
+.profile-pic
+	border-radius 50%
+	size px(30rem)
+	background white url(http://lorempixel.com/120/120/people/) 
+	background-repeat no-repeat !important
+	background-position 50% 50% !important
+	background-size cover !important
+	border 10px solid white
+	ilb(top)
+	position relative
+	top px(7.5rem)
+	&.is-assigned
+		size px(30rem)
+		background white url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODM5NzkzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTIuNCA1MGwzMS44IDMxLjggNjMuNi02My42Ii8+PC9zdmc+')) 
+		background-repeat no-repeat !important
+		background-size 80% auto !important
+		background-position 50% 50% !important
+		top px(12.5rem)
+		left px(7.3rem)
+		border 5px solid white
+	&.is-uploaded
+		size px(30rem)
+		background white url(unquote('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNFQUFCMjIiIHN0cm9rZS13aWR0aD0iMy45MzQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCI+PHBhdGggZD0iTTUzIDguNkgxNS4xYy02IDAtMTAuOCA0LjgtMTAuOCAxMC44djY1YzAgNiA0LjggMTAuOCAxMC44IDEwLjhoNjVjNiAwIDEwLjgtNC44IDEwLjgtMTAuOFY0Ni41TTQ3LjYgNTEuOWw0OC00Ny43TTk2LjMgMzUuN1Y1LjljMC0xLjUtMS4yLTIuNy0yLjctMi43SDYzLjgiLz48L2c+PC9zdmc+')) 
+		background-repeat no-repeat !important
+		background-size 80% auto !important
+		background-position 50% 50% !important
+		top px(12.5rem)
+		left px(7.3rem)
+		border 5px solid white
+	&.is-complete
+		size px(30rem)
+		background white url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODM5NzkzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTIuNCA1MGwzMS44IDMxLjggNjMuNi02My42Ii8+PC9zdmc+')) 
+		background-repeat no-repeat !important
+		background-size 80% auto !important
+		background-position 50% 50% !important
+		top px(12.5rem)
+		left px(7.3rem)
+		border 5px solid white
+	&.is-edited
+		size px(30rem)
+		background white url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRUFBQjIyIiBzdHJva2Utd2lkdGg9IjMuOTAxIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiPjxwYXRoIGQ9Ik02LjEgOTdIOTBNMzkuOCA3My45bC0yNiA3LjQgNy40LTI2IDUwLjItNTBjMy42LTMuNiA5LjQtMy42IDEzIDBsNS42IDUuNmMzLjYgMy42IDMuNiA5LjQgMCAxM2wtNTAuMiA1MHpNODIuNSAzMS4yTDY0IDEyLjciLz48L2c+PC9zdmc+')) 
+		background-repeat no-repeat !important
+		background-size 80% auto !important
+		background-position 50% 50% !important
+		top px(12.5rem)
+		left px(7.3rem)
+		border 5px solid white
+	+above(640px)
+		size px(45rem)
+	
+	
+
+.comment-box__submit
+	width px(20rem)
+	position absolute
+	right px(20rem)
+	bottom px(20rem)
+	

@@ -1,0 +1,17 @@
+footer.footer.footer--main
+	.container
+		.row
+			.footer__social-list
+				.container
+					.row
+						each val, index in [{name: 'linkedin'},{name: 'twitter'},{name: 'facebook'}]
+							a(href="")
+								svg(viewbox='0 0 100 100')
+									use(xlink:href='#icon_#{val.name}')
+			.footer__subnav
+				.container
+					.row
+						a(href="#", target="_blank") Legal
+						a(href="#", target="_blank") Privacy Policy
+						a(href="#", target="_blank") Cookie Policy
+						span &copy;2015 all rights reserved

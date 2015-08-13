@@ -1,0 +1,162 @@
+extends layouts/layout-primary
+
+block content
+	.row
+		include modules/sidebar.jade
+		main.main-main
+
+			img(src="svg/bar-chart.svg", alt="")
+			.container
+				.spacer
+				.spacer
+				//- header.main-header
+				//- 	//- .main-header__section.main-header__left
+				//- 	//- 	nav.main-nav
+				//- 	//- 		.nav-bar.nav-bar--top
+				//- 	//- 		.nav-bar.nav-bar--center
+				//- 	//- 		.nav-bar.nav-bar--bottom
+				//- 	.main-header__section.main-header__middle
+				//- 		.main-header__center
+				//- 			h1.h1 101 MAIN STREET
+				//- 			h2.h2 Concept
+				//- 	//- .main-header__section.main-header-right
+				//- 	//- 	img(src="http://dummyimage.com/30x30/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image")
+				//- //- h6.h6 Recently Closed
+				
+				header.task-header
+
+					.task-box__circle
+					.inline-block
+						h3.h3(style='padding-bottom:0.6rem') Personal Information
+						h6.h6.span-dropdown__container Assigned to: 
+							span.span-dropdown Gardenia
+							i.icon.span-dropdown__icon
+								svg(viewbox='0 0 100 100')
+									use(xlink:href='#icon_caret')
+					hr(style='margin: 2rem 0;')
+					
+				section
+					h4.h4 Upload front and back of your driver’s license and social security card to complete this step.
+					.spacer
+					.spacer
+					.row
+						.task__row
+							h6.h6 Front of License
+							.alert-circle
+								span.center i
+							//- hr
+							.spacer
+							.box.solid-border.is-yellow(style='min-height: 10rem')
+							
+								.box__center
+									div.message 
+										i.icon.box__icon.is-large.is-yellow
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_document')
+										.inline-block
+											p.box__title IMG_001.JPG
+											i.icon(style='margin-left:10px; width:20px;')
+												svg(viewbox='0 0 100 100')
+													use(xlink:href='#icon_edit')
+											i.icon.box__icon.box__icon--edit
+												svg(viewbox='0 0 100 100')
+													use(xlink:href='#icon_edit')
+											p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
+											p.box__metadata.box__metadata-2 4:30pm by Gardenia
+								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
+									.box__col3.is-left
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_view')
+										span.inline-block View
+									.box__col3.is-center
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_download')
+										span.inline-block Download
+									.box__col3.is-right
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_upload')
+										span.inline-block Update
+							.spacer
+							h6.h6 Front of License
+							.alert-circle
+								span.center i
+							//- hr
+							.spacer
+							.box.dotted-border(style='min-height: 10rem')
+								.box__center
+									div.message
+										i.icon.box__icon.is-large.is-gray
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_document')
+										.inline-block
+											p.box__title Upload Document
+								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
+									.box__col3 &nbsp;
+									.box__col3 &nbsp;
+									.box__col3.is-right
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_upload')
+										span.inline-block Upload
+						.spacer
+						.task__row
+							
+							h6.h6 Additional Documents
+							.alert-circle
+								span.center i
+							//- hr
+							.spacer
+							.box.dotted-border(style='min-height: 10rem')
+								.box__center
+									div.message
+										i.icon.box__icon.is-large.is-gray
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_document')
+										.inline-block
+											p.box__title Upload Document
+								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
+									.box__col3 &nbsp;
+									.box__col3 &nbsp;
+									.box__col3.is-right
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_upload')
+										span.inline-block Upload
+				.spacer
+				.spacer
+									
+			include modules/comments.jade
+						//- .message-input__container
+						//- 	.message-input__icon.message-input__icon-left
+						//- 		svg(viewbox='0 0 100 100')
+						//- 			use(xlink:href='#icon_text')
+						//- 	input.message-input(type='text' placeholder='Reply')
+						//- 	.message-input__icon.message-input__icon-right
+						//- 		svg(viewbox='0 0 100 100')
+						//- 			use(xlink:href='#icon_caret')
+							
+
+
+
+				//- .task-box.task-box--yellow
+				//- 	.task-box__center
+				//- 		.task-box__circle
+				//- 		p.task-box__title 2014 PROPERTY FINANCIALS  
+				//- 	//- p.task-box__subtitle Bob is checking over Section 5
+				//- 	.taskbox__dropdown.taskbox__dropdown--right
+				//- 		.taskbox__dropdown__center
+				//- 			| Todd
+				//- 			br.show-small
+				//- 			| Lynch
+				//- 		i.taskbox__dropdown__caret
+				//- 			svg(viewbox='0 0 100 100')
+				//- 				use(xlink:href='#icon_caret')
+				
+				
+
+				
+		//- block footer
+		//- 	include modules/footer
