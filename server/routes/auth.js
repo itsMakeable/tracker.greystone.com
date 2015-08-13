@@ -38,11 +38,13 @@ module.exports = function(app) {
                     user: user.omit('password'),
                     token: token
                 });
-            }).catch(User.NotFoundError, function() {
+            })
+            .catch(User.NotFoundError, function() {
                 res.json(400, {
                     error: req.body.email + ' not found'
                 });
-            }).catch(function(err) {
+            })
+            .catch(function(err) {
                 console.log(err);
                 res.json(400, {
                     error: 'Error authenticating'
@@ -73,17 +75,19 @@ module.exports = function(app) {
                         password: passwordHash
                     });
 
-                    signUpUser.save().then(function(model) {
-                        var token = jwt.sign({
-                            user_id: model.toJSON().user_id
-                        }, app.get('SECRET'), {
-                            expiresInMinutes: 6000000 * 5
+                    signUpUser
+                        .save()
+                        .then(function(model) {
+                            var token = jwt.sign({
+                                user_id: model.toJSON().user_id
+                            }, app.get('SECRET'), {
+                                expiresInMinutes: 6000000 * 5
+                            });
+                            res.json({
+                                user: model.toJSON(),
+                                token: token
+                            });
                         });
-                        res.json({
-                            user: model.toJSON(),
-                            token: token
-                        });
-                    });
                 }
             });
     });

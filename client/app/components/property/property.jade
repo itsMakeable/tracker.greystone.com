@@ -2,6 +2,8 @@ h1 {{ vm.project.name }}
 
 user-profile-button
 
+button(type="button" ng-click="vm.updateFile()") Update File
+
 ul
 	li(ng-repeat="milestone in vm.project.milestones track by milestone.milestone_id" ng-click="vm.goToMilestone(milestone)")
 		h4 {{ milestone.name }}

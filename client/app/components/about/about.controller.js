@@ -11,7 +11,8 @@ class AboutController {
 		console.log(file);
 		if (file) {
 			this.Upload.upload({
-				url: 'http://localhost:8080/api/upload',
+				url: 'http://localhost:8080/api/files/3',
+				method: 'PUT',
 				fields: {
 					'field_id': 2
 				},
@@ -28,7 +29,7 @@ class AboutController {
 	}
 	uploadMulti() {
 		this.Upload.upload({
-			url: 'http://localhost:8080/api/upload',
+			url: 'http://localhost:8080/api/files',
 			file: this.files,
 			fields: {
 				'field_id': 2
