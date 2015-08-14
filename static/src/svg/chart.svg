@@ -1,644 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 345 347" enable-background="new 0 0 345 347" xml:space="preserve">
-<g id="Layer_5">
-	<rect x="-1547.5" y="-142.6" fill="#3C3C3C" width="380.6" height="1200.4"/>
-</g>
-<g id="Layer_6">
-	<rect x="-1547.6" y="441.4" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-	<rect x="-1547.6" y="494.4" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-	<rect x="-1547.3" y="580.8" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-	<rect x="-1547.3" y="720.2" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-	<rect x="-1547.3" y="773.5" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-	<rect x="-1547.3" y="826.1" opacity="0.2" fill="#58595B" width="380.7" height="40"/>
-</g>
-<g id="Layer_1">
-	<polygon fill="#58595B" points="-1166.6,673.8 -1547.3,673.8 -1547.3,633.8 -1166.6,633.8 -1151.5,653.8 	"/>
-	<rect x="-1547.3" y="633.8" fill="#E9AA22" width="4.6" height="40.1"/>
-	<text transform="matrix(1 0 0 1 -1492.7185 428.6253)" fill="#D4D4D4" font-family="'Avenir-Medium'" font-size="12">Recently Completed</text>
-	<text transform="matrix(1 0 0 1 -1492.2091 458.9649)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-Regular'" font-size="12">2013 TAX RETURN</tspan><tspan x="0" y="12" fill="#939598" font-family="'AvenirNext-Italic'" font-size="10">Approved by Todd</tspan></text>
-	<text transform="matrix(1 0 0 1 -1492.2061 511.9649)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-Regular'" font-size="12">2013 PROPERTY FINANCIALS</tspan><tspan x="0" y="12" fill="#939598" font-family="'AvenirNext-Italic'" font-size="10">Approved by Marques</tspan></text>
-	<g>
-		<g>
-			<circle fill="#829693" cx="-1523.5" cy="461.4" r="13"/>
-			<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="-1528.9,461.4 -1525,465.2 -1517.4,457.6 			"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<circle fill="#829693" cx="-1523.5" cy="514.4" r="13"/>
-			<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="-1528.9,514.4 -1525,518.2 -1517.4,510.6 			"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<circle fill="#E9AA22" cx="-1523.3" cy="653.9" r="13"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<circle fill="#939598" cx="-1523.3" cy="740.2" r="13"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<circle fill="#E9AA22" cx="-1523.3" cy="600.8" r="13"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 -1491.9591 598.3814)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'AvenirNext-Regular'" font-size="12">2014 PROPERTY FINANCIALS</tspan><tspan x="0" y="12" fill="#D4D4D4" font-family="'AvenirNext-Italic'" font-size="10">Bob is checking over Section 5</tspan></text>
-	<text transform="matrix(1 0 0 1 -1491.9591 651.4649)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'AvenirNext-Regular'" font-size="12">2014 PROPERTY FINANCIALS</tspan><tspan x="0" y="12" fill="#D4D4D4" font-family="'AvenirNext-Italic'" font-size="10">Gardenia is filing the tax form</tspan></text>
-	<text transform="matrix(1 0 0 1 -1491.9591 742.9465)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">2015 PROPERTY FINANCIALS</text>
-	<g>
-		<g>
-			<circle fill="#939598" cx="-1523.3" cy="793.5" r="13"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 -1491.9591 796.1915)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">2015 PROPERTY FINANCIALS</text>
-	<g>
-		<g>
-			<circle fill="#939598" cx="-1523.3" cy="846.1" r="13"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 -1491.9591 848.8077)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">2015 PROPERTY FINANCIALS</text>
-	<text transform="matrix(1 0 0 1 -1492.719 567.6552)" fill="#D4D4D4" font-family="'Avenir-Medium'" font-size="12">Active</text>
-	<text transform="matrix(1 0 0 1 -1492.4686 707.3854)" fill="#D4D4D4" font-family="'Avenir-Medium'" font-size="12">Remaining</text>
-	<text transform="matrix(1 0 0 1 -1498.9996 -64.768)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="33.7638">101 MAIN STREET</text>
-	<text transform="matrix(1 0 0 1 -1410.6198 -31.5685)" fill="#829693" font-family="'AvenirNext-Regular'" font-size="23.0377">CONCEPT</text>
-	<g>
-		<circle fill="#829693" cx="-1523.2" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 -1512.1698 341.0284)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">Completed &amp; Approved</text>
-	</g>
-	<g>
-		<circle fill="#E9AA22" cx="-1359.5" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 -1348.4557 341.0283)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">In Progress</text>
-	</g>
-	<g>
-		<circle opacity="0.18" fill="#FFFFFF" cx="-1265.4" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 -1254.3665 341.0291)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">Not Started</text>
-	</g>
-	<g>
-		<ellipse fill="#FFFFFF" cx="-1192.8" cy="600.8" rx="6.9" ry="6.5"/>
-		
-			<text transform="matrix(1.052 0 0 1 -1194.8665 603.098)" fill="#7F2755" font-family="'AvenirNextCondensed-Bold'" font-size="7.5975">3</text>
-	</g>
-	<g>
-		<ellipse fill="#FFFFFF" cx="-1192.8" cy="653.9" rx="6.9" ry="6.5"/>
-		
-			<text transform="matrix(1.052 0 0 1 -1194.8665 656.1813)" fill="#7F2755" font-family="'AvenirNextCondensed-Bold'" font-size="7.5975">2</text>
-	</g>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1909.5" y1="202.3" x2="-1909.5" y2="237.4"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1897.3" y1="201.1" x2="-1884.5" y2="266.7"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1857.4" y1="174.2" x2="-1801.7" y2="211.2"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1851.6" y1="163.3" x2="-1816.2" y2="177.6"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1848.2" y1="151.7" x2="-1813.4" y2="158.4"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1355.7" y1="190.3" x2="-1355.7" y2="225.3"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1343.5" y1="189.1" x2="-1330.7" y2="254.7"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1303.6" y1="162.2" x2="-1247.9" y2="199.1"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1297.8" y1="151.2" x2="-1262.4" y2="165.5"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="-1294.4" y1="139.6" x2="-1259.7" y2="146.3"/>
-	<g>
-		<circle fill="#829693" cx="10.8" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 21.8302 341.0284)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">Completed &amp; Approved</text>
-	</g>
-	<g>
-		<circle fill="#E9AA22" cx="174.5" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 185.5443 341.0283)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">In Progress</text>
-	</g>
-	<g>
-		<circle opacity="0.18" fill="#FFFFFF" cx="268.6" cy="337.4" r="5.4"/>
-		<text transform="matrix(1 0 0 1 279.6336 341.0291)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">Not Started</text>
-	</g>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="178.3" y1="190.3" x2="178.3" y2="225.3"/>
-	<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="239.6" y1="139.6" x2="274.3" y2="146.3"/>
-</g>
-<g id="SIDE_BAR_GRIDS" display="none">
-</g>
-<g id="Layer_3" display="none">
-</g>
-<g id="Layer_2">
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1323.3" y1="45.4" x2="-1333.7" y2="84.1"/>
-	<circle opacity="0.18" fill="#FFFFFF" cx="-1352.3" cy="157.3" r="117.4"/>
-	<rect x="-781.5" y="671.7" fill="#D4D4D4" width="99.4" height="23.2"/>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="269.2px" height="310.8px" viewBox="0 0 269.2 310.8" enable-background="new 0 0 269.2 310.8" xml:space="preserve">
+<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="115.7" y1="188.4" x2="115.7" y2="223.4"/>
+<line fill="none" stroke="#3C3C3C" stroke-width="0.5" stroke-miterlimit="10" x1="177" y1="137.7" x2="211.7" y2="144.4"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="148.1" y1="43.5" x2="137.7" y2="82.2"/>
+<circle opacity="0.18" fill="#FFFFFF" enable-background="new    " cx="119.1" cy="155.4" r="117.4"/>
+<g>
 	<g>
 		<defs>
-			<circle id="SVGID_1_" cx="-1907.4" cy="169.7" r="117.8"/>
+			<circle id="SVGID_1_" cx="117.8" cy="155.7" r="117.8"/>
 		</defs>
 		<clipPath id="SVGID_2_">
 			<use xlink:href="#SVGID_1_"  overflow="visible"/>
 		</clipPath>
-		<polygon clip-path="url(#SVGID_2_)" fill="#829693" points="-1907.4,51.9 -1907.4,101.6 -1871.7,117.4 -1841.8,71.5 -1856.2,47.2 
-					"/>
-		<polygon clip-path="url(#SVGID_2_)" fill="#E9AA22" points="-1783.7,120.3 -1849.5,145.4 -1865.4,107 -1834.4,60.4 		"/>
-		<polyline clip-path="url(#SVGID_2_)" fill="#E9AA22" points="-1843.6,143.9 -1768.8,114.5 -1759.2,162.7 -1756,169.7 
-			-1841.8,169.8 -1843.6,143.9 		"/>
+		<polygon clip-path="url(#SVGID_2_)" fill="#829693" points="117.8,37.9 117.8,87.6 153.5,103.4 183.3,57.6 168.9,33.3 		"/>
 	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1907.4" y1="12.1" x2="-1907.4" y2="245.1"/>
-	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-2025.1" y1="169.7" x2="-1789.6" y2="169.7"/>
-	<g>
-		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-1768.8" y1="225.1" x2="-1977.3" y2="141.5"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1868.9" y1="58.4" x2="-1945.8" y2="281"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1863.3" y1="278.9" x2="-1951.5" y2="60.5"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-2016.6" y1="213.8" x2="-1768.8" y2="113.8"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1884.6" y1="285.3" x2="-1929.2" y2="54"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1760.7" y1="141.5" x2="-2022.6" y2="192"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1931.5" y1="298" x2="-1892.4" y2="94.3"/>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1791.3" y1="192" x2="-1981.4" y2="155.3"/>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1789.8" y1="180.8" x2="-1982.9" y2="166.5"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1972" y1="267.8" x2="-1841.8" y2="71.5"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1808.8" y1="234.8" x2="-2005.1" y2="104.6"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-2006.2" y1="233" x2="-1807.6" y2="106.3"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1843.6" y1="269" x2="-1970.3" y2="70.4"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-2012" y1="222.8" x2="-1801.8" y2="116.5"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1853.8" y1="274.8" x2="-1960.1" y2="64.6"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1795.5" y1="206.7" x2="-1979.4" y2="147.3"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1876.6" y1="55.9" x2="-1938" y2="284.4"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1897.8" y1="287.1" x2="-1916.1" y2="52.3"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1789.9" y1="160.7" x2="-2024.3" y2="178.9"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1893.4" y1="286.7" x2="-1920.5" y2="52.7"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1790.3" y1="156.3" x2="-2023.9" y2="183.2"/>
-	</g>
-	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1884.6" y1="52.7" x2="-1892.6" y2="94.4"/>
-	<polygon fill="#E9AA22" points="-1756.3,141.3 -1797.2,147.9 -1801.7,127.7 -1765.2,111.2 -1759.9,126.5 	"/>
-	<circle fill="#FFFFFF" cx="-1907.4" cy="169.4" r="75.4"/>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="-1907.4" cy="169.4" r="75.4"/>
-	<rect x="-211" y="-69.5" fill="#829693" width="56.2" height="44.9"/>
-	<rect x="-211" y="-8.3" fill="#7F2755" width="56.2" height="44.9"/>
-	<rect x="-211" y="52.8" fill="#E9AA22" width="56.2" height="44.9"/>
-	<rect x="-211" y="114" fill="#3C3C3C" width="56.2" height="44.9"/>
-	<rect x="-211" y="236.3" fill="#D4D4D4" width="56.2" height="44.9"/>
-	<rect x="-211" y="176.9" fill="#939598" width="56.2" height="41.3"/>
-	<rect x="-213.9" y="-132.9" fill="#16779C" width="62" height="49.6"/>
-	<circle fill="#3C3C3C" cx="-1907.4" cy="169.4" r="68.5"/>
-	<text transform="matrix(1 0 0 1 -1959.282 180.9582)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">8</tspan><tspan x="17" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="27.9" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">12</tspan><tspan x="62" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="72.8" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">16</tspan></text>
-	<text transform="matrix(1 0 0 1 -1943.9554 139.4211)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Next Deadline</text>
-	<text transform="matrix(1 0 0 1 -1952.3367 200.9299)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Concept Meeting</text>
 	<g>
 		<defs>
-			<circle id="SVGID_3_" cx="-1353.6" cy="157.6" r="117.8"/>
+			<circle id="SVGID_3_" cx="117.8" cy="155.7" r="117.8"/>
 		</defs>
 		<clipPath id="SVGID_4_">
 			<use xlink:href="#SVGID_3_"  overflow="visible"/>
 		</clipPath>
-		<polygon clip-path="url(#SVGID_4_)" fill="#829693" points="-1353.6,39.8 -1353.6,89.5 -1317.9,105.3 -1288.1,59.5 -1302.5,35.2 
-					"/>
-		<polygon clip-path="url(#SVGID_4_)" fill="#E9AA22" points="-1229.9,108.2 -1295.7,133.4 -1311.6,95 -1280.7,48.4 		"/>
-		<polyline clip-path="url(#SVGID_4_)" fill="#E9AA22" points="-1289.8,131.9 -1215.1,102.4 -1205.4,150.6 -1202.2,157.6 
-			-1288.1,157.7 -1289.8,131.9 		"/>
+		<polygon clip-path="url(#SVGID_4_)" fill="#E9AA22" points="241.5,106.3 175.7,131.5 159.8,93.1 190.7,46.5 		"/>
 	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1353.6" y1="0" x2="-1353.6" y2="233"/>
-	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1471.4" y1="157.6" x2="-1235.8" y2="157.6"/>
-	<g>
-		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-1215.1" y1="213" x2="-1423.5" y2="129.4"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1328.5" y1="84.9" x2="-1392" y2="269"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1309.5" y1="266.8" x2="-1397.7" y2="48.4"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1462.8" y1="201.7" x2="-1282.1" y2="128.9"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1330.9" y1="273.3" x2="-1375.4" y2="42"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1277.6" y1="143.4" x2="-1468.8" y2="179.9"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1380.8" y1="302.9" x2="-1338.6" y2="82.2"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1237.5" y1="179.9" x2="-1427.6" y2="143.3"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1236" y1="168.7" x2="-1429.1" y2="154.4"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1418.2" y1="255.8" x2="-1310.9" y2="93.9"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1255" y1="222.7" x2="-1451.3" y2="92.5"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1452.5" y1="221" x2="-1288.1" y2="116.1"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1289.8" y1="256.9" x2="-1416.5" y2="58.3"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1284.5" y1="122.9" x2="-1458.3" y2="210.8"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1300" y1="262.7" x2="-1406.3" y2="52.5"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1241.7" y1="194.6" x2="-1425.6" y2="135.2"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1333.3" y1="83.6" x2="-1384.3" y2="272.3"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1339.6" y1="274.6" x2="-1366.7" y2="40.6"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="-1277" y1="149.1" x2="-1470.2" y2="171.2"/>
-	</g>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1330.9" y1="40.6" x2="-1338.9" y2="82.3"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1322.9" y1="44.1" x2="-1333.7" y2="84.3"/>
-	<path fill="none" stroke="#D4D4D4" stroke-miterlimit="10" d="M-1328.5,85.8"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1315.7" y1="46.9" x2="-1328.8" y2="84.9"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1289" y1="60.7" x2="-1311" y2="93.9"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1254.3" y1="94.9" x2="-1288.1" y2="116.5"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1248.5" y1="104.7" x2="-1286.1" y2="123.7"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1241.7" y1="112.4" x2="-1283.6" y2="129.3"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1238.5" y1="135.8" x2="-1281.9" y2="144.2"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1237.5" y1="144.2" x2="-1285.4" y2="150"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1236.9" y1="149.7" x2="-1285.3" y2="153.5"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1236" y1="157.3" x2="-1282.8" y2="157.3"/>
-	<circle fill="#FFFFFF" cx="-1353.6" cy="157.3" r="75.4"/>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="-1353.6" cy="157.3" r="75.4"/>
-	<circle fill="#3C3C3C" cx="-1353.6" cy="157.3" r="68.5"/>
-	<text transform="matrix(1 0 0 1 -1405.5179 168.9028)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">8</tspan><tspan x="17" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="27.9" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">12</tspan><tspan x="62" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="72.8" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">16</tspan></text>
-	<text transform="matrix(1 0 0 1 -1390.1914 127.3657)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Next Deadline</text>
-	<text transform="matrix(1 0 0 1 -1398.5726 188.8745)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Concept Meeting</text>
-	<rect x="-1166.9" y="-85.3" fill="none" stroke="#D4D4D4" stroke-miterlimit="10" width="899.4" height="11.7"/>
-	<rect x="-1166.9" y="-85.3" fill="#829693" width="294.9" height="11.7"/>
-	<rect x="-872" y="-85.3" fill="#E9AA22" width="337.3" height="11.7"/>
-	<polygon fill="none" stroke="#D4D4D4" stroke-miterlimit="10" points="-701.9,-70.5 -706,-64.1 -706,-56 -697.7,-56 -697.7,-64.1 	
-		"/>
-	<rect x="-778.2" y="-85.3" fill="#E9AA22" width="152.5" height="11.7"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1133.7" y1="-22" x2="-1133.7" y2="-10.4"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1085.6" y1="-22" x2="-1085.6" y2="-10.4"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1019.4" y1="-85.3" x2="-1019.4" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-928.8" y1="-85.3" x2="-928.8" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-872" y1="-85.3" x2="-872" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-841.1" y1="-85.3" x2="-841.1" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-810.3" y1="-85.3" x2="-810.3" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-779.4" y1="-85.3" x2="-779.4" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-624.4" y1="-85.3" x2="-624.4" y2="-73.6"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-593.5" y1="-85.3" x2="-593.5" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-505.9" y1="-85.3" x2="-505.9" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-475" y1="-85.3" x2="-475" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-424.1" y1="-85.3" x2="-424.1" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-397" y1="-85.3" x2="-397" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-346" y1="-85.3" x2="-346" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-322.3" y1="-85.3" x2="-322.3" y2="-73.6"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-286.7" y1="-85.3" x2="-286.7" y2="-73.6"/>
-	<text transform="matrix(1 0 0 1 -1101.9038 -5.6703)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="20">2014 PROPERTY FINANCIALS  </text>
-	<g>
-		<circle fill="#FFFFFF" stroke="#E9AA22" stroke-width="2" stroke-miterlimit="10" cx="-1126.7" cy="-11.9" r="10.2"/>
-	</g>
-	<text transform="matrix(1 0 0 1 -1101.9038 18.4048)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="16">Assigned to:</tspan><tspan x="90.8" y="0" font-family="'AvenirNext-Regular'" font-size="16"> </tspan><tspan x="94.8" y="0" fill="#16779C" font-family="'AvenirNext-Regular'" font-size="16">Gardenia</tspan></text>
-	<line fill="none" stroke="#16779C" stroke-miterlimit="10" x1="-1005.5" y1="23.4" x2="-939.2" y2="23.4"/>
-	<polyline fill="none" stroke="#16779C" stroke-miterlimit="10" points="-931.9,10.2 -925.3,15.8 -918.8,10.2 	"/>
-	<g>
-		<rect x="-1101.4" y="62.3" fill="none" width="806.5" height="60.6"/>
-		<text transform="matrix(1 0 0 1 -1101.4072 72.8456)" fill="#939598" font-family="'Avenir-Light'" font-size="14">Please upload all 2014 Property Financial Documents including Lorem Ipsum sitdolor sit amet, affert dissentiunt ad sea. </text>
-	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-1101.9" y1="43.9" x2="-281.9" y2="43.9"/>
-	<g>
-		<text transform="matrix(1 0 0 1 -1101.4072 113.6274)" fill="#939598" font-family="'Avenir-Medium'" font-size="14">Documents</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -1003.1812 508.6657)" fill="#D4D4D4" font-family="'Avenir-Medium'" font-size="19.9032">UPLOAD DOCUMENT</text>
-	</g>
-	<g>
-		<circle fill="#939598" cx="-343.9" cy="109.4" r="11.2"/>
-		<text transform="matrix(1 0 0 1 -346.0191 114.2276)" fill="#FFFFFF" font-family="'AvenirNext-Bold'" font-size="13.9992">i</text>
-	</g>
-	<rect x="-1101.9" y="138" fill="#E9AA22" width="770" height="137.4"/>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1036.2,211.8h-40c-4,0-7.3-3.3-7.3-7.3v-49.1c0-4,3.3-7.3,7.3-7.3
-			h22.2c0.9,0,1.8,0.3,2.5,1l21.4,19.8c0.7,0.7,1.2,1.7,1.2,2.7v33C-1028.9,208.5-1032.2,211.8-1036.2,211.8z"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1052.6,148.1v14.6c0,4,3.3,7.3,7.3,7.3h15.5"/>
-	</g>
-	<text transform="matrix(1 0 0 1 -1003.181 169.4945)" fill="#FFFFFF" font-family="'Avenir-Medium'" font-size="19.9032">2014_PROP_FIN.PDF</text>
-	<g>
-		<text transform="matrix(1 0 0 1 -759.7604 263.2922)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">DOWNLOAD</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -411.671 261.957)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">UPDATE</text>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 -1052.6437 263.2922)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">VIEW </text>
-		</g>
-		<g>
-			<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1073.1,248.8c-6,0-10.8,5.9-10.8,7s4.9,7,10.8,7s10.8-5.9,10.8-7
-				S-1067.1,248.8-1073.1,248.8z"/>
-			<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="-1073.1" cy="255.8" r="3.8"/>
-		</g>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-779.5,248h-6.8c-1.1,0-1.9,0.9-1.9,1.9v11.7
-			c0,1.1,0.9,1.9,1.9,1.9h11.7c1.1,0,1.9-0.9,1.9-1.9v-6.8"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-773.2" y1="248.5" x2="-781.4" y2="256.8"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-781.9,251.4v5.4c0,0.3,0.2,0.5,0.5,0.5h5.4"/>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-428.4,247.5h-6.4c-1,0-1.8,0.8-1.8,1.8v11c0,1,0.8,1.8,1.8,1.8h11
-			c1,0,1.8-0.8,1.8-1.8V254"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-429.3" y1="254.9" x2="-421.5" y2="247.1"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-421,252.1v-5.1c0-0.3-0.2-0.5-0.5-0.5h-5.1"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-382.3" y1="181.7" x2="-352.5" y2="181.7"/>
-		<g>
-			<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-370.3,173.5l-9.2,2.6l2.6-9.2l17.8-17.8c1.3-1.3,3.3-1.3,4.6,0
-				l2,2c1.3,1.3,1.3,3.3,0,4.6L-370.3,173.5z"/>
-			<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-355.1" y1="158.3" x2="-361.7" y2="151.7"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 -1003.181 191.7831)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Avenir-LightOblique'" font-size="15">UPLOADED AUGUST 09, 2015 </tspan><tspan x="0" y="14.9" fill="#FFFFFF" font-family="'Avenir-LightOblique'" font-size="13">4:30pm by Gardenia</tspan></text>
-	<rect x="-1101.9" y="303.4" fill="#E9AA22" width="770" height="137.4"/>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1036.2,377.1h-40c-4,0-7.3-3.3-7.3-7.3v-49.1c0-4,3.3-7.3,7.3-7.3
-			h22.2c0.9,0,1.8,0.3,2.5,1l21.4,19.8c0.7,0.7,1.2,1.7,1.2,2.7v33C-1028.9,373.8-1032.2,377.1-1036.2,377.1z"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1052.6,313.4v14.6c0,4,3.3,7.3,7.3,7.3h15.5"/>
-	</g>
-	
-		<rect x="-1101.9" y="468.7" fill="none" stroke="#D4D4D4" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="6" width="770" height="137.4"/>
-	<g>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-1036.2,542.4h-40c-4,0-7.3-3.3-7.3-7.3V486c0-4,3.3-7.3,7.3-7.3
-			h22.2c0.9,0,1.8,0.3,2.5,1l21.4,19.8c0.7,0.7,1.2,1.7,1.2,2.7v33C-1028.9,539.2-1032.2,542.4-1036.2,542.4z"/>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-1052.6,478.7v14.6c0,4,3.3,7.3,7.3,7.3h15.5"/>
-	</g>
-	<text transform="matrix(1 0 0 1 -1003.181 334.8278)" fill="#FFFFFF" font-family="'Avenir-Medium'" font-size="19.9032">2014_ADDENDUM...</text>
-	<g>
-		<text transform="matrix(1 0 0 1 -759.7604 428.6255)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">DOWNLOAD</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -411.671 427.2903)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">UPDATE</text>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 -1052.6437 428.6255)" fill="#FFFFFF" font-family="'Avenir-Light'" font-size="16">VIEW </text>
-		</g>
-		<g>
-			<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1073.1,414.1c-6,0-10.8,5.9-10.8,7s4.9,7,10.8,7s10.8-5.9,10.8-7
-				S-1067.1,414.1-1073.1,414.1z"/>
-			<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="-1073.1" cy="421.1" r="3.8"/>
-		</g>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-779.5,413.3h-6.8c-1.1,0-1.9,0.9-1.9,1.9V427
-			c0,1.1,0.9,1.9,1.9,1.9h11.7c1.1,0,1.9-0.9,1.9-1.9v-6.8"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-773.2" y1="413.8" x2="-781.4" y2="422.1"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-781.9,416.7v5.4c0,0.3,0.2,0.5,0.5,0.5h5.4"/>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-428.4,412.9h-6.4c-1,0-1.8,0.8-1.8,1.8v11c0,1,0.8,1.8,1.8,1.8h11
-			c1,0,1.8-0.8,1.8-1.8v-6.4"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-429.3" y1="420.2" x2="-421.5" y2="412.4"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-421,417.5v-5.1c0-0.3-0.2-0.5-0.5-0.5h-5.1"/>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -411.671 588.6338)" fill="#D4D4D4" font-family="'Avenir-Light'" font-size="16">UPDATE</text>
-	</g>
-	<g>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-428.4,574.2h-6.4c-1,0-1.8,0.8-1.8,1.8v11c0,1,0.8,1.8,1.8,1.8h11
-			c1,0,1.8-0.8,1.8-1.8v-6.4"/>
-		<line fill="none" stroke="#D4D5D4" stroke-miterlimit="10" x1="-429.3" y1="581.6" x2="-421.5" y2="573.7"/>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-421,578.8v-5.1c0-0.3-0.2-0.5-0.5-0.5h-5.1"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-381.7" y1="347" x2="-351.9" y2="347"/>
-		<g>
-			<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-369.7,338.8l-9.2,2.6l2.6-9.2l17.8-17.8c1.3-1.3,3.3-1.3,4.6,0
-				l2,2c1.3,1.3,1.3,3.3,0,4.6L-369.7,338.8z"/>
-			<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-354.5" y1="323.7" x2="-361.1" y2="317.1"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 -1003.181 357.1164)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Avenir-LightOblique'" font-size="15">UPLOADED AUGUST 09, 2015 </tspan><tspan x="0" y="14.9" fill="#FFFFFF" font-family="'Avenir-LightOblique'" font-size="13">4:30pm by Gardenia</tspan></text>
-	<g>
-		<text transform="matrix(1 0 0 1 -792.2294 642.3558)" fill="#16779C" font-family="'AvenirNext-Italic'" font-size="12">28 Previous Messages</text>
-	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-798.2" y1="639.4" x2="-1102.5" y2="639.4"/>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-331.9" y1="639.4" x2="-664.8" y2="639.4"/>
-	<g>
-		<text transform="matrix(1 0 0 1 -1101.9036 -98.2617)" fill="#939598" font-family="'Avenir-Light'" font-size="14">MILESTONE PROGRESS</text>
-	</g>
-	<rect x="-1052.6" y="789.2" fill="#F1F2F2" width="720.7" height="60.7"/>
-	<line fill="none" stroke="#D4D5D4" stroke-miterlimit="10" x1="-1088.1" y1="748" x2="-1088.1" y2="781.6"/>
-	<line fill="none" stroke="#D4D5D4" stroke-miterlimit="10" x1="-1088.1" y1="835.2" x2="-1088.1" y2="883"/>
-	<line fill="none" stroke="#D4D5D4" stroke-miterlimit="10" x1="-1088.1" y1="911" x2="-1088.1" y2="949.2"/>
-	<text transform="matrix(1 0 0 1 -1038.3525 810.7879)" fill="#3C3C3C" font-family="'AvenirNext-Medium'" font-size="14">TODD LYNCH</text>
-	<rect x="-1038.4" y="822.5" fill="none" width="706.5" height="29.4"/>
-	<text transform="matrix(1 0 0 1 -1038.3523 831.5793)"><tspan x="0" y="0" fill="#939598" font-family="'Avenir-Light'" font-size="12">Hi Gardenia, just want to check in and make sure that  this the right address in</tspan><tspan x="413.9" y="0" fill="#16779C" font-family="'AvenirNext-DemiBold'" font-size="12"> #2014pdf</tspan><tspan x="472.4" y="0" fill="#939598" font-family="'Avenir-Light'" font-size="12">?</tspan></text>
 	<g>
 		<defs>
-			<circle id="SVGID_5_" cx="-1088.1" cy="809.2" r="20"/>
+			<circle id="SVGID_5_" cx="117.8" cy="155.7" r="117.8"/>
 		</defs>
 		<clipPath id="SVGID_6_">
 			<use xlink:href="#SVGID_5_"  overflow="visible"/>
 		</clipPath>
-		<g id="ipZwdm_1_" clip-path="url(#SVGID_6_)">
-			
-				<image overflow="visible" width="128" height="128" id="ipZwdm_2_" xlink:href="data:image/jpeg;base64,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
-ofc32Ifc/q9Xni+5s/O6vNPh38r6vX/2ftT/2Q==" transform="matrix(0.3366 0 0 0.3366 -1110.0033 787.6339)">
-			</image>
-		</g>
+		<polyline clip-path="url(#SVGID_6_)" fill="#E9AA22" points="181.6,130 256.3,100.5 266,148.7 269.2,155.7 183.3,155.8 181.6,130 
+					"/>
 	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -1052.5598 740.7662)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-DemiBoldItalic'" font-size="12">Todd Lynch</tspan><tspan x="64" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12"> was assigned by </tspan><tspan x="158.6" y="0" fill="#939598" font-family="'AvenirNext-DemiBoldItalic'" font-size="12">Gardenia Smith</tspan><tspan x="244" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12"> at 7:51pm </tspan></text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -1052.5597 901.4321)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-DemiBoldItalic'" font-size="12">Gardenia Smith</tspan><tspan x="85.4" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12"> uploaded </tspan><tspan x="144.1" y="0" fill="#16779C" font-family="'AvenirNext-DemiBoldItalic'" font-size="12">2014_PROP_FIN.pdf</tspan><tspan x="259.3" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12"> at 12:32pm</tspan></text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -393.1126 810.7883)" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12">11:00am</text>
-	</g>
-	<g>
-		<path fill="none" stroke="#E9AA22" stroke-miterlimit="10" d="M-1087.8,891.2h-4.5c-0.7,0-1.3,0.6-1.3,1.3v7.7
-			c0,0.7,0.6,1.3,1.3,1.3h7.7c0.7,0,1.3-0.6,1.3-1.3v-4.5"/>
-		<line fill="none" stroke="#E9AA22" stroke-miterlimit="10" x1="-1088.4" y1="896.3" x2="-1083" y2="890.9"/>
-		<path fill="none" stroke="#E9AA22" stroke-miterlimit="10" d="M-1082.7,894.4v-3.5c0-0.2-0.1-0.3-0.3-0.3h-3.5"/>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -1052.5602 964.7371)"><tspan x="0" y="0" fill="#939598" font-family="'AvenirNext-DemiBoldItalic'" font-size="12">Todd Lynch</tspan><tspan x="64" y="0" fill="#939598" font-family="'AvenirNext-Italic'" font-size="12"> marked complete at 5:30pm</tspan></text>
-	</g>
-	<g>
-		<polyline fill="none" stroke="#829693" stroke-miterlimit="10" points="-1094.4,960.5 -1090.2,964.7 -1081.7,956.3 		"/>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 -770.4005 687.9731)" fill="#3C3C3C" font-family="'AvenirNext-Regular'" font-size="12">MAY 10, 2016</text>
-	</g>
-	<rect x="-897.7" y="2297.2" fill="#3C3C3C" width="380.6" height="60.5"/>
-	<rect x="-842.4" y="2319.4" fill="none" width="256.9" height="13.5"/>
-	<text transform="matrix(1 0 0 1 -842.4243 2328.502)" fill="#D4D4D4" font-family="'AvenirNext-Regular'" font-size="12">Type Message Here</text>
-	<g>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-853.5,2322.8v6c0,0.9-0.8,1.7-1.7,1.7h-10.2
-			c-0.9,0-1.7-0.8-1.7-1.7v-10.2c0-0.9,0.8-1.7,1.7-1.7h6"/>
-		<path fill="none" stroke="#D4D5D4" stroke-miterlimit="10" d="M-857.9,2323l-2.4,0.6l0.6-2.4l5.7-5.7c0.5-0.5,1.3-0.5,1.8,0
-			s0.5,1.3,0,1.8L-857.9,2323z"/>
-		<line fill="none" stroke="#D4D5D4" stroke-miterlimit="10" x1="-854.6" y1="2316.1" x2="-852.8" y2="2317.9"/>
-	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="-872.6" y1="2339" x2="-571.3" y2="2339"/>
-	<rect x="-1108.1" y="997.3" fill="#829693" width="797.8" height="60.5"/>
-	<rect x="-1050.3" y="1019.5" fill="none" width="256.9" height="13.5"/>
-	<text transform="matrix(1 0 0 1 -1050.2966 1028.5447)" fill="#FFFFFF" font-family="'AvenirNext-Regular'" font-size="12">Type Message Here</text>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1061.3,1022.8v6c0,0.9-0.8,1.7-1.7,1.7h-10.2
-			c-0.9,0-1.7-0.8-1.7-1.7v-10.2c0-0.9,0.8-1.7,1.7-1.7h6"/>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-1065.7,1023.1l-2.4,0.6l0.6-2.4l5.7-5.7c0.5-0.5,1.3-0.5,1.8,0
-			c0.5,0.5,0.5,1.3,0,1.8L-1065.7,1023.1z"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1062.4" y1="1016.2" x2="-1060.6" y2="1018"/>
-	</g>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-1080.5" y1="1039.1" x2="-336.3" y2="1039.1"/>
-	<g>
-		<path fill="none" stroke="#E9AA22" stroke-miterlimit="10" d="M-1090.5,737.5c-2,0.9-3.2,2.8-3.2,5"/>
-		<path fill="none" stroke="#E9AA22" stroke-miterlimit="10" d="M-1085.7,737.5c2,0.9,3.2,2.9,3.2,5.1"/>
-		<ellipse fill="none" stroke="#E9AA22" stroke-miterlimit="10" cx="-1088.1" cy="734.3" rx="3.7" ry="4.2"/>
-	</g>
-	<g>
-		<circle fill="#7F2755" cx="-372.7" cy="683.3" r="21.3"/>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-361.6,691.9h-11.1l-7,5l-0.1-5h-4c-0.9,0-1.6-0.7-1.6-1.6v-14.5
-			c0-0.9,0.7-1.6,1.6-1.6h22.2c0.9,0,1.6,0.7,1.6,1.6v14.5C-360,691.1-360.7,691.9-361.6,691.9z"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-381" y1="679.3" x2="-365" y2="679.3"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-381" y1="682.6" x2="-365" y2="682.6"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-381" y1="685.5" x2="-371.3" y2="685.5"/>
-	</g>
-	<g>
-		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M-348.2,1030.3l6.1-6.1c0.3-0.3,0.3-0.8,0-1.1l-6.1-6.1"/>
-		<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-342.1" y1="1023.7" x2="-364.2" y2="1023.7"/>
-	</g>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="-1352.3" cy="157.3" r="117.4"/>
-	<path fill="#E9AA22" d="M-1202.5,129.3l-40.9,6.5l-4.5-20.2l36.5-16.5l4.8,12.2c0.7,1.8,1.2,3.6,1.6,5.4L-1202.5,129.3z"/>
-	<circle fill="none" cx="-1352.3" cy="157.3" r="116.4"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="210.7" y1="45.4" x2="200.3" y2="84.1"/>
-	<circle opacity="0.18" fill="#FFFFFF" cx="181.7" cy="157.3" r="117.4"/>
-	<g>
-		<defs>
-			<circle id="SVGID_7_" cx="180.4" cy="157.6" r="117.8"/>
-		</defs>
-		<clipPath id="SVGID_8_">
-			<use xlink:href="#SVGID_7_"  overflow="visible"/>
-		</clipPath>
-		<polygon clip-path="url(#SVGID_8_)" fill="#829693" points="180.4,39.8 180.4,89.5 216.1,105.3 245.9,59.5 231.5,35.2 		"/>
-		<polygon clip-path="url(#SVGID_8_)" fill="#E9AA22" points="304.1,108.2 238.3,133.4 222.4,95 253.3,48.4 		"/>
-		<polyline clip-path="url(#SVGID_8_)" fill="#E9AA22" points="244.2,131.9 318.9,102.4 328.6,150.6 331.8,157.6 245.9,157.7 
-			244.2,131.9 		"/>
-	</g>
-	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="180.4" y1="3.9" x2="180.4" y2="233"/>
-	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="62.6" y1="157.6" x2="298.2" y2="157.6"/>
-	<g>
-		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="318.9" y1="213" x2="110.5" y2="129.4"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="205.5" y1="84.9" x2="142" y2="269"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="224.5" y1="266.8" x2="136.3" y2="48.4"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="71.2" y1="201.7" x2="251.9" y2="128.9"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="203.1" y1="273.3" x2="158.6" y2="42"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="256.4" y1="143.4" x2="65.2" y2="179.9"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="152.1" y1="307.9" x2="195.4" y2="82.2"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="296.5" y1="179.9" x2="106.4" y2="143.3"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="298" y1="168.7" x2="104.9" y2="154.4"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="115.8" y1="255.8" x2="223.1" y2="93.9"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="279" y1="222.7" x2="82.7" y2="92.5"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="81.5" y1="221" x2="245.9" y2="116.1"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="244.2" y1="256.9" x2="117.5" y2="58.3"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="249.5" y1="122.9" x2="75.7" y2="210.8"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="234" y1="262.7" x2="127.7" y2="52.5"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="292.3" y1="194.6" x2="108.4" y2="135.2"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="200.7" y1="83.6" x2="149.7" y2="272.3"/>
-	</g>
-	<g>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="194.4" y1="274.6" x2="167.3" y2="40.6"/>
-		<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="257" y1="149.1" x2="63.8" y2="171.2"/>
-	</g>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="203.1" y1="40.6" x2="195.1" y2="82.3"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="211.1" y1="44.1" x2="200.3" y2="84.3"/>
-	<path fill="none" stroke="#D4D4D4" stroke-miterlimit="10" d="M205.5,85.8"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="218.3" y1="46.9" x2="205.2" y2="84.9"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="245" y1="60.7" x2="223" y2="93.9"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="279.7" y1="94.9" x2="245.9" y2="116.5"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="285.5" y1="104.7" x2="247.9" y2="123.7"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="292.3" y1="112.4" x2="250.4" y2="129.3"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="295.5" y1="135.8" x2="252.1" y2="144.2"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="296.5" y1="144.2" x2="248.6" y2="150"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="297.1" y1="149.7" x2="248.7" y2="153.5"/>
-	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="298" y1="157.3" x2="251.2" y2="157.3"/>
-	<circle fill="#FFFFFF" cx="180.4" cy="157.3" r="75.4"/>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="180.4" cy="157.3" r="75.4"/>
-	<circle fill="#3C3C3C" cx="180.4" cy="157.3" r="68.5"/>
-	<text transform="matrix(1 0 0 1 128.4821 168.9028)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">8</tspan><tspan x="17" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="27.9" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">12</tspan><tspan x="62" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296">/</tspan><tspan x="72.8" y="0" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296">16</tspan></text>
-	<text transform="matrix(1 0 0 1 143.8086 127.3657)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Next Deadline</text>
-	<text transform="matrix(1 0 0 1 135.4274 188.8745)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409">Concept Meeting</text>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="181.7" cy="157.3" r="117.4"/>
-	<path fill="#E9AA22" d="M331.5,129.3l-40.9,6.5l-4.5-20.2l36.5-16.5l4.8,12.2c0.7,1.8,1.2,3.6,1.6,5.4L331.5,129.3z"/>
-	<circle fill="none" cx="181.7" cy="157.3" r="116.4"/>
-	<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="181.7" cy="157.3" r="153.4"/>
 </g>
+<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="117.8" y1="2" x2="117.8" y2="231.1"/>
+<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="0" y1="155.7" x2="235.6" y2="155.7"/>
+<g>
+	<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="256.3" y1="211.1" x2="47.9" y2="127.5"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="142.9" y1="83" x2="79.4" y2="267.1"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="161.9" y1="264.9" x2="73.7" y2="46.5"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="8.6" y1="199.8" x2="189.3" y2="127"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="140.5" y1="271.4" x2="96" y2="40.1"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="193.8" y1="141.5" x2="2.6" y2="178"/>
+</g>
+<g>
+	<line fill="none" stroke="#D4D4D4" stroke-miterlimit="10" x1="89.5" y1="306" x2="132.8" y2="80.3"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="233.9" y1="178" x2="43.8" y2="141.4"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="235.4" y1="166.8" x2="42.3" y2="152.5"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="53.2" y1="253.9" x2="160.5" y2="92"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="216.4" y1="220.8" x2="20.1" y2="90.6"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="18.9" y1="219.1" x2="183.3" y2="114.2"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="181.6" y1="255" x2="54.9" y2="56.4"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="186.9" y1="121" x2="13.1" y2="208.9"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="171.4" y1="260.8" x2="65.1" y2="50.6"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="229.7" y1="192.7" x2="45.8" y2="133.3"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="138.1" y1="81.7" x2="87.1" y2="270.4"/>
+</g>
+<g>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="131.8" y1="272.7" x2="104.7" y2="38.7"/>
+	<line fill="none" stroke="#3C3C3C" stroke-miterlimit="10" x1="194.4" y1="147.2" x2="1.2" y2="169.3"/>
+</g>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="140.5" y1="38.7" x2="132.5" y2="80.4"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="148.5" y1="42.2" x2="137.7" y2="82.4"/>
+<path fill="none" stroke="#D4D4D4" stroke-miterlimit="10" d="M142.9,83.9"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="155.7" y1="45" x2="142.6" y2="83"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="182.4" y1="58.8" x2="160.4" y2="92"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="217.1" y1="93" x2="183.3" y2="114.6"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="222.9" y1="102.8" x2="185.3" y2="121.8"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="229.7" y1="110.5" x2="187.8" y2="127.4"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="232.9" y1="133.9" x2="189.5" y2="142.3"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="233.9" y1="142.3" x2="186" y2="148.1"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="234.5" y1="147.8" x2="186.1" y2="151.6"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="235.4" y1="155.4" x2="188.6" y2="155.4"/>
+<circle fill="#FFFFFF" cx="117.8" cy="155.4" r="75.4"/>
+<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="117.8" cy="155.4" r="75.4"/>
+<circle fill="#3C3C3C" cx="117.8" cy="155.4" r="68.5"/>
+<text transform="matrix(1 0 0 1 65.8821 167.0028)" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296px">8</text>
+<text transform="matrix(1 0 0 1 82.8821 167.0028)" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296px">/</text>
+<text transform="matrix(1 0 0 1 93.7821 167.0028)" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296px">12</text>
+<text transform="matrix(1 0 0 1 127.8821 167.0028)" fill="#FFFFFF" font-family="'AvenirNextCondensed-UltraLight'" font-size="36.2296px">/</text>
+<text transform="matrix(1 0 0 1 138.6821 167.0028)" fill="#FFFFFF" font-family="'AvenirNextCondensed-Regular'" font-size="36.2296px">16</text>
+<text transform="matrix(1 0 0 1 81.2086 125.4657)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409px">Next Deadline</text>
+<text transform="matrix(1 0 0 1 72.8274 186.9745)" fill="#E9AA22" font-family="'Avenir-Light'" font-size="11.4409px">Concept Meeting</text>
+<circle fill="none" stroke="#3C3C3C" stroke-width="4" stroke-miterlimit="10" cx="119.1" cy="155.4" r="117.4"/>
+<path fill="#E9AA22" d="M268.9,127.4l-40.9,6.5l-4.5-20.2L260,97.2l4.8,12.2c0.7,1.8,1.2,3.6,1.6,5.4L268.9,127.4z"/>
+<circle fill="none" cx="119.1" cy="155.4" r="116.4"/>
 </svg>
