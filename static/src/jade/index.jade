@@ -9,6 +9,7 @@ block content
 			.container
 				.spacer
 				.spacer
+				.spacer
 				//- header.main-header
 				//- 	//- .main-header__section.main-header__left
 				//- 	//- 	nav.main-nav
@@ -27,7 +28,7 @@ block content
 
 					.task-box__circle
 					.inline-block
-						h3.h3(style='padding-bottom:0.6rem') Personal Information
+						h3.h2(style='padding-bottom:0.6rem') Personal Information
 						h6.h6.span-dropdown__container Assigned to: 
 							span.span-dropdown Gardenia
 							i.icon.span-dropdown__icon
@@ -42,12 +43,12 @@ block content
 					.row
 						.task__row
 							h6.h6 Front of License
-							.alert-circle
-								span.center i
-							//- hr
+							//- .alert-circle
+							//- 	span.center i
+							//- //- hr
 							.spacer
 							.box.solid-border.is-yellow(style='min-height: 10rem')
-							
+								
 								.box__center
 									div.message 
 										i.icon.box__icon.is-large.is-yellow
@@ -55,48 +56,46 @@ block content
 												use(xlink:href='#icon_document')
 										.inline-block
 											p.box__title IMG_001.JPG
-											i.icon(style='margin-left:10px; width:20px;')
+											i.icon.box__icon--edit
 												svg(viewbox='0 0 100 100')
 													use(xlink:href='#icon_edit')
-											i.icon.box__icon.box__icon--edit
+											i.icon.box__icon.box__icon--right
 												svg(viewbox='0 0 100 100')
 													use(xlink:href='#icon_edit')
 											p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
 											p.box__metadata.box__metadata-2 4:30pm by Gardenia
-								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
-									.box__col3.is-left
-										i.icon.box__icon
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_view')
-										span.inline-block View
-									.box__col3.is-center
-										i.icon.box__icon
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_download')
-										span.inline-block Download
-									.box__col3.is-right
-										i.icon.box__icon
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_upload')
-										span.inline-block Update
+								.task-box__tasks
+									i.icon.box__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_view')
+									//- span.inline-block View
+									i.icon.box__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_download')
+									//- span.inline-block Download
+									i.icon.box__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_upload')
+									//- span.inline-block Update
 							.spacer
-							h6.h6 Front of License
+							.inline-block.top(style='margin-right: 4rem')
+								h6.h6 Back of License
 							.alert-circle
 								span.center i
 							//- hr
-							.spacer
-							.box.dotted-border(style='min-height: 10rem')
-								.box__center
-									div.message
-										i.icon.box__icon.is-large.is-gray
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_document')
-										.inline-block
-											p.box__title Upload Document
-								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
-									.box__col3 &nbsp;
-									.box__col3 &nbsp;
-									.box__col3.is-right
+							.inline-block(style='width:760px')
+								.box.dotted-border(style='min-height: 10rem')
+									.alert-circle
+										span.center i
+									.box__center
+										div.message
+											i.icon.box__icon.is-large.is-gray
+												svg(viewbox='0 0 100 100')
+													use(xlink:href='#icon_document')
+											.inline-block
+												p.box__title Upload Document
+									
+									.task-box__tasks
 										i.icon.box__icon
 											svg(viewbox='0 0 100 100')
 												use(xlink:href='#icon_upload')
@@ -117,14 +116,11 @@ block content
 												use(xlink:href='#icon_document')
 										.inline-block
 											p.box__title Upload Document
-								.row(style='position:absolute;bottom:1.2rem;left:0;right:0;padding: 1rem 2rem')
-									.box__col3 &nbsp;
-									.box__col3 &nbsp;
-									.box__col3.is-right
-										i.icon.box__icon
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_upload')
-										span.inline-block Upload
+								.task-box__tasks
+									i.icon.box__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_upload')
+									span.inline-block Upload
 				.spacer
 				.spacer
 									
