@@ -30,10 +30,35 @@ block content
 					.inline-block
 						h1.h1(style='padding-bottom:0.6rem') Personal Information
 						h6.h6.span-dropdown__container Assigned to: 
-							span.span-dropdown Gardenia
-							i.icon.span-dropdown__icon
-								svg(viewbox='0 0 100 100')
-									use(xlink:href='#icon_caret')
+							span.span-dropdown 
+								span Gardenia
+									i.icon.span-dropdown__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_caret')
+								ul.dropdown-list
+									li.is-active 
+										i.icon
+											.profile-pic
+										span.inline-block Gardenia Willoughby
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Nobody
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Todd Lynch
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Kyla Medina
+									li 
+										i.icon.clear-assignee
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_x')
+										span.inline-block Clear Assignee
+
+							
 					hr(style='margin: 2rem 0;')
 					
 				section
@@ -60,7 +85,7 @@ block content
 												use(xlink:href='#icon_edit')
 										i.icon.box__icon.box__icon--right
 											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_x')
+												use(xlink:href='#icon_trash')
 										p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
 										p.box__metadata.box__metadata-2 4:30pm by Gardenia
 								.task-box__tasks
