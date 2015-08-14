@@ -43,28 +43,27 @@ block content
 					.row
 						.task__row
 							h6.h6 Front of License
-								span.text-rasberry *
+								span.text-blue *
 							//- .alert-circle
 							//- 	span.center i
 							//- //- hr
-							.spacer
-							.box.solid-border.is-yellow(style='min-height: 10rem')
+							.spacer.half
+							.box.solid-border.is-yellow(style='min-height: 12rem')
 								
-								.box__center
-									div.message 
-										i.icon.box__icon.is-large.is-yellow
+								div.message 
+									i.icon.box__icon.is-large.is-yellow
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_document')
+									.inline-block
+										p.box__title IMG_001.JPG
+										i.icon.box__icon--edit
 											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_document')
-										.inline-block
-											p.box__title IMG_001.JPG
-											i.icon.box__icon--edit
-												svg(viewbox='0 0 100 100')
-													use(xlink:href='#icon_edit')
-											i.icon.box__icon.box__icon--right
-												svg(viewbox='0 0 100 100')
-													use(xlink:href='#icon_x')
-											p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
-											p.box__metadata.box__metadata-2 4:30pm by Gardenia
+												use(xlink:href='#icon_edit')
+										i.icon.box__icon.box__icon--right
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_x')
+										p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
+										p.box__metadata.box__metadata-2 4:30pm by Gardenia
 								.task-box__tasks
 									i.icon.box__icon
 										svg(viewbox='0 0 100 100')
@@ -78,30 +77,23 @@ block content
 										svg(viewbox='0 0 100 100')
 											use(xlink:href='#icon_upload')
 									//- span.inline-block Update
-							.spacer
-							.inline-block.top(style='margin-right: 4rem')
-								h6.h6 Back of License
-									span.text-blue *
-							//- .alert-circle
-							//- 	span.center i
-							//- hr
-							.inline-block(style='width:540px')
-								.box.dotted-border(style='min-height: 10rem')
-									//- .alert-circle
-										//- span.center i
-									.box__center
-										div.message
-											i.icon.box__icon.is-large
-												svg(viewbox='0 0 100 100')
-													use(xlink:href='#icon_document')
-											.inline-block
-												p.box__title Upload Document
-									
-									.task-box__tasks
-										i.icon.box__icon
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_upload')
-										span.inline-block Upload
+						.spacer.half
+						.task__row
+							.spacer.half
+							.box.dotted-border(style='min-height: 12rem')
+								.box__center
+									div.message
+										//- i.icon.box__icon.is-large
+										//- 	svg(viewbox='0 0 100 100')
+										//- 		use(xlink:href='#icon_document')
+										.inline-block
+											p.box__title Drop File to Upload
+								.task-box__tasks
+									i.icon.box__icon
+										svg(viewbox='0 0 100 100')
+											use(xlink:href='#icon_upload')
+									span.inline-block Upload
+						.spacer
 						.spacer
 						.task__row
 							
@@ -110,15 +102,15 @@ block content
 							//- .alert-circle
 							//- 	span.center i
 							//- hr
-							.spacer
-							.box.dotted-border(style='min-height: 10rem')
+							.spacer.half
+							.box.dotted-border(style='min-height: 12rem')
 								.box__center
 									div.message
-										i.icon.box__icon.is-large
-											svg(viewbox='0 0 100 100')
-												use(xlink:href='#icon_document')
+										//- i.icon.box__icon.is-large
+										//- 	svg(viewbox='0 0 100 100')
+										//- 		use(xlink:href='#icon_document')
 										.inline-block
-											p.box__title Upload Document
+											p.box__title Drop File to Upload
 								.task-box__tasks
 									i.icon.box__icon
 										svg(viewbox='0 0 100 100')
@@ -126,6 +118,70 @@ block content
 									span.inline-block Upload
 				.spacer
 				.spacer
+				//- .spacer
+				//- .spacer
+				//- .spacer
+				//- .spacer
+				//- .spacer
+				//- .inline-block.top(style='margin-right: 4rem')
+				//- 	h6.h6 Back of License
+				//- 		span.text-blue *
+				//- //- .alert-circle
+				//- //- 	span.center i
+				//- //- hr
+				//- .inline-block(style='width:760px')
+				//- 	.box.solid-border.is-yellow(style='min-height: 12rem')
+				//- 		div.message 
+				//- 			i.icon.box__icon.is-large.is-yellow
+				//- 				svg(viewbox='0 0 100 100')
+				//- 					use(xlink:href='#icon_document')
+				//- 			.inline-block
+				//- 				p.box__title IMG_001.JPG
+				//- 				i.icon.box__icon--edit
+				//- 					svg(viewbox='0 0 100 100')
+				//- 						use(xlink:href='#icon_edit')
+				//- 				i.icon.box__icon.box__icon--right
+				//- 					svg(viewbox='0 0 100 100')
+				//- 						use(xlink:href='#icon_x')
+				//- 				p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
+				//- 				p.box__metadata.box__metadata-2 4:30pm by Gardenia
+				//- 		.task-box__tasks
+				//- 			i.icon.box__icon
+				//- 				svg(viewbox='0 0 100 100')
+				//- 					use(xlink:href='#icon_view')
+				//- 			//- span.inline-block View
+				//- 			i.icon.box__icon
+				//- 				svg(viewbox='0 0 100 100')
+				//- 					use(xlink:href='#icon_download')
+				//- 			//- span.inline-block Download
+				//- 			i.icon.box__icon
+				//- 				svg(viewbox='0 0 100 100')
+				//- 					use(xlink:href='#icon_upload')
+				//- 			//- span.inline-block Update
+				//- .spacer
+				//- .inline-block.top(style='margin-right: 4rem')
+				//- 	h6.h6 Back of License
+				//- 		span.text-blue *
+				//- //- .alert-circle
+				//- //- 	span.center i
+				//- //- hr
+				//- .inline-block(style='width:760px')
+				//- 	.box.dotted-border(style='min-height: 12rem')
+				//- 		//- .alert-circle
+				//- 			//- span.center i
+				//- 		.box__center
+				//- 			div.message
+				//- 				//- i.icon.box__icon.is-large
+				//- 				//- 	svg(viewbox='0 0 100 100')
+				//- 				//- 		use(xlink:href='#icon_document')
+				//- 				.inline-block
+				//- 					p.box__title Drop File to Upload
+						
+				//- 		.task-box__tasks
+				//- 			i.icon.box__icon
+				//- 				svg(viewbox='0 0 100 100')
+				//- 					use(xlink:href='#icon_upload')
+				//- 			span.inline-block Upload
 									
 			include modules/comments.jade
 						//- .message-input__container

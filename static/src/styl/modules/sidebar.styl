@@ -31,6 +31,8 @@
 		border-bottom 1px solid rgb(70,70,70)
 	.messages-info
 		background url(unquote('../svg/triple-hr--dark.svg')) repeat-x
+		margin-top px(30rem)
+		padding-bottom px(10rem)
 		span
 			background-color black
 	.sidebar-list__item
@@ -77,7 +79,7 @@
 	&.is-pending
 		.sidebar-list__item__indicator
 			border 2px solid darkergray
-			background-color darkgray
+			background-color darkergray
 
 .sidebar-list__item
 	padding 0 14%
@@ -108,24 +110,22 @@
 	&.is-gray
 		background-color darkergray
 		color white
-		.sidebar-list__item__indicator
-			opacity 1
 		.sidebar-small
 			color white
 		&:after
 			content ''
 			triangle: 'right' px(24rem) darkergray
 			
-	&.is-highlighted
-		&:before
-			content ''
-			width 10px
-			display inline-block
-			background-color yellow
-			position absolute
-			left 0
-			top 0
-			bottom 0
+	// &.is-highlighted
+	// 	&:before
+	// 		content ''
+	// 		width 10px
+	// 		display inline-block
+	// 		background-color yellow
+	// 		position absolute
+	// 		left 0
+	// 		top 0
+	// 		bottom 0
 	
 .sidebar-list__center
 	align(vertical)
@@ -135,7 +135,6 @@
 	border-radius 50%
 	border 2px solid yellow
 	background-color yellow
-	opacity 0.2
 	size px(20rem)
 	position absolute
 	left px(-30rem)
