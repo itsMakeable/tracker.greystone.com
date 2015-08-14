@@ -17,7 +17,12 @@
 		top px(-17/2)  !important
 		right px(-17/2) !important
 	
-
+.file-drop-active
+	.box.dotted-border
+		background-color blue
+		border 2px solid blue
+		color white
+		
 .box__title
 	fs(2rem)
 	ilb()
@@ -46,6 +51,8 @@
 	&.is-large
 		size px(54rem)
 		ilb(top)
+		position relative
+		top px(-5rem)
 	&.is-yellow
 		color white
 	&.is-gray
@@ -54,7 +61,7 @@
 .box__icon--right
 	position absolute
 	right px(25rem)
-	size px(20rem)
+	size px(17rem)
 
 .box__metadata
 	font-family f-lightit
@@ -65,5 +72,6 @@
 
 .box__metadata-2
 	fs(1rem)
+	text-transform capitalize
 	// color gray
 	

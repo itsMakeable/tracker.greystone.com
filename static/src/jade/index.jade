@@ -43,6 +43,7 @@ block content
 					.row
 						.task__row
 							h6.h6 Front of License
+								span.text-rasberry *
 							//- .alert-circle
 							//- 	span.center i
 							//- //- hr
@@ -61,7 +62,7 @@ block content
 													use(xlink:href='#icon_edit')
 											i.icon.box__icon.box__icon--right
 												svg(viewbox='0 0 100 100')
-													use(xlink:href='#icon_edit')
+													use(xlink:href='#icon_x')
 											p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
 											p.box__metadata.box__metadata-2 4:30pm by Gardenia
 								.task-box__tasks
@@ -78,40 +79,42 @@ block content
 											use(xlink:href='#icon_upload')
 									//- span.inline-block Update
 							.spacer
-							//- .inline-block.top(style='margin-right: 4rem')
-							//- 	h6.h6 Back of License
+							.inline-block.top(style='margin-right: 4rem')
+								h6.h6 Back of License
+									span.text-blue *
 							//- .alert-circle
 							//- 	span.center i
-							//- //- hr
-							//- .inline-block(style='width:760px')
-							//- 	.box.dotted-border(style='min-height: 10rem')
-							//- 		.alert-circle
-							//- 			span.center i
-							//- 		.box__center
-							//- 			div.message
-							//- 				i.icon.box__icon.is-large.is-gray
-							//- 					svg(viewbox='0 0 100 100')
-							//- 						use(xlink:href='#icon_document')
-							//- 				.inline-block
-							//- 					p.box__title Upload Document
+							//- hr
+							.inline-block(style='width:540px')
+								.box.dotted-border(style='min-height: 10rem')
+									//- .alert-circle
+										//- span.center i
+									.box__center
+										div.message
+											i.icon.box__icon.is-large
+												svg(viewbox='0 0 100 100')
+													use(xlink:href='#icon_document')
+											.inline-block
+												p.box__title Upload Document
 									
-							//- 		.task-box__tasks
-							//- 			i.icon.box__icon
-							//- 				svg(viewbox='0 0 100 100')
-							//- 					use(xlink:href='#icon_upload')
-							//- 			span.inline-block Upload
+									.task-box__tasks
+										i.icon.box__icon
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_upload')
+										span.inline-block Upload
 						.spacer
 						.task__row
 							
 							h6.h6 Additional Documents
-							.alert-circle
-								span.center i
+								span.text-blue *
+							//- .alert-circle
+							//- 	span.center i
 							//- hr
 							.spacer
 							.box.dotted-border(style='min-height: 10rem')
 								.box__center
 									div.message
-										i.icon.box__icon.is-large.is-gray
+										i.icon.box__icon.is-large
 											svg(viewbox='0 0 100 100')
 												use(xlink:href='#icon_document')
 										.inline-block
