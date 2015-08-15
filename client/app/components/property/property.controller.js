@@ -1,16 +1,19 @@
 class PropertyController {
-	constructor(Project, $state, project, Milestone, File) {
-		this.$state = $state;
+	constructor(File, project, User) {
 		this.File = File;
-		this.Project = Project;
 		this.project = project;
-		this.Milestone = Milestone;
-	}
-	goToMilestone(milestone) {
-		this.Milestone.inject(milestone);
-		this.$state.go('milestone', {
-			milestoneId: milestone.milestone_id
-		});
+		User.findAll({})
+			.then(users => {
+				console.log(users);
+			});
+
+		File.findAll()
+			.then(files => {
+				console.log(files);
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	}
 	updateFile() {
 		this.File.update(3, {
