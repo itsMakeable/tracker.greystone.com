@@ -1,0 +1,86 @@
+.row.comments
+	.container
+		.spacer
+		.spacer
+		//- h6.h6 Activity
+		.messages-info 
+			span 28 Older Messages
+		.date_container
+			.date MAY 10, 2016
+		.notifications
+			.user-notification.has-padding
+				.profile-pic
+				.user-notification__box
+					p.user-notification__top-right 04:33PM
+					p.user-notification__h1 Todd Lynch
+					//- hr
+					p.user-notification__p Hi Gardenia, just want to check in and make sure that  this the right address in  
+						a(href='#') #2014pdf
+						| ?
+			.user-notification.has-padding
+				.profile-pic
+				.user-notification__box
+					p.user-notification__top-right 04:33PM
+					p.user-notification__h1 Gardenia Willoughby
+					//- hr
+					p.user-notification__p Hi Todd, just want to check in and make sure that  this the right address in  
+						a(href='#') #2014pdf
+						| ?
+			.user-notification
+				.profile-pic.is-uploaded
+				.user-notification__box.is-white
+					p 
+						b Gardenia Smith
+						|  uploaded 
+						a() 2014_PROP_FIN.PDF to 2014_PROP_FIN-v02.PDF to Front of License
+						|  at 10:05am 
+			.date_container
+				.date MAY 10, 2016
+		.notifications
+			.user-notification
+				.profile-pic.is-edited
+				.user-notification__box.is-white
+					p 
+						b Gardenia Smith
+						|  renamed 2014_PROP_FIN.PDF 
+						|  to 2014_PROP_FIN-v02.PDF at 10:06am 
+			.user-notification.has-padding
+				.profile-pic
+				.user-notification__box
+					p.user-notification__top-right 04:33PM
+					p.user-notification__h1 Todd Lynch
+					//- small: em Underwriter at Greystone
+					//- hr
+					p.user-notification__p 
+						| Gardenia Is Filing The Tax Form 
+						span.is-yellow #status 
+			.user-notification.has-padding
+				.profile-pic
+				.user-notification__box
+					p.user-notification__top-right 04:33PM
+					p.user-notification__h1 Gardenia Willoughby
+					//- hr
+					p.user-notification__p 
+						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum sint, neque odit aliquid repudiandae in quibusdam repellendus, nesciunt, laborum, eligendi fugiat doloribus rerum consectetur optio ratione nobis accusamus enim minima?
+						br
+						br
+						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum sint, neque odit aliquid repudiandae in quibusdam repellendus, nesciunt, laborum, eligendi fugiat doloribus rerum consectetur optio ratione nobis accusamus enim minima?
+			.user-notification
+				.profile-pic.is-assigned
+				.user-notification__box.is-white
+					p Gardenia Smith assigned task to Todd Lynch.
+			.user-notification
+				.profile-pic.is-complete
+				.user-notification__box.is-white
+					p Todd Lynch marked complete at 5:30pm.
+			.user-notification.is-comment-box
+				.profile-pic
+				.user-notification__box
+					//- //- p.user-notification__top-right 04:33PM
+					//- p.user-notification__h1 Todd Lynch
+					//- //- small: em Underwriter at Greystone
+					//- hr
+					textarea#textarea.user-notification__textarea(placeholder='Type Message Here' rows='1')
+					i.icon.comment-box__submit
+						svg(viewbox='0 0 100 100')
+							use(xlink:href='#icon_arrow')
