@@ -12,7 +12,7 @@ module.exports = function(bookshelf) {
             fields: function() {
                 return this.hasMany(Field, ['task_id']);
             },
-            current_user: function() {
+            user: function() {
                 return this.belongsTo(User, ['user_id']);
             }
         });

@@ -9,17 +9,19 @@ module.exports = function(app) {
                     'milestones',
                     'milestones.tasks',
                     'milestones.tasks.fields',
-                    'milestones.tasks.current_user',
-                    'milestones.tasks.fields.files'
+                    'milestones.tasks.user',
+                    'milestones.tasks.fields.files',
+                    'milestones.tasks.fields.files.user'
                 ]
             })
             .then(function(model) {
                 res.json(model.toJSON());
             })
-            .catch(function(err) {
+            .catch(function(error) {
+                console.log(error);
                 res.json(503, {
                     result: 'error',
-                    err: err.code
+                    error: error.code
                 });
             });
     });

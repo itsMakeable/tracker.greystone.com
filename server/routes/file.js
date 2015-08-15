@@ -5,6 +5,7 @@ module.exports = function(app) {
     var Promise = require('bluebird');
     var bookshelf = app.get('bookshelf');
     var File = require('./../models/file')(bookshelf);
+
     var storage = multer.diskStorage({
         destination: function(req, file, cb) {
             cb(null, 'uploads/');
@@ -36,8 +37,6 @@ module.exports = function(app) {
 
     });
 
-
-    // move the upload logic here.
     app.post('/api/files', upload.array('file', 3), function(req, res) {
         if (!req.body.field_id) {
             res.json(503, {
@@ -70,13 +69,10 @@ module.exports = function(app) {
 
     });
 
-
-
-
-
     // should also be able to upload a new file here for replacing an
     // existing one. 
     app.put('/api/files/:id', upload.single('file'), function(req, res) {
+
         if (req.file) {
             // for updating a file, set the current file_id to update,
             // set it to is_active false and create the new one and set

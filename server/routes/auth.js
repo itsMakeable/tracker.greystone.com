@@ -35,7 +35,7 @@ module.exports = function(app) {
                     expiresInMinutes: 6000000 * 5
                 });
                 res.json({
-                    user: user.omit('password'),
+                    user: user.toJSON(),
                     token: token
                 });
             })

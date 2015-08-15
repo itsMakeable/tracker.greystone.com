@@ -8,14 +8,11 @@ module.exports = function(bookshelf) {
         var Field = bookshelf.Model.extend({
             tableName: 'fields',
             idAttribute: 'field_id',
-            virtuals: {
-                model: function() {
-                    // return JSON.parse(this.get("data"));
-                    return 'Model';
-                }
-            },
             files: function() {
-                return this.hasMany(File, ['field_id']);
+                return this.hasMany(File, ['field_id'])
+                    .query(function(qb) {
+                        qb.where('is_active', true);
+                    });
             }
         });
         return bookshelf.model('Field', Field);
