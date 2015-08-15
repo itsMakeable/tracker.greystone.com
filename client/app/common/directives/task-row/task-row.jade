@@ -1,0 +1,6 @@
+li.sidebar-list__item(ui-sref="property.task({taskId: vm.task.task_id})" ui-sref-active='is-active is-gray')
+	.sidebar-list__center
+		span.sidebar-list__item__indicator
+		| {{ vm.task.name }}
+		mall: em.sidebar-small {{ vm.task.quick_status }}
+	.alert-circle.is-purple(ng-if="vm.showAlert"): span.center 1
