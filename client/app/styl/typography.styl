@@ -1,0 +1,78 @@
+/*!**
+  title: Headers
+  section: Typography
+  example: |
+    <h1>H1 Header</h1>
+    <h2>H2 Header</h2>
+    <h3>H3 Header</h3>
+    <h4>H4 Header</h4>
+    <h5>H5 Header</h5>
+    <h6>H6 Header</h6>
+***/
+
+h1, h2, h3, h4, h5, h6
+  // text-rendering optimizeLegibility
+  font-smooth always
+  -moz-osx-font-smoothing: grayscale
+  
+h1, h2, h3, h4, h5, h6, p, li
+  font-weight: normal
+  color inherit
+
+.h1
+  fs(2.8rem) 
+  padding-bottom px(6) 
+  font-family f-reg
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  font-smoothing antialiased
+
+.h2
+  upcase()
+  fs(1.6rem)
+  font-family f-reg
+
+.h3
+  // upcase()
+  fs(2rem)
+  font-family f-light
+  color inherit
+  line-height 1.2
+
+.h4
+  // upcase()
+  fs(1.2rem)
+  font-family f-lightit
+  color inherit
+  line-height 1.2
+
+.h6
+  color inherit
+  fs(1.2rem)
+  line-height 1.6
+  font-family f-med
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  font-smoothing antialiased
+  span 
+    cursor pointer
+
+p
+  fs(1.2rem)
+  line-height 1.4
+  
+small
+  fs(1rem)
+  em
+    font-family f-lightit
+    color darkgray
+    text-transform capitalize
+
+.upcase
+  upcase()
+  
+.text-blue
+  color blue
+  
+.text-rasberry
+  color rasberry

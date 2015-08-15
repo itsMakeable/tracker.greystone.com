@@ -1,0 +1,149 @@
+.main-main
+	span(7/10)
+	position relative
+	.container
+		max-width px(768rem)
+		+below(1700px)
+			margin-right 10%
+			padding-left 10%
+		+below(1200px)
+			margin-right 5%
+		// +below(1700px)
+		// 	width 60%
+	+below(1700px)
+		span(7/10)
+		float right
+	// +below(1200px)
+
+.main-sidebar
+	span(3/10)
+	min-width 320px
+	min-height 100vh
+	top 0
+	bottom 0
+	background-color black
+	color gray
+	+below(1700px)
+		span(3/10)
+	// +below(1200px)
+	// 	span(4/10)
+	hr
+		border-bottom 1px solid rgb(70,70,70)
+	.messages-info
+		background url(unquote('../svg/triple-hr--dark.svg')) repeat-x
+		margin-top px(30rem)
+		padding-bottom px(10rem)
+		span
+			background-color black
+	.sidebar-list__item
+		text-rendering optimizeLegibility
+		-webkit-font-smoothing antialiased
+		font-smoothing antialiased
+	.h2
+		color mantle
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left 0
+		bottom: 0
+		z-index: -1
+		background-color black
+		width inherit
+		display block
+	
+		
+	
+// .sidebar-container
+// 	margin-left 8%
+// 	margin-right 8%
+// 	padding 2% 5%
+
+.sidebar-list__container
+	margin-top px(40rem)
+	.h6
+		padding-left 14%
+
+.sidebar-list
+	color white
+	&.is-completed
+		color darkgray
+		.sidebar-list__item__indicator
+			opacity 1
+			border 2px solid mantle
+			background mantle url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yLjQgNTBsMzEuOCAzMS44IDYzLjYtNjMuNiIvPjwvc3ZnPg==')) no-repeat
+			background-size 65%
+			background-position 50% 50%
+		.sidebar-small
+			color darkgray
+	&.is-pending
+		.sidebar-list__item__indicator
+			border 2px solid darkergray
+			background-color darkergray
+
+.sidebar-list__item
+	padding 0 14%
+	height px(46rem)
+	margin px(5rem) 0
+	position relative
+	// background-color rgba(deepblack,0.1)
+	fs(1.3rem)
+	line-height 1
+	upcase()
+	font-family f-reg
+	.sidebar-small
+		line-height 1.5
+		display block
+		font-family f-lightit
+	.alert-circle
+		position absolute
+		right 10%
+		top 0
+		bottom 0
+		margin auto
+	&.is-active
+		&:after
+			content ''
+			position absolute
+			right px(-22.8rem)
+			top 0
+	&.is-gray
+		background-color darkergray
+		color white
+		.sidebar-small
+			color white
+		&:after
+			content ''
+			triangle: 'right' px(24rem) darkergray
+			
+	// &.is-highlighted
+	// 	&:before
+	// 		content ''
+	// 		width 10px
+	// 		display inline-block
+	// 		background-color yellow
+	// 		position absolute
+	// 		left 0
+	// 		top 0
+	// 		bottom 0
+	
+.sidebar-list__center
+	align(vertical)
+		
+.sidebar-list__item__indicator
+	display inline-block
+	border-radius 50%
+	border 2px solid yellow
+	background-color yellow
+	size px(20rem)
+	position absolute
+	left px(-30rem)
+	top 0
+	bottom 0
+	margin auto
+	
+.main-chart
+	width 65%
+	margin px(25rem) auto px(70rem) auto
+	+below(1700px)
+		width 88%

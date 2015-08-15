@@ -1,0 +1,80 @@
+*
+	-webkit-tap-highlight-color rgba(0,0,0,0)
+	box-sizing inherit
+	&:before,
+	&:after
+		box-sizing inherit
+	&:focus
+		outline none
+
+html
+	font-size 62.5%
+	-webkit-font-smoothing initial
+	font-smoothing initial
+	// text-rendering optimizeLegibility
+	font-smooth always
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	font-family f-light
+	position relative
+	min-height 100%
+	overflow-x hidden
+	font-size 12px
+	+below(640px)
+		font-size 10px
+	
+body
+	-webkit-touch-callout none
+	-webkit-text-size-adjust none
+	// -webkit-user-select none
+	color black
+	height 100%
+	transition opacity 0.1s ease
+	// padding px(40)
+	&.is-active
+		opacity: 1 !important
+
+img, svg, iframe, object, video
+	width 100%
+	display block
+	
+i
+	display inline-block
+	vertical-align middle
+	font inherit
+	
+.hidden
+	position: absolute
+	height: 0
+	width: 0
+	visibility: hidden
+
+::-moz-selection
+	background-color: blue
+	color white
+
+::selection
+	background-color: blue
+	color white
+
+.solid-border
+	border 1px solid gray
+.dotted-border
+	border 2px dashed gray
+	
+hr
+	border none
+	border-bottom 1px solid gray
+
+.inline-block
+	ilb()
+	&.top
+		ilb(top)
+
+.comments
+	// background-color rgba(rasberry,0.1)
+	width 100%
+	padding-bottom px(100rem)
+
+.top-bar-chart
+	position relative

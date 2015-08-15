@@ -1,0 +1,77 @@
+$input
+	appearance none
+	-moz-appearance none
+	-webkit-appearance none
+
+	border-radius 0
+	-moz-border-radius 0
+	-webkit-border-radius 0
+	font-family f-light
+	display block
+	width 100%
+	margin 0
+	border 0px solid transparent
+	fs(1.4rem)
+	display block
+	background white no-repeat
+	box-sizing border-box
+	&:focus
+		outline 0
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=search],
+input[type=number],
+input[type=password],
+textarea
+	@extend $input
+	&.message-input
+		background-color black
+		height inherit
+		color gray
+		padding 0 px(46rem)
+		+above(640px)
+			background-color transparent
+			color black
+			
+			&::placeholder
+				color black
+		
+
+.message-input__container
+	position relative
+	height px(60rem)
+	&:after
+		content ''
+		height 2px
+		left px(20rem)
+		right px(60rem)
+		margin auto
+		display block
+		background-color gray
+		position absolute
+		bottom px(16rem)
+		z-index 1
+	
+
+.message-input__icon
+	size px(18rem)
+	color gray
+	position absolute
+	top 0
+	bottom 0
+	margin auto
+	+above(640px)
+		color black
+
+.message-input__icon-right
+	right px(20rem)
+	svg
+		transform-origin 50% 50%
+		transform rotate(0)
+	
+.message-input__icon-left
+	left px(20rem)
+	top px(-8rem)

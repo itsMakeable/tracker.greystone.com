@@ -1,0 +1,50 @@
+.span-dropdown__container
+	line-height 1.1
+	
+.span-dropdown
+	// border-bottom 1px solid blue
+	ilb()
+	color blue
+	position relative
+
+.span-dropdown__icon
+	color blue
+	size px(10rem)
+	transform-origin 50% 50%
+	transform rotate(90deg)
+	margin-left px(5rem)
+	
+.dropdown-list
+	position absolute
+	background-color white
+	border 1px solid gray
+	top 25px
+	z-index 10
+	li
+		color darkgray
+		width 100%
+		padding 10px
+		border-bottom 1px solid gray
+		white-space nowrap
+		.icon
+			width px(25rem) !important
+			height px(25rem) !important
+			margin-right 8px
+			color black
+			.profile-pic
+				width inherit !important
+				height inherit !important
+				position static
+			&.clear-assignee
+				width px(15rem) !important
+				height px(15rem) !importan
+		.profile-pic
+			border 2px solid white
+		&:last-of-type
+			border-bottom 1px solid white
+		&.is-active
+			color blue
+		&:hover
+			background-color blue
+			color white
+	
