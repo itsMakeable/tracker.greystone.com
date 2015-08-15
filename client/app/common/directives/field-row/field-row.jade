@@ -1,0 +1,5 @@
+.task__row
+	h6.h6 {{ vm.field.name }}
+		span.text-blue *
+	.spacer.half
+	file-box(files='vm.field.files' allow-multiple='vm.field.type == "MULTIPLE_FILE"')
