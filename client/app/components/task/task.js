@@ -10,7 +10,7 @@ let taskModule = angular.module('task', [
 	.config(($stateProvider, $urlRouterProvider) => {
 
 		$stateProvider
-			.state('task', {
+			.state('property.task', {
 				url: '/task/:taskId',
 				template,
 				controller,
@@ -32,5 +32,6 @@ let taskModule = angular.module('task', [
 					}
 				}
 			});
+
 	});
 export default taskModule;

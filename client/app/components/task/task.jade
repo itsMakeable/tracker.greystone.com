@@ -1,12 +1,45 @@
-h1 {{ vm.project.name }}
+main.main-main
+	img.top-bar-chart(src="app/svg/bar-chart.svg", alt="")
+	.container
+		.spacer
+		.spacer
+		.spacer
+		header.task-header
+			.task-box__circle(ng-click='vm.task.is_complete = !vm.task.is_complete' ng-class='{"is-checked": vm.task.is_complete}')
+			.inline-block
+				h1.h1(style='padding-bottom:0.6rem') {{ vm.task.name }}
+				h6.h6.span-dropdown__container Assigned to: 
+					span.span-dropdown(ng-click='vm.showDropdow = !vm.showDropdow')
+						span {{ vm.task.user.first_name }} {{ vm.task.user.last_name }}
+							i.icon.span-dropdown__icon
+								svg(viewbox='0 0 100 100')
+									use(xlink:href='#icon_caret')
+						ul.dropdown-list(ng-show='vm.showDropdow')
+							li(ng-repeat='user in vm.users track by user.user_id' ng-class='{"is-active": user.user_id == vm.task.user.user_id}' ng-click='vm.assignUser(user)')
+								i.icon
+									.profile-pic
+								span.inline-block {{ user.first_name }} {{ user.last_name }}
+							li(ng-click='vm.clearUser()')
+								i.icon.clear-assignee
+									svg(viewbox='0 0 100 100')
+										use(xlink:href='#icon_x')
+								span.inline-block Clear Assignee
 
-user-profile-button
-	
-h3 {{ vm.task.name }}
-p {{ vm.task.description}}
-div(ng-repeat="field in vm.task.fields track by field.field_id")
-	div.drop-box(ngf-change="vm.fileDropped($files, $file, $event, $rejectedFiles, field)" ngf-select ngf-drop ng-model="field._files" ngf-drag-over-class="dragover" ngf-multiple="field.type == 'MULTIPLE_FILE'" ngf-allow-dir="true" ngf-accept="'image/*,application/pdf'")
-		p(ng-if="field.type == 'MULTIPLE_FILE'") Upload Documents
-		p(ng-if="field.type == 'SINGLE_FILE'") Upload Document			
+					
+			hr(style='margin: 2rem 0;')
+			
+		section
+			h4.h4 {{ vm.task.description }}
+			.spacer
+			.spacer
+			.row
+				div(ng-repeat='field in vm.task.fields track by field.field_id')
+					field-row(field='field')
+					.spacer
+					.spacer
+		.spacer
+		.spacer
+	comments-box
+						
 
 

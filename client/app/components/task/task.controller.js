@@ -1,5 +1,5 @@
 class TaskController {
-	constructor(Project, $state, task, Task, $scope, Upload, File) {
+	constructor(Project, $state, task, Task, $scope, Upload, File, User) {
 		this.Upload = Upload;
 		this.$state = $state;
 		this.Project = Project;
@@ -7,6 +7,17 @@ class TaskController {
 		this.task = task;
 		this.File = File;
 		console.log(this.task);
+		this.showDropdow = false;
+
+		$scope.$watch(() => User.lastModified(), () => {
+			this.users = User.filter();
+		});
+	}
+	clearUser() {
+		delete this.task.user;
+	}
+	assignUser(user) {
+		this.task.user = user;
 	}
 	fileDropped($files, $file, $event, $rejectedFiles, field) {
 		console.log('fileDropped');
