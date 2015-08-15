@@ -1,0 +1,33 @@
+aside.main-sidebar
+	.spacer
+	.spacer
+
+	header.main-header
+		h1.h1 {{ vm.project.name }}
+		h2.h2 {{ vm.milestone.name }}
+	section(ng-click='vm.changeMilestone()')
+		img.main-chart(src="app/svg/chart.svg", alt="")
+	section
+		.sidebar-container
+			.sidebar-list__container
+				h6.h6 Recently Completed
+				hr
+				ul.sidebar-list.is-completed
+					div(ng-repeat='task in vm.tasksRecentlyCompleted track by task.task_id' ng-click="vm.selectTask(task)")
+						task-row(task='task')
+			.sidebar-list__container
+				h6.h6 Assigned to You
+				hr
+				ul.sidebar-list
+					div(ng-repeat='task in vm.tasksAssignedToMe track by task.task_id' ng-click="vm.selectTask(task)")
+						task-row(task='task' show-alert="true")
+				.messages-info 
+					span 28 Additional Tasks
+			.sidebar-list__container
+				h6.h6 Other Tasks
+				hr
+				ul.sidebar-list.is-pending
+					div(ng-repeat='task in vm.otherTasks track by task.task_id' ng-click="vm.selectTask(task)")
+						task-row(task='task')
+				.messages-info 
+					span 28 Additional Tasks
