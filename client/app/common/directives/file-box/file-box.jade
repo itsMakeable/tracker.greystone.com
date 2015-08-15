@@ -1,0 +1,38 @@
+div
+	div(ng-repeat='file in vm.files' )
+		.box.solid-border.is-yellow(style='min-height: 12rem')
+			div.message 
+				i.icon.box__icon.is-large
+					<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M79.7 96.9H20.3c-6 0-10.8-4.8-10.8-10.8V13.3c0-6 4.8-10.8 10.8-10.8h32.9c1.4 0 2.7.5 3.7 1.4l31.8 29.3c1.1 1 1.7 2.5 1.7 4v48.9c0 5.9-4.8 10.8-10.7 10.8z"/><path d="M55.4 2.5v21.6c0 6 4.8 10.8 10.8 10.8h22.9"/></g></svg>
+				.inline-block
+					p.box__title {{ file.name }}
+					i.icon.box__icon--edit(ng-click='vm.editName()')
+						svg(viewbox='0 0 100 100')
+							use(xlink:href='#icon_edit')
+					i.icon.box__icon.box__icon--right(ng-click='vm.removeFile()')
+						svg(viewbox='0 0 100 100')
+							use(xlink:href='#icon_trash')
+					p.box__metadata.box__metadata-1 UPLOADED {{ file.created_at | date: 'longDate' }}
+					p.box__metadata.box__metadata-2 {{ file.created_at | date: 'shortTime' }} by {{ file.user.first_name }} {{ file.user.last_name }}
+			.task-box__tasks
+				i.icon.box__icon(ng-click='vm.viewFile()')
+					svg(viewbox='0 0 100 100')
+						use(xlink:href='#icon_view')
+				i.icon.box__icon(ng-click='vm.downloadFile()')
+					svg(viewbox='0 0 100 100')
+						use(xlink:href='#icon_download')
+				i.icon.box__icon(ng-click='vm.replaceFile()')
+					svg(viewbox='0 0 100 100')
+						use(xlink:href='#icon_upload')
+		.spacer
+
+	.box.dotted-border(ng-if='vm.files.length == 0 || vm.allowMultiple' ngf-change="vm.onFilesDropped($files, $file, $event, $rejectedFiles)" style='min-height: 12rem' ngf-drop ngf-drag-over-class="dragover" ngf-multiple="vm.allowMultiple" ngf-allow-dir="false" ngf-accept="'image/*,application/pdf'")
+		.box__center
+			div.message
+				.inline-block
+					p.box__title Drop File to Upload
+		.task-box__tasks(ngf-select ngf-change="vm.uploadFile($file)")
+			i.icon.box__icon
+				svg(viewbox='0 0 100 100')
+					use(xlink:href='#icon_upload')
+			span.inline-block Upload
