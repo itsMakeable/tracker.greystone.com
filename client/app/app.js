@@ -1,13 +1,11 @@
 import angular from 'angular';
-import bootstrapWebpack from 'bootstrap-webpack';
 import uiRouter from 'angular-ui-router';
-import angularUIBootstrap from 'angular-ui-bootstrap';
 import ngMessages from 'angular-messages';
 import angularToastr from 'angular-toastr';
 import jsData from 'js-data';
 import jsDataAngular from 'js-data-angular';
 require('../../node_modules/ng-file-upload/dist/ng-file-upload.js');
-require('../../node_modules/angular-toastr/dist/angular-toastr.css');
+import appStyles from './styl/index.styl';
 
 var server = 'http://69.164.209.184:8080';
 var local = 'http://localhost:8080';
@@ -28,9 +26,7 @@ import 'normalize.css';
 angular.module('app', [
 		'ngFileUpload',
 		jsDataAngular,
-		angularToastr,
 		ngMessages,
-		angularUIBootstrap,
 		uiRouter,
 		Common.name,
 		Components.name,
