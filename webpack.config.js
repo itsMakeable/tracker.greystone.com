@@ -1,3 +1,9 @@
+var nib = require('nib');
+var axis = require('axis');
+var rupture = require('rupture');
+var jeet = require('jeet');
+var autoprefixer = require('autoprefixer-stylus');
+
 module.exports = {
 	devtool: 'sourcemap',
 	output: {
@@ -39,5 +45,8 @@ module.exports = {
 			test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 			loader: "url?limit=10000&minetype=image/svg+xml"
 		}]
+	},
+	stylus: {
+		use: [nib(), axis(), rupture(), jeet(), autoprefixer()]
 	}
 };
