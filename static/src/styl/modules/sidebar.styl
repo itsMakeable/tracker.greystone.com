@@ -61,8 +61,29 @@
 
 .sidebar-list__container
 	margin-top px(40rem)
+	position relative
 	.h6
 		padding-left 14%
+	.is-right
+		position absolute
+		right 5%
+		top 0
+		bottom 0
+		margin auto
+		color darkgray
+		transition 0.2s ease
+		cursor pointer
+		text-transform capitalize
+		font-family f-light
+		height px(10rem)
+		svg
+			size px(10rem)
+			margin-right px(5rem)
+		&:hover
+			color blue
+	p.is-right
+		height auto
+			
 
 .sidebar-list
 	color white
