@@ -3,23 +3,35 @@
 	
 .span-dropdown
 	// border-bottom 1px solid blue
-	ilb()
+	ilb(baseline)
 	color blue
 	position relative
+	transition 0.3s ease
+	&.is-active
+		background-color blue
+		color white
+		padding px(3rem) px(5rem)
+		.span-dropdown__icon
+			transform rotate(-90deg)
 
 .span-dropdown__icon
-	color blue
+	transition 0.3s ease
+	color currentColor
 	size px(10rem)
 	transform-origin 50% 50%
 	transform rotate(90deg)
 	margin-left px(5rem)
+	position relative
+	top px(-1rem)
+	
 	
 .dropdown-list
 	position absolute
 	background-color white
 	border 1px solid gray
-	top 25px
+	top px(22.5rem)
 	z-index 10
+	left px(-0.4rem)
 	margin-bottom 0
 	padding-bottom 0
 	li

@@ -9,20 +9,6 @@ block content
 			.container
 				.spacer
 				.spacer
-				.spacer
-				//- header.main-header
-				//- 	//- .main-header__section.main-header__left
-				//- 	//- 	nav.main-nav
-				//- 	//- 		.nav-bar.nav-bar--top
-				//- 	//- 		.nav-bar.nav-bar--center
-				//- 	//- 		.nav-bar.nav-bar--bottom
-				//- 	.main-header__section.main-header__middle
-				//- 		.main-header__center
-				//- 			h1.h1 101 MAIN STREET
-				//- 			h2.h2 Concept
-				//- 	//- .main-header__section.main-header-right
-				//- 	//- 	img(src="http://dummyimage.com/30x30/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image")
-				//- //- h6.h6 Recently Closed
 				
 				header.task-header
 
@@ -30,7 +16,8 @@ block content
 					.inline-block
 						h1.h1(style='padding-bottom:0.6rem') Personal Information
 						h6.h6.span-dropdown__container Assigned to: 
-							span.span-dropdown 
+							//- NOTE: this has an .is-active class
+							span.span-dropdown.is-active
 								span Gardenia
 									i.icon.span-dropdown__icon
 										svg(viewbox='0 0 100 100')
@@ -39,7 +26,7 @@ block content
 									li.is-active 
 										i.icon
 											.profile-pic
-										span.inline-block Gardenia Willoughby
+										span.inline-block: b Gardenia Willoughby
 									li 
 										i.icon
 											.profile-pic
