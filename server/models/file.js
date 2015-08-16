@@ -10,6 +10,9 @@ module.exports = function(bookshelf) {
 			idAttribute: 'file_id',
 			user: function() {
 				return this.belongsTo(User, ['user_id']);
+			},
+			field: function() {
+				return this.belongsTo('Field', ['field_id']);
 			}
 		});
 

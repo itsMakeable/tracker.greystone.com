@@ -2,7 +2,7 @@ module.exports = function(app) {
 
 	require('./routes/field.js')(app);
 	require('./routes/file.js')(app);
-	require('./routes/message.js')(app);
+	require('./routes/event.js')(app);
 	require('./routes/milestone.js')(app);
 	require('./routes/project.js')(app);
 	require('./routes/response.js')(app);

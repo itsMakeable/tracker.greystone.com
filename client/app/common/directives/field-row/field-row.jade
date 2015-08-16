@@ -2,4 +2,7 @@
 	h6.h6 {{ vm.field.name }}
 		span.text-blue *
 	.spacer.half
-	file-box(files='vm.field.files' allow-multiple='vm.field.type == "MULTIPLE_FILE"')
+	file-box(files='vm.field.files' 
+		allow-multiple='vm.field.type == "MULTIPLE_FILE"' 
+		on-file-selected='vm.uploadFile($files)'
+		on-file-replaced='vm.replaceFile($prevFile, $newFile)')

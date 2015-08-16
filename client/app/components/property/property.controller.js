@@ -7,13 +7,13 @@ class PropertyController {
 				console.log(users);
 			});
 
-		File.findAll()
-			.then(files => {
-				console.log(files);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+		// File.findAll()
+		// 	.then(files => {
+		// 		console.log(files);
+		// 	})
+		// 	.catch(error => {
+		// 		console.log(error);
+		// 	});
 	}
 	updateFile() {
 		this.File.update(3, {
