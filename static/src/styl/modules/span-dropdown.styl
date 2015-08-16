@@ -20,12 +20,18 @@
 	border 1px solid gray
 	top 25px
 	z-index 10
+	margin-bottom 0
+	padding-bottom 0
 	li
 		color darkgray
 		width 100%
-		padding 10px
+		padding px(8rem) px(12rem) px(8rem) px(10rem)
 		border-bottom 1px solid gray
 		white-space nowrap
+		display block
+		margin 0
+		&:last-of-type
+			border-bottom 0px solid transparent
 		.icon
 			width px(25rem) !important
 			height px(25rem) !important
@@ -37,7 +43,9 @@
 				position static
 			&.clear-assignee
 				width px(15rem) !important
-				height px(15rem) !importan
+				height px(15rem) !important
+				padding px(2rem)
+				margin-left px(2.75rem)
 		.profile-pic
 			border 2px solid white
 		&:last-of-type
@@ -47,4 +55,6 @@
 		&:hover
 			background-color blue
 			color white
+			.icon.clear-assignee
+				color white
 	
