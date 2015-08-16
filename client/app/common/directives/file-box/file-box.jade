@@ -6,22 +6,23 @@ div
 					<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M79.7 96.9H20.3c-6 0-10.8-4.8-10.8-10.8V13.3c0-6 4.8-10.8 10.8-10.8h32.9c1.4 0 2.7.5 3.7 1.4l31.8 29.3c1.1 1 1.7 2.5 1.7 4v48.9c0 5.9-4.8 10.8-10.7 10.8z"/><path d="M55.4 2.5v21.6c0 6 4.8 10.8 10.8 10.8h22.9"/></g></svg>
 				.inline-block
 					p.box__title {{ file.name }}
-					i.icon.box__icon--edit(ng-click='vm.editName()')
+					//- Add input for updating the name, cancel and save buttons.
+					i.icon.box__icon--edit(ng-click='vm.editName(file)')
 						svg(viewbox='0 0 100 100')
 							use(xlink:href='#icon_edit')
-					i.icon.box__icon.box__icon--right(ng-click='vm.removeFile()')
+					i.icon.box__icon.box__icon--right(ng-click='vm.removeFile(file)')
 						svg(viewbox='0 0 100 100')
 							use(xlink:href='#icon_trash')
 					p.box__metadata.box__metadata-1 UPLOADED {{ file.created_at | date: 'longDate' }}
 					p.box__metadata.box__metadata-2 {{ file.created_at | date: 'shortTime' }} by {{ file.user.first_name }} {{ file.user.last_name }}
 			.task-box__tasks
-				i.icon.box__icon(ng-click='vm.viewFile()')
+				i.icon.box__icon(ng-click='vm.viewFile(file)')
 					svg(viewbox='0 0 100 100')
 						use(xlink:href='#icon_view')
-				i.icon.box__icon(ng-click='vm.downloadFile()')
+				i.icon.box__icon(ng-click='vm.downloadFile(file)')
 					svg(viewbox='0 0 100 100')
 						use(xlink:href='#icon_download')
-				i.icon.box__icon(ng-click='vm.replaceFile()')
+				i.icon.box__icon(ngf-select ngf-change="vm.replaceFile(file, $file)")
 					svg(viewbox='0 0 100 100')
 						use(xlink:href='#icon_upload')
 		.spacer
@@ -31,7 +32,7 @@ div
 			div.message
 				.inline-block
 					p.box__title Drop File to Upload
-		.task-box__tasks(ngf-select ngf-change="vm.uploadFile($file)")
+		.task-box__tasks(ngf-select ngf-multiple="vm.allowMultiple" ngf-change="vm.uploadFile($files, $file, $rejectedFiles)")
 			i.icon.box__icon
 				svg(viewbox='0 0 100 100')
 					use(xlink:href='#icon_upload')

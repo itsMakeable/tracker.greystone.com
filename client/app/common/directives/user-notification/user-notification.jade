@@ -1,0 +1,44 @@
+div(ng-switch="vm.event.type")
+	.user-notification.has-padding(ng-switch-when="MESSAGE")
+		.profile-pic
+		.user-notification__box
+			p.user-notification__top-right {{ vm.event.created_at | date: 'shortTime' }}
+			p.user-notification__h1 {{ vm.event.user.first_name }} {{ vm.event.user.last_name }}
+			p.user-notification__p {{ vm.event.message }}
+
+	.user-notification(ng-switch-when="NEW_FILE")
+		.profile-pic.is-uploaded
+		.user-notification__box.is-white
+			p 
+				b {{ vm.event.user.first_name }} {{ vm.event.user.last_name }}
+				|  uploaded 
+				a() {{ vm.event.file.name }} to {{ vm.event.file.field.name }}
+			|  at {{ vm.event.created_at | date: 'shortTime' }}.
+
+	.user-notification(ng-switch-when="CHANGE_FILE_NAME")
+		.profile-pic.is-edited
+		.user-notification__box.is-white
+			p 
+				b {{ vm.event.user.first_name }} {{ vm.event.user.last_name }}
+				|  renamed {{ vm.event.old_file_name }} to {{ vm.event.file_name }}
+			|  at {{ vm.event.created_at | date: 'shortTime' }}.
+
+	.user-notification(ng-switch-when="DELETE_FILE")
+		.profile-pic.is-edited
+		.user-notification__box.is-white
+			p 
+				b {{ vm.event.user.first_name }} {{ vm.event.user.last_name }}
+				|  deleted {{ vm.event.file.name }} from {{ vm.event.file.field.name }}
+			|  at {{ vm.event.created_at | date: 'shortTime' }}.
+
+	.user-notification(ng-switch-when="ASSIGN_USER")
+		.profile-pic.is-assigned
+		.user-notification__box.is-white
+			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} assigned task to {{ vm.event.assigned_user.first_name }} {{ vm.event.assigned_user.last_name }}
+			|  at {{ vm.event.created_at | date: 'shortTime' }}.
+
+	.user-notification(ng-switch-when="FALSE")
+		.profile-pic.is-complete
+		.user-notification__box.is-white
+			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} marked complete
+			|  at {{ vm.event.created_at | date: 'shortTime' }}. 

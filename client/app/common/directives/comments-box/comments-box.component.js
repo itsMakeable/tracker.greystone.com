@@ -8,7 +8,9 @@ let commentsBoxComponent = function() {
 		controller,
 		restrict: 'E',
 			controllerAs: 'vm',
-			scope: {},
+			scope: {
+				taskId: '='
+			},
 			bindToController: true
 	};
 };

@@ -1,34 +1,76 @@
 class FileBoxController {
-	constructor(Upload) {
-		console.log(this.allowMultiple);
+	constructor(Upload, File) {
 		this.Upload = Upload;
+		this.File = File;
+		this.editNameMode = false;
 	}
-	editName() {
-		console.log('editName');
+	editName(file) {
+		this.editNameMode = true;
 	}
-	removeFile() {
-		console.log('removeFile');
+	cancelEdit() {
+		this.editNameMode = false;
 	}
-	viewFile() {
-		console.log('viewFile');
+	updateFileName(file) {
+		this.File.update(file.file_id, {
+				name: file.name
+			})
+			.then(file => {
+				console.log(file);
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	}
-	downloadFile() {
-		console.log('downloadFile');
+	removeFile(file) {
+		// Probably create a new event then. onFileRemove
+		var index = this.files.indexOf(file);
+		this.File.destroy(file.file_id)
+			.then(() => {
+				this.files.splice(index, 1);
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	}
-	replaceFile() {
-		console.log('replaceFile');
+	viewFile(file) {
+		console.log('viewFile ->');
 	}
-	onFilesDropped($files, $file, $event, $rejectedFiles) {
-		console.log('onFilesDropped');
-		if (this.allowMultiple) {
-			console.log($files);
-		} else {
-			console.log($file);
+	downloadFile(file) {
+		console.log('downloadFile ->');
+	}
+	replaceFile(prevFile, newFile) {
+		if (newFile) {
+			this.onFileReplaced({
+				$newFile: newFile,
+				$prevFile: prevFile
+			});
 		}
 	}
-	uploadFile($file) {
-		console.log('onFilesDropped');
+	onFilesDropped($files, $file, $event, $rejectedFiles) {
+		if ($files.length > 0) {
+			this.onFileSelected({
+				$files: $files
+			});
+		} else if ($file) {
+			this.onFileSelected({
+				$files: [$file]
+			});
+		}
+	}
+	uploadFile($files, $file, $rejectedFiles) {
+		console.log('uploadFile');
+		console.log($files);
 		console.log($file);
+		console.log($rejectedFiles);
+		if ($files.length > 0) {
+			this.onFileSelected({
+				$files: $files
+			});
+		} else if ($file) {
+			this.onFileSelected({
+				$files: [$file]
+			});
+		}
 	}
 
 

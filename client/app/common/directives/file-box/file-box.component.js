@@ -10,7 +10,9 @@ let fileBoxComponent = function() {
 			controllerAs: 'vm',
 			scope: {
 				files: '=',
-				allowMultiple: '='
+				allowMultiple: '=',
+				onFileSelected: '&',
+				onFileReplaced: '&'
 			},
 			bindToController: true
 	};

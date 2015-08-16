@@ -9,7 +9,7 @@ module.exports = function(bookshelf) {
             tableName: 'fields',
             idAttribute: 'field_id',
             files: function() {
-                return this.hasMany(File, ['field_id'])
+                return this.hasMany('File', ['field_id'])
                     .query(function(qb) {
                         qb.where('is_active', true);
                     });
