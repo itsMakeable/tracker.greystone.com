@@ -3,29 +3,48 @@
 	
 .span-dropdown
 	// border-bottom 1px solid blue
-	ilb()
+	ilb(baseline)
 	color blue
 	position relative
+	transition 0.3s ease
+	&.is-active
+		background-color blue
+		color white
+		padding px(3rem) px(5rem)
+		.span-dropdown__icon
+			transform rotate(-90deg)
 
 .span-dropdown__icon
-	color blue
+	transition 0.3s ease
+	color currentColor
 	size px(10rem)
 	transform-origin 50% 50%
 	transform rotate(90deg)
 	margin-left px(5rem)
+	position relative
+	top px(-1rem)
+	
 	
 .dropdown-list
 	position absolute
 	background-color white
 	border 1px solid gray
-	top 25px
+	top px(22.5rem)
 	z-index 10
+	left px(-0.4rem)
+	margin-bottom 0
+	padding-bottom 0
 	li
 		color darkgray
 		width 100%
-		padding 10px
+		padding px(6rem) px(12rem) px(6rem) px(10rem)
 		border-bottom 1px solid gray
 		white-space nowrap
+		display block
+		margin 0
+		fs(1.2rem)
+		&:last-of-type
+			border-bottom 0px solid transparent
 		.icon
 			width px(25rem) !important
 			height px(25rem) !important
@@ -37,7 +56,9 @@
 				position static
 			&.clear-assignee
 				width px(15rem) !important
-				height px(15rem) !importan
+				height px(15rem) !important
+				padding px(2rem)
+				margin-left px(2.75rem)
 		.profile-pic
 			border 2px solid white
 		&:last-of-type
@@ -47,4 +68,6 @@
 		&:hover
 			background-color blue
 			color white
+			.icon.clear-assignee
+				color white
 	

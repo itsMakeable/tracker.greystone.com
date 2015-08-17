@@ -22,9 +22,26 @@
 		// background-color blue
 		border 2px dashed blue
 		color blue
-		
+
+.box__row
+	padding-right px(32rem)
+	background url(../svg/symbols/icon_edit.svg) no-repeat
+	background-size 22px 22px
+	background-position 100% 0%
+	height px(26rem)
+	position relative
+	&:after
+		content ''
+		display block
+		height 1px
+		width 100%
+		position absolute
+		background-color white
+		bottom px(4rem)
+	
 .box__title
 	fs(2rem)
+	text-transform capitalize
 	ilb()
 	line-height 1
 	
@@ -32,6 +49,7 @@
 	ilb(top)
 	margin-left: 10px
 	width: 20px
+	float left
 	
 .box__center
 	text-align left
@@ -75,4 +93,3 @@
 	fs(1rem)
 	text-transform capitalize
 	// color gray
-	

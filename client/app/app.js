@@ -1,7 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMessages from 'angular-messages';
-import angularToastr from 'angular-toastr';
 import jsData from 'js-data';
 import jsDataAngular from 'js-data-angular';
 require('../../node_modules/ng-file-upload/dist/ng-file-upload.js');
@@ -21,7 +20,6 @@ import Common from './common/common';
 import Components from './components/components';
 import Models from './models/models';
 import AppComponent from './app.component';
-import 'normalize.css';
 
 angular.module('app', [
 		'ngFileUpload',

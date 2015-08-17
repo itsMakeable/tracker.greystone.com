@@ -44,6 +44,12 @@ module.exports = {
 		}, {
 			test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 			loader: "url?limit=10000&minetype=image/svg+xml"
+		}, {
+			test: /\.(jpe?g|png|gif)$/i,
+			loaders: [
+				'file?hash=sha512&digest=hex&name=[hash].[ext]',
+				'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+			]
 		}]
 	},
 	stylus: {

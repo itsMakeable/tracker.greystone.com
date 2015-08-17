@@ -2,5 +2,8 @@ li.sidebar-list__item(ui-sref="property.task({taskId: vm.task.task_id})" ui-sref
 	.sidebar-list__center
 		span.sidebar-list__item__indicator
 		| {{ vm.task.name }}
-		mall: em.sidebar-small {{ vm.task.quick_status }}
-	.alert-circle.is-purple(ng-if="vm.showAlert"): span.center 1
+		small: em.sidebar-small {{ vm.task.quick_status }}
+	.is-right(ng-if="vm.showDismiss" ng-click='vm.dismissTask()')
+		svg(viewbox='0 0 100 100')
+			use(xlink:href='#icon_x')
+	.alert-circle.is-purple(ng-if="vm.showAlert"): span.center {{ vm.newEvents }}

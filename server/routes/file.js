@@ -57,13 +57,13 @@ module.exports = function(app) {
                     field_id: Number(req.body.field_id),
                     is_active: true,
                     path: file.path,
-                    created_at: new Date()
+                    created_at: new Date().getTime().getTime()
                 });
                 filesPromises.push(newFile.save().then(function(model) {
                     var file = model.toJSON();
                     var newEvent = new Event({
                         type: 'NEW_FILE',
-                        created_at: new Date(),
+                        created_at: new Date().getTime(),
                         user_id: req.user.user_id,
                         file_id: file.file_id,
                         file_name: file.name,
@@ -135,7 +135,7 @@ module.exports = function(app) {
                         console.log(prevFile);
                         var newEvent = new Event({
                             type: 'DELETE_FILE',
-                            created_at: new Date(),
+                            created_at: new Date().getTime(),
                             user_id: req.user.user_id,
                             file_id: req.params.id,
                             task_id: prevFile.field.task_id
@@ -156,7 +156,7 @@ module.exports = function(app) {
                             field_id: Number(req.body.field_id),
                             is_active: true,
                             path: req.file.path,
-                            created_at: new Date()
+                            created_at: new Date().getTime()
                         });
                         return newFile.save();
                     })
@@ -164,7 +164,7 @@ module.exports = function(app) {
                         var file = model.toJSON();
                         var newEvent = new Event({
                             type: 'NEW_FILE',
-                            created_at: new Date(),
+                            created_at: new Date().getTime(),
                             user_id: req.user.user_id,
                             file_id: file.file_id,
                             file_name: file.name,
@@ -216,7 +216,7 @@ module.exports = function(app) {
                     console.log(file);
                     var newEvent = new Event({
                         type: 'CHANGE_FILE_NAME',
-                        created_at: new Date(),
+                        created_at: new Date().getTime(),
                         user_id: req.user.user_id,
                         file_id: req.params.id,
                         file_name: req.body.name,
@@ -274,7 +274,7 @@ module.exports = function(app) {
                 console.log(model.toJSON());
                 var newEvent = new Event({
                     type: 'DELETE_FILE',
-                    created_at: new Date(),
+                    created_at: new Date().getTime(),
                     user_id: req.user.user_id,
                     file_id: req.params.id,
                     task_id: file.field.task_id

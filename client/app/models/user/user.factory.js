@@ -1,4 +1,4 @@
-let UserFactory = function(DS, $http, LocalStorage, $q) {
+let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 
 	let userResource = DS.defineResource({
 		name: 'user',
@@ -77,6 +77,21 @@ let UserFactory = function(DS, $http, LocalStorage, $q) {
 
 	userResource.getCurrentUser = function() {
 		return this.get(currentUser.user_id);
+	};
+
+	userResource.viewTask = function(task_id) {
+		return $http.post(DS.defaults.basePath + '/api/users/view_task', {
+				task_id: task_id,
+			})
+			.then(response => {
+				console.log(response);
+				$rootScope.$broadcast('CHECK_EVENTS');
+				return response.data;
+			})
+			.catch(response => {
+				console.log(response);
+				return $q.reject(response);
+			});
 	};
 
 	return userResource;

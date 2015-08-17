@@ -27,7 +27,8 @@ let taskModule = angular.module('task', [
 								});
 							});
 					},
-					task: ($stateParams, Task, $q) => {
+					task: ($stateParams, Task, $q, User) => {
+						User.viewTask($stateParams.taskId);
 						return $q.when(Task.get($stateParams.taskId));
 					}
 				}

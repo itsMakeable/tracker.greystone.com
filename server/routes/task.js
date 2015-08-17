@@ -51,7 +51,7 @@ module.exports = function(app) {
             .then(function(model) {
                 var newEvent = new Event({
                     type: 'ASSIGN_USER',
-                    created_at: new Date(),
+                    created_at: new Date().getTime(),
                     user_id: req.user.user_id,
                     task_owner_user_id: req.body.user_id,
                     task_id: Number(req.params.id)

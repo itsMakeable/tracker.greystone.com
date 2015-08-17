@@ -1,0 +1,83 @@
+.overlay
+	@extends $absolute-cover
+	// background-color rgba(darken(mantle,50%), 0.8)
+	// background-color rgba(lighten(mantle,50%), 0.9)
+	// background-color rgba(white, 0.6)
+.login-hero
+	
+	background url(../assets/img/login-hero.jpg) no-repeat
+	background-size cover
+	background-position 100% 100%
+	height 100vh
+	color white
+	text-align center
+	.center
+		top 40%
+	.h1
+		text-align center
+		font-family f-med
+		upcase()
+		fs(5rem)
+		width 100%
+		white-space nowrap
+		padding-bottom px(20rem)
+		color yellow
+	.h6
+		upcase()
+		text-align center
+		padding-bottom px(5rem)
+		font-family f-reg
+		fs(1.6rem)
+	p
+		display inline-block
+		width px(500rem)
+		align(horizontal)
+		fs(1.4rem)
+		text-align center
+		font-family f-light
+		
+.login__form
+	margin-top px(50rem)
+	position relative
+	
+input.login__input
+	border-bottom 1px solid darkgray
+	background-color transparent
+	color gray
+	fs(1.8rem)
+	padding-left px(35rem)
+	transform translateX(0)
+	fs(1.6rem)
+	padding-bottom px(5rem)
+	&.has-error
+		animation wiggle 0.2s linear 3
+		border-bottom 1px solid rasberry
+	&:placeholder
+		color darkgray
+	
+	
+// .login__input--name
+// 	background
+// .login__input--password
+.login__fieldgroup
+	height px(70rem)
+	margin 0 auto
+	width 70%
+	display block
+.login__input
+	background-color darkgray
+	width 100%
+	&:focus
+		+ .login__input-icon
+			left 2%
+			color white
+	
+.login__input-icon
+	size px(15rem)
+	position absolute
+	top px(3.5rem)
+	bottom 0
+	left 1%
+	transition t-greystone1
+	color darkgray
+	

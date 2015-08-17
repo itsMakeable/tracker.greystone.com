@@ -2,6 +2,7 @@ import groupBy from 'lodash.groupby';
 
 class CommentsBoxController {
 	constructor(socket, $scope, Event, $filter) {
+		this.textareaFunction();
 		console.log('NEW COMMENT BOX');
 		var _this = this;
 		this.$filter = $filter;
@@ -61,6 +62,16 @@ class CommentsBoxController {
 					console.log(error);
 				});
 		}
+	}
+	textareaFunction() {
+		var heightLimit, textarea;
+		textarea = document.getElementById('textarea');
+		heightLimit = 200; /* Maximum height: 200px */
+		textarea.oninput = function() {
+			textarea.style.height = ''; /* Reset the height */
+			textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + 'px';
+		};
+
 	}
 }
 

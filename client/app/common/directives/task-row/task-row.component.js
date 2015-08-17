@@ -10,7 +10,8 @@ let taskRowComponent = function() {
 			controllerAs: 'vm',
 			scope: {
 				task: '=',
-				showAlert: '='
+				showAlert: '=',
+				showDismiss: '='
 			},
 			bindToController: true
 	};

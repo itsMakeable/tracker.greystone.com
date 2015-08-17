@@ -4,13 +4,19 @@ class LoginController {
 		this.$state = $state;
 	}
 	login() {
-		this.User.signin(this.email, this.password)
-			.then(() => {
-				this.$state.go('property');
-			})
-			.catch(() => {
+		console.log(this.loginForm);
+		if (this.loginForm.$valid) {
+			this.User.signin(this.email, this.password)
+				.then(() => {
+					this.$state.go('property');
+				})
+				.catch(() => {
 
-			});
+				});
+		} else {
+			this.loginForm.$setSubmitted();
+		}
+
 	}
 }
 

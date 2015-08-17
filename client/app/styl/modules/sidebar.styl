@@ -29,6 +29,14 @@
 	// 	span(4/10)
 	hr
 		border-bottom 1px solid rgb(70,70,70)
+	.button
+		background-color darkgray
+		transtion t-greystone1
+		color white
+		align(horizontal)
+		display inline-block
+		&:hover
+			background-color gray
 	.messages-info
 		background url(unquote('../svg/triple-hr--dark.svg')) repeat-x
 		margin-top px(30rem)
@@ -61,8 +69,29 @@
 
 .sidebar-list__container
 	margin-top px(40rem)
+	position relative
 	.h6
 		padding-left 14%
+	.is-right
+		position absolute
+		right 5%
+		top 0
+		bottom 0
+		margin auto
+		color darkgray
+		transition 0.2s ease
+		cursor pointer
+		text-transform capitalize
+		font-family f-light
+		height px(10rem)
+		svg
+			size px(10rem)
+			margin-right px(5rem)
+		&:hover
+			color blue
+	p.is-right
+		height auto
+			
 
 .sidebar-list
 	color white
@@ -147,3 +176,7 @@
 	margin px(25rem) auto px(70rem) auto
 	+below(1700px)
 		width 88%
+.main-sidebar
+	.logo
+		max-width 60%
+		margin auto

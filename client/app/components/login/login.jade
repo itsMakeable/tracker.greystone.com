@@ -1,18 +1,34 @@
-h1 Login
+.row
+	aside.main-sidebar
+		img.logo(src="app/svg/background-logo.svg", alt="")
 
-button(type="button" ui-sref="signUp") Sign Up
-
-form(name='vm.loginForm' novalidate)
-	div
-		label(for="email") Email address
-		input(type="email" id="email" name="email" placeholder="Email" ng-model="vm.email" required)
-		div(ng-messages='vm.loginForm.email.$error', ng-if='vm.loginForm.email.$dirty || vm.loginForm.$submitted')
-			em.error-message(ng-message='required') Email is Required
-			em.error-message(ng-message='email') Must be a valid email
-	div
-		label(for="password") Password
-		input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password" required)
-		div(ng-messages='vm.loginForm.password.$error', ng-if='vm.loginForm.password.$dirty || vm.loginForm.$submitted')
-			em.error-message(ng-message='required') Password is Required
+		form.login__form(name='vm.loginForm' novalidate)
+			
+			fieldgroup.login__fieldgroup.login__input--name
+				input.login__input(type="email" id="email" name="email" placeholder="Email" ng-model="vm.email" required)
+				svg.login__input-icon(viewbox='0 0 100 100')
+					use(xlink:href='#icon_user')
+			
+			fieldgroup.login__fieldgroup.login__input--password
+				input.login__input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password" required)
+				svg.login__input-icon(viewbox='0 0 100 100')
+					use(xlink:href='#icon_lock')
+			
+			a.button.login__button(ng-click="vm.login()") Login
 	
-	button(ng-click="vm.login()") Login
+	main.main-main.login-hero
+		.overlay
+			.center
+				h6.h6 Greystone
+				h1.h1 Loan Tracker
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur, inventore expedita, nobis veritatis debitis cumque ut tempore beatae, repudiandae recusandae pariatur placeat iusto. Sunt id, deserunt.
+
+//- form()
+//- 	div
+//- 		div(ng-messages='vm.loginForm.email.$error', ng-if='vm.loginForm.email.$dirty || vm.loginForm.$submitted')
+//- 			em.error-message(ng-message='required') Email is Required
+//- 			em.error-message(ng-message='email') Must be a valid email
+//- 	div
+//- 		div(ng-messages='vm.loginForm.password.$error', ng-if='vm.loginForm.password.$dirty || vm.loginForm.$submitted')
+//- 			em.error-message(ng-message='required') Password is Required
+//- 	button() Login
