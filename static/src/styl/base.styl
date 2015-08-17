@@ -18,7 +18,6 @@ html
 	font-family f-light
 	position relative
 	min-height 100%
-	overflow-x hidden
 	font-size 12px
 	+below(640px)
 		font-size 10px
@@ -31,6 +30,12 @@ body
 	height 100%
 	transition opacity 0.1s ease
 	// padding px(40)
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
 	&.is-active
 		opacity: 1 !important
 

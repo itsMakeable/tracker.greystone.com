@@ -17,7 +17,7 @@ block content
 						h1.h1(style='padding-bottom:0.6rem') Personal Information
 						h6.h6.span-dropdown__container Assigned to: 
 							//- NOTE: this has an .is-active class
-							span.span-dropdown.is-active
+							span.span-dropdown
 								span Gardenia
 									i.icon.span-dropdown__icon
 										svg(viewbox='0 0 100 100')
@@ -49,8 +49,9 @@ block content
 					hr(style='margin: 2rem 0;')
 					
 				section
+					.spacer.half
+					h5.h5 Documents
 					h4.h4 Upload front and back of your driver’s license and social security card to complete this step.
-					.spacer
 					.spacer
 					.row
 						.task__row
@@ -95,10 +96,10 @@ block content
 						.task__row
 							h6.h6 Back of License
 								span.text-blue *
-							p Form 1099-MISC
+							p: small Form 1099-MISC
 
-							p Instructions for Form 1099-MISC (HTML)
-							p General Instructions for Certain Information Returns (Forms 1097, 1098, 1099, 3921, 3922, 5498, and W-2G)
+							p: small Instructions for Form 1099-MISC (HTML)
+							p: small General Instructions for Certain Information Returns (Forms 1097, 1098, 1099, 3921, 3922, 5498, and W-2G)
 							//- .alert-circle
 							//- 	span.center i
 							//- hr

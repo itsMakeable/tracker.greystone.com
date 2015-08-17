@@ -10,6 +10,7 @@ MKBL.toggleActivation = (el, elClass) ->
 
 $ ->
 	MKBL.toggleActivation('body')
+	$divs = $('.main-sidebar, .main-main')
 
 textarea = document.getElementById('textarea')
 heightLimit = 200

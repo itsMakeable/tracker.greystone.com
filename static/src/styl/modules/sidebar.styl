@@ -1,6 +1,8 @@
 .main-main
 	span(7/10)
 	position relative
+	height 100vh
+	overflow scroll
 	.container
 		max-width px(768rem)
 		// +below(1700px)
@@ -24,8 +26,10 @@
 	min-height 100vh
 	top 0
 	bottom 0
+	height 100vh
 	background-color black
 	color gray
+	overflow scroll
 	+below(1700px)
 		span(4/10)
 	// +below(1200px)
@@ -199,10 +203,10 @@
 .main-chart
 	width 65%
 	margin px(25rem) auto px(20rem) auto
-	+below(1700px)
-		width 88%
-	+below(1200px)
-		width 100%
+	// +below(1700px)
+	// 	width 88%
+	// +below(1200px)
+	width 100%
 .main-sidebar
 	.logo
 		max-width 60%
