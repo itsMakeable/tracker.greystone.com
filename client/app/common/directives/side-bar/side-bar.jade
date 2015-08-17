@@ -4,9 +4,9 @@ aside.main-sidebar
 
 	header.main-header
 		h1.h1 {{ vm.project.name }}
+		figure(ng-click='vm.changeMilestone()')
+			img.main-chart(src="app/svg/chart.svg", alt="")
 		h2.h2 {{ vm.milestone.name }}
-	section(ng-click='vm.changeMilestone()')
-		img.main-chart(src="app/svg/chart.svg", alt="")
 	section
 		.sidebar-container
 			.sidebar-list__container

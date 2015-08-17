@@ -4,9 +4,10 @@ aside.main-sidebar
 
 	header.main-header
 		h1.h1 101 MAIN STREET
+		
+		figure
+			img.main-chart(src="svg/chart.svg", alt="")
 		h2.h2 Concept
-	section
-		img.main-chart(src="svg/chart.svg", alt="")
 	section
 		.sidebar-container
 			.sidebar-list__container
@@ -17,6 +18,8 @@ aside.main-sidebar
 					li.sidebar-list__item
 						.sidebar-list__center
 							span.sidebar-list__item__indicator
+								svg(viewbox='0 0 100 100')
+									use(xlink:href='#icon_check')
 							| 2013 Tax Return
 							small: em.sidebar-small Approved by Todd
 						.is-right
@@ -26,6 +29,8 @@ aside.main-sidebar
 					li.sidebar-list__item
 						.sidebar-list__center
 							span.sidebar-list__item__indicator
+								svg(viewbox='0 0 100 100')
+									use(xlink:href='#icon_check')
 							| 2013 Property Financials
 							small: em.sidebar-small Approved by Gardenia
 						.is-right

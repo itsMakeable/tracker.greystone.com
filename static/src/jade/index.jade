@@ -5,7 +5,7 @@ block content
 		include modules/sidebar.jade
 		main.main-main
 
-			img.top-bar-chart(src="svg/bar-chart.svg", alt="")
+			//- img.top-bar-chart(src="svg/bar-chart.svg", alt="")
 			.container
 				.spacer
 				.spacer
@@ -22,28 +22,28 @@ block content
 									i.icon.span-dropdown__icon
 										svg(viewbox='0 0 100 100')
 											use(xlink:href='#icon_caret')
-								//- ul.dropdown-list
-								//- 	li.is-active 
-								//- 		i.icon
-								//- 			.profile-pic
-								//- 		span.inline-block: b Gardenia Willoughby
-								//- 	li 
-								//- 		i.icon
-								//- 			.profile-pic
-								//- 		span.inline-block Nobody
-								//- 	li 
-								//- 		i.icon
-								//- 			.profile-pic
-								//- 		span.inline-block Todd Lynch
-								//- 	li 
-								//- 		i.icon
-								//- 			.profile-pic
-								//- 		span.inline-block Kyla Medina
-								//- 	li 
-								//- 		i.icon.clear-assignee
-								//- 			svg(viewbox='0 0 100 100')
-								//- 				use(xlink:href='#icon_x')
-								//- 		span.inline-block Clear Assignee
+								ul.dropdown-list
+									li.is-active 
+										i.icon
+											.profile-pic
+										span.inline-block: b Gardenia Willoughby
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Nobody
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Todd Lynch
+									li 
+										i.icon
+											.profile-pic
+										span.inline-block Kyla Medina
+									li 
+										i.icon.clear-assignee
+											svg(viewbox='0 0 100 100')
+												use(xlink:href='#icon_x')
+										span.inline-block Clear Assignee
 
 							
 					hr(style='margin: 2rem 0;')
@@ -62,12 +62,14 @@ block content
 							.spacer.half
 							.box.solid-border.is-yellow(style='min-height: 12rem')
 								
-								div.message 
-									i.icon.box__icon.is-large
-										<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M79.7 96.9H20.3c-6 0-10.8-4.8-10.8-10.8V13.3c0-6 4.8-10.8 10.8-10.8h32.9c1.4 0 2.7.5 3.7 1.4l31.8 29.3c1.1 1 1.7 2.5 1.7 4v48.9c0 5.9-4.8 10.8-10.7 10.8z"/><path d="M55.4 2.5v21.6c0 6 4.8 10.8 10.8 10.8h22.9"/></g></svg>
-									.inline-block
-										//- This needs an .is-editing class
-										.row.box__row
+								.row.message
+									.box__col2
+										i.icon.box__icon.is-large
+											<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M79.7 96.9H20.3c-6 0-10.8-4.8-10.8-10.8V13.3c0-6 4.8-10.8 10.8-10.8h32.9c1.4 0 2.7.5 3.7 1.4l31.8 29.3c1.1 1 1.7 2.5 1.7 4v48.9c0 5.9-4.8 10.8-10.7 10.8z"/><path d="M55.4 2.5v21.6c0 6 4.8 10.8 10.8 10.8h22.9"/></g></svg>
+										
+											//- This needs an .is-editing class
+									.box__col2
+										.row.box__row.is-editing
 											p.box__title IMG_001.JPG
 											input.box__edit(type='text' placeholder='IMG_001.JPG')
 										p.box__metadata.box__metadata-1 UPLOADED AUGUST 09, 2015 
@@ -93,6 +95,10 @@ block content
 						.task__row
 							h6.h6 Back of License
 								span.text-blue *
+							p Form 1099-MISC
+
+							p Instructions for Form 1099-MISC (HTML)
+							p General Instructions for Certain Information Returns (Forms 1097, 1098, 1099, 3921, 3922, 5498, and W-2G)
 							//- .alert-circle
 							//- 	span.center i
 							//- hr
@@ -103,8 +109,7 @@ block content
 										//- i.icon.box__icon.is-large
 										//- 	svg(viewbox='0 0 100 100')
 										//- 		use(xlink:href='#icon_document')
-										.inline-block
-											p.box__title Drop File to Upload
+										p.box__title Drop File to Upload
 								.task-box__tasks
 									i.icon.box__icon
 										svg(viewbox='0 0 100 100')

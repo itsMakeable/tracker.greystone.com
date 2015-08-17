@@ -22,6 +22,11 @@
 		// background-color blue
 		border 2px dashed blue
 		color blue
+		
+.box__col2
+	col(1/7)
+	&:last-child
+		col(6/7)
 
 .box__row
 	padding-right px(32rem)
@@ -30,20 +35,41 @@
 	background-position 100% 0%
 	height px(26rem)
 	position relative
+	display inline-block
+	width auto
+	transition width t-greystone1
+	.box__edit
+		display none !important
 	&:after
 		content ''
 		display block
 		height 1px
-		width 100%
+		transition t-greystone1
 		position absolute
 		background-color white
 		bottom px(4rem)
+		width 0%
+	&.is-editing
+		background url(../svg/icon_check.svg) no-repeat
+		background-size 22px 22px
+		background-position 100% 0%
+		width 100%
+		&:after
+			width 100%
+		.box__edit
+			display block !important
+		.box__title
+			opacity 0
 	
 .box__title
 	fs(2rem)
 	text-transform capitalize
-	ilb()
 	line-height 1
+	display inline-block
+	white-space nowrap
+	top 2px
+	left 1px
+	position relative
 	
 .box__icon--edit
 	ilb(top)
@@ -68,7 +94,7 @@
 	margin 0 px(6rem)
 	color inherit
 	&.is-large
-		size px(54rem)
+		width 100%
 		ilb(top)
 		position relative
 		top px(-5rem)
