@@ -16,7 +16,7 @@ $input
 	border 0px solid transparent
 	fs(1.4rem)
 	display block
-	background white no-repeat
+	background transparent no-repeat
 	box-sizing border-box
 	&:focus
 		outline 0
@@ -41,6 +41,22 @@ textarea
 			
 			&::placeholder
 				color black
+	&.box__edit
+		// border-bottom 1px solid white
+		position absolute
+		top 0
+		left 0
+		font-family f-reg
+		text-transform capitalize
+		fs(2rem)
+		ilb()
+		line-height 1
+		padding-bottom 0
+		height auto
+		&::placeholder
+			color white
+			text-transform capitalize
+		
 		
 
 .message-input__container
