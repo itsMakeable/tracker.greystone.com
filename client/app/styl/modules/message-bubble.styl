@@ -7,30 +7,44 @@
 	padding 0 0 px(5rem) 0
 	background url(../svg/vr.svg) no-repeat
 	background-position 25px 0
+	&.is-comment-box
+		background none
 	&.has-padding
 		padding 0 0 px(22rem) 0
 	&:not(.has-padding) + .has-padding
 		padding px(10rem) 0 px(22rem) 0
-	&:first-of-type
-		background url(../svg/vr.svg) no-repeat
-		background-position 25px 14px
-	&:nth-last-of-type(2)
-		background url(../svg/vr-small.svg) no-repeat
-		background-position 25px 0
-		background-size 1px 25px
-	&.is-comment-box
-		background none
-	&.is-comment-box
-		padding-top px(20rem)
-		.user-notification__box
-			background-color mantle
-			color white
-		hr
-			border-color white
-	// .profile-pic
-	// 	margin-right px(10rem)
+.all-meesages
+	&:not(:nth-last-of-type(2))
+		.notifications
+			> div:last-of-type
+				.user-notification:not(.is-comment-box)
+					background none
+		&:last-of-type .user-notification
+			background url(../svg/vr-small.svg) no-repeat
+			background-position 25px 0
+			background-size 1px 25px
+	+ .user-notification.is-comment-box
+			background url(../svg/vr-small.svg) no-repeat
+			background-position 25px 0
+			background-size 1px 25px
+			
+.notifications 
 	a
 		color blue
+	> div
+		&:first-of-type .user-notification
+			background url(../svg/vr.svg) no-repeat
+			background-position 25px 14px
+		
+		
+.user-notification.is-comment-box
+	padding-top px(20rem)
+	.user-notification__box
+		background-color mantle
+		color white
+	hr
+		border-color white
+	
 	
 .user-notification__box
 	padding 2rem
@@ -89,7 +103,7 @@
 		background-size 80% auto !important
 		background-position 50% 50% !important
 		top px(12.5rem)
-		left px(7.3rem)
+		left px(6.5rem)
 		border 5px solid white
 	&.is-uploaded
 		size px(30rem)

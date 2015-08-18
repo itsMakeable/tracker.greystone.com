@@ -2,8 +2,8 @@
 	span(7/10)
 	position relative
 	height 100vh
-	overflow-x hidden
-	overflow-y scroll
+	// overflow-x hidden
+	// overflow-y scroll
 	
 	.container
 		max-width px(768rem)
@@ -21,18 +21,24 @@
 		padding-left 8%
 		padding-right 3%
 	// +below(1200px)
-
+// .main-sidebar__underlay
+// 	@extend $absolute-cover
+// 	background-color black
+// 	right px(22.8rem)
+// 	z-index 0
 .main-sidebar
 	span(3/10)
 	// min-width 320px
 	min-height 100vh
 	top 0
 	bottom 0
-	height 100vh
+	// height 100vh
+	// height 100%
 	background-color black
+	// padding-right px(22.8rem)
 	color gray
-	overflow-x visible
-	overflow-y scroll
+	// overflow-x visible
+	// overflow-y scroll
 	padding-bottom px(70rem)
 	+below(1700px)
 		span(4/10)
@@ -66,16 +72,17 @@
 		font-smoothing antialiased
 	.h2
 		color mantle
-	&:before
-		content: ''
-		position: absolute
-		top: 0
-		left 0
-		bottom: 0
-		z-index: -1
-		background-color black
-		width inherit
-		display block
+	// &:before
+	// 	content: ''
+	// 	position: fixed
+	// 	top: 0
+	// 	left 0
+	// 	bottom: -100%
+	// 	z-index: -1
+	// 	background-color black
+	// 	// height 100%
+	// 	width inherit
+	// 	display block
 	
 		
 	
@@ -138,14 +145,6 @@
 		.sidebar-list__item__indicator
 			border 2px solid gray
 			background-color gray
-		.sidebar-list__item.is-active
-			.sidebar-list__item__indicator
-				border 2px solid black
-				background-color black
-		// .sidebar-list__item:hover
-		// 	.sidebar-list__item__indicator
-		// 		border 2px solid darkergray
-		// 		background-color darkergray
 
 .sidebar-list__item
 	padding 0 14%
@@ -157,7 +156,7 @@
 	line-height 1
 	text-transform uppercase
 	font-family f-reg
-	transition t-greystone1
+	transition 0.3s ease
 	.is-right
 		opacity 0
 	.sidebar-small
@@ -171,8 +170,7 @@
 		bottom 0
 		margin auto
 	&.is-active
-		.triangle-indicator
-			display none
+		&:before
 			content ''
 			position absolute
 			right px(-22.8rem)
@@ -182,11 +180,12 @@
 		color white
 		.sidebar-small
 			color white
-		.triangle-indicator
+		&:before
 			content ''
 			triangle: 'right' px(24rem) darkergray
-	&:hover
+	&:not(.is-active):hover
 		background-color rgba(deepblack,0.1)
+		transition 0.3s ease
 		.is-right
 			opacity 1
 			
@@ -231,6 +230,7 @@
 
 .sidebar__bottom-controls
 	position fixed
+	top 100%
 	bottom 0
 	height px(38rem)
 	background-color rgba(lighten(deepblack,20%),1)
