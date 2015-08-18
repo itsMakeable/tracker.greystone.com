@@ -1,7 +1,7 @@
 import groupBy from 'lodash.groupby';
 
 class CommentsBoxController {
-	constructor(socket, $scope, Event, $filter) {
+	constructor(socket, $scope, Event, $filter, Task) {
 		this.textareaFunction();
 		var _this = this;
 		this.$filter = $filter;
@@ -28,6 +28,13 @@ class CommentsBoxController {
 		function test(data) {
 			console.log('NEW_EVENT');
 			console.log(data.data);
+			var task = Task.get(_this.taskId);
+			if (data.data.type == 'ASSIGN_USER') {
+				task.user = data.data.assigned_user;
+			} else if (data.data.type == 'CLEAR_ASSIGN') {
+				delete task.user;
+			}
+			Task.inject(task);
 			Event.inject(data.data);
 		}
 

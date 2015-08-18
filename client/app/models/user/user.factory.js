@@ -79,6 +79,21 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 		return this.get(currentUser.user_id);
 	};
 
+	userResource.resetPassword = function(user_id, password) {
+		return $http.post(DS.defaults.basePath + '/auth/reset_password', {
+				user_id: user_id,
+				password: password
+			})
+			.then(response => {
+				console.log(response);
+				return response.data;
+			})
+			.catch(response => {
+				console.log(response);
+				return $q.reject(response);
+			});
+	};
+
 	userResource.viewTask = function(task_id) {
 		return $http.post(DS.defaults.basePath + '/api/users/view_task', {
 				task_id: task_id,

@@ -9,6 +9,7 @@ module.exports = function(app) {
 	require('./routes/task.js')(app);
 	require('./routes/user.js')(app);
 	require('./routes/auth.js')(app);
+	require('./routes/task-complete-notification.js')(app);
 
 	// For Angular
 	app.get('*', function(req, res) {

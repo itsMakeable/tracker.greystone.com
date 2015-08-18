@@ -5,7 +5,7 @@ main.main-main
 		.spacer
 		.spacer
 		header.task-header
-			.task-box__circle(ng-click='vm.task.is_complete = !vm.task.is_complete' ng-class='{"is-checked": vm.task.is_complete}')
+			.task-box__circle(ng-click='vm.toggleCompletition()' ng-class='{"is-checked": vm.task.is_complete}')
 			.inline-block
 				h1.h1(style='padding-bottom:0.6rem') {{ vm.task.name }}
 				h6.h6.span-dropdown__container Assigned to: 

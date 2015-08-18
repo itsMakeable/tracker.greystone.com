@@ -7,17 +7,17 @@ div
 					i.icon.box__icon.is-large
 						<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10"><path d="M79.7 96.9H20.3c-6 0-10.8-4.8-10.8-10.8V13.3c0-6 4.8-10.8 10.8-10.8h32.9c1.4 0 2.7.5 3.7 1.4l31.8 29.3c1.1 1 1.7 2.5 1.7 4v48.9c0 5.9-4.8 10.8-10.7 10.8z"/><path d="M55.4 2.5v21.6c0 6 4.8 10.8 10.8 10.8h22.9"/></g></svg>
 				
-				.box__col2.is-editing
-					.row.box__row.is-editing
+				.box__col2(ng-class="{'is-editing': vm.editModes[file.file_id]}")
+					.row.box__row(ng-class="{'is-editing': vm.editModes[file.file_id]}")
 						p.box__title {{ file.name }}
-						input.box__edit.ng-hide(type='text' placeholder='{{ file.name }}')
-						i.icon.box__edit-icon.box__edit-icon--save
+						input.box__edit(ng-show='vm.editModes[file.file_id]' type='text' placeholder='File Name' ng-model='file.name')
+						i.icon.box__edit-icon.box__edit-icon--save(ng-if='vm.editModes[file.file_id]' ng-click='vm.saveName(file)')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_check')
-						i.icon.box__edit-icon.box__edit-icon--cancel
+						i.icon.box__edit-icon.box__edit-icon--cancel(ng-if='vm.editModes[file.file_id]' ng-click='vm.cancelEdit(file)')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_x')
-						i.icon.box__edit-icon.box__edit-icon--edit
+						i.icon.box__edit-icon.box__edit-icon--edit(ng-if='!vm.editModes[file.file_id]' ng-click='vm.editModes[file.file_id] = !vm.editModes[file.file_id]')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_edit')
 

@@ -6,6 +6,7 @@ import Milestone from './milestone/milestone';
 import Project from './project/project';
 import Response from './response/response';
 import Task from './task/task';
+import TaskRecentlyComplete from './task-recently-complete/task-recently-complete';
 import User from './user/user';
 
 let modelsModule = angular.module('models.common', [
@@ -16,6 +17,7 @@ let modelsModule = angular.module('models.common', [
 	Project.name,
 	Response.name,
 	Task.name,
+	TaskRecentlyComplete.name,
 	User.name,
 ]);
 

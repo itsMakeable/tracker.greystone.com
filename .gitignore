@@ -10,4 +10,4 @@ client/*.svg
 client/*.ttf
 client/*.eot
 client/*.woff
-uploads/
+uploads/*

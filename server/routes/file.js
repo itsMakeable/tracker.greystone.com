@@ -195,7 +195,9 @@ module.exports = function(app) {
 
         } else if (req.body.name) {
             // for renaming a file is just a change in the name.
-            var file = null;
+            var old_file_name = null;
+            var ext = null;
+            var prev_file = null;
             new File({
                     file_id: req.params.id,
                 })
@@ -204,24 +206,30 @@ module.exports = function(app) {
                     withRelated: ['field']
                 })
                 .then(function(model) {
-                    file = model.toJSON().name;
+                    prev_file = model.toJSON();
+                    console.log(prev_file);
+                    old_file_name = prev_file.name;
+                    console.log(old_file_name);
+                    var fileInformation = path.parse(old_file_name);
+                    console.log(fileInformation);
+                    ext = fileInformation.ext;
                     return model.save({
-                        name: req.body.name
+                        name: req.body.name + ext
                     }, {
                         patch: true
                     });
                 })
                 .then(function(model) {
-                    file = model.toJSON();
+                    var file = model.toJSON();
                     console.log(file);
                     var newEvent = new Event({
                         type: 'CHANGE_FILE_NAME',
                         created_at: new Date().getTime(),
                         user_id: req.user.user_id,
                         file_id: req.params.id,
-                        file_name: req.body.name,
-                        old_file_name: file.name,
-                        task_id: file.field.task_id
+                        file_name: file.name,
+                        old_file_name: old_file_name,
+                        task_id: prev_file.field.task_id
                     });
                     newEvent.save()
                         .then(function(model) {

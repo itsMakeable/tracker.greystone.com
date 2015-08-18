@@ -13,8 +13,9 @@ aside.main-sidebar
 				p.is-right(ng-click='vm.dismissAll()') Dismiss All
 				hr
 				ul.sidebar-list.is-completed
-					div(ng-repeat='task in vm.tasksRecentlyCompleted track by task.task_id' ng-click="vm.selectTask(task)")
-						task-row(task='task' show-dismiss="true")
+					div(ng-repeat='notification in vm.tasksRecentlyCompleted' ng-click="vm.selectTask(notification.task)")
+						//- hide class on active? go to task from here?
+						task-row(task='notification.task' show-dismiss="true")
 			.sidebar-list__container(ng-hide='vm.tasksAssignedToMe.length == 0')
 				h6.h6 Assigned to You
 				hr

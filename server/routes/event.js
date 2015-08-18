@@ -7,8 +7,8 @@ module.exports = function(app) {
     var sortBy = require('lodash.sortby');
 
     app.get('/api/events', function(req, res) {
-        console.log('/api/events');
-        console.log(req.query);
+        // console.log('/api/events');
+        // console.log(req.query);
         if (req.query.created_at) {
             ViewTask
                 .where({
@@ -19,41 +19,37 @@ module.exports = function(app) {
                 .query('limit', 1)
                 .fetchAll()
                 .then(function(model) {
-                    console.log('ViewTasks');
-                    if (model) {
+                    // console.log('ViewTasks');
+                    if (model.length > 0) {
                         var tasks = model.toJSON();
-                        console.log(tasks);
-                        return Event.query('where', 'created_at', '>', tasks[0].viewed_at).fetchAll();
+                        // console.log(tasks);
+                        // filter task_id
+                        return Event
+                            .query('where', 'created_at', '>', tasks[0].viewed_at)
+                            .query('where', 'task_id', '=', Number(req.query.task_id))
+                            .fetchAll();
                     } else {
-                        new Event({
-                                task_id: Number(req.query.task_id)
-                            })
-                            .fetchAll({})
-                            .then(function(model) {
-                                console.log(model.toJSON());
-                                res.json(model.toJSON());
-                            })
-                            .catch(function(err) {
-                                res.json(503, {
-                                    result: 'error',
-                                    err: err.code
-                                });
-                            });
+                        return new Event({
+                            task_id: Number(req.query.task_id)
+                        }).fetchAll({});
                     }
-
                 })
                 .then(function(model) {
-                    console.log('Events');
-                    var events = model.toJSON();
-                    console.log(events);
-                    res.json(events);
+                    // console.log('Events');
+                    // console.log(model);
+                    if (model && model.length > 0) {
+                        var events = model.toJSON();
+                        res.json(events);
+                    } else {
+                        res.json([]);
+                    }
                 })
                 .catch(Event.NotFoundError, function(error) {
-                    console.log('All Events Saw');
+                    // console.log('All Events Saw');
                     res.json([]);
                 })
                 .catch(function(err) {
-                    console.log(err);
+                    // console.log(err);
                     res.json(503, {
                         result: 'error',
                         err: err.code
