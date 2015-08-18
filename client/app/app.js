@@ -51,6 +51,11 @@ angular.module('app', [
 			}
 		});
 
+		$rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
+			console.log($state.current);
+			$rootScope.current = $state.current;
+		});
+
 	})
 	.directive('app', AppComponent)
 	.value('socket', socket);

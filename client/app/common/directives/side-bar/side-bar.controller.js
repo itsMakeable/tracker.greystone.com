@@ -93,7 +93,8 @@ class SideBarController {
 		});
 	}
 	logout() {
-		console.log('logout');
+		this.User.logout();
+		this.$state.go('login');
 	}
 	changeProject() {
 		console.log('changeProject');

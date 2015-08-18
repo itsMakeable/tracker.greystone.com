@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="app/assets/fonts.css">
 </head>
 
-<body ngf-drop ngf-drag-over-class="file-drop-active">
+<body ngf-drop ngf-drag-over-class="file-drop-active" ng-class="{'login-page': current.name == 'login'}">
     <app></app>
     <script src="bundle.js"></script>
     <script src="bundle.js.map"></script>
