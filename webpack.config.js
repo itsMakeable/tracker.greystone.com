@@ -2,7 +2,8 @@ var nib = require('nib');
 var axis = require('axis');
 var rupture = require('rupture');
 var jeet = require('jeet');
-var autoprefixer = require('autoprefixer-stylus');
+// var autoprefixer = require('autoprefixer-stylus');
+var autoprefixer = require('autoprefixer-core');
 
 module.exports = {
 	devtool: 'sourcemap',
@@ -22,7 +23,7 @@ module.exports = {
 			loader: 'raw'
 		}, {
 			test: /\.styl$/,
-			loader: 'style!css!stylus'
+			loader: 'style!css!postcss-loader!stylus'
 		}, {
 			test: /\.jade$/,
 			loader: "jade-loader"
@@ -53,6 +54,7 @@ module.exports = {
 		}]
 	},
 	stylus: {
-		use: [nib(), axis(), rupture(), jeet(), autoprefixer()]
-	}
+		use: [nib(), axis(), rupture(), jeet()]
+	},
+	postcss: [autoprefixer()]
 };
