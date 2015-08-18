@@ -15,7 +15,7 @@
 					use(xlink:href='#icon_lock')
 			a.button.login__button(ng-click="vm.login()") Login
 		
-		.sidebar-list__container(ng-show='vm.errorMessage')
+		.sidebar-list__container(ng-show='vm.errorMessage' style='margin-top:7rem;')
 			p.form-error {{ vm.errorMessage }}
 	
 	main.main-main.login-hero
