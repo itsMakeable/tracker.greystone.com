@@ -8,4 +8,4 @@ li.sidebar-list__item(ui-sref="property.task({taskId: vm.task.task_id})" ui-sref
 	.is-right(ng-if="vm.showDismiss" ng-click='vm.dismissTask()')
 		svg(viewbox='0 0 100 100')
 			use(xlink:href='#icon_x')
-	.alert-circle.is-purple(ng-if="vm.showAlert"): span.center {{ vm.newEvents }}
+	.alert-circle.is-purple(ng-if="vm.showAlert && (vm.newEvents > 0)"): span.center {{ vm.newEvents }}
