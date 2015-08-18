@@ -9,7 +9,8 @@ class SideBarController {
 		Milestone.inject(this.project.milestones);
 
 		this.assignedToMeLimit = 7;
-		this.otherLimit = 7;
+		this.activeLimit = 7;
+		this.completedLimit = 7;
 
 		angular.forEach(this.project.milestones, milestone => {
 			Task.inject(milestone.tasks);
@@ -42,7 +43,7 @@ class SideBarController {
 		if (this.tasksAssignedToMe[0]) {
 			task_id = this.tasksAssignedToMe[0].task_id;
 		} else {
-			task_id = this.otherTasks[0].task_id;
+			task_id = this.activeTasks[0].task_id;
 		}
 		this.$state.go('property.task', {
 			taskId: task_id
@@ -81,13 +82,23 @@ class SideBarController {
 				}
 			}
 		});
-		this.otherTasks = this.Task.filter({
+		this.activeTasks = this.Task.filter({
 			where: {
 				milestone_id: {
 					'==': this.milestone.milestone_id
 				},
 				user_id: {
 					'!=': this.User.getCurrentUser().user_id
+				}
+			}
+		});
+		this.completedTasks = this.Task.filter({
+			where: {
+				milestone_id: {
+					'==': this.milestone.milestone_id
+				},
+				is_complete: {
+					'==': true
 				}
 			}
 		});

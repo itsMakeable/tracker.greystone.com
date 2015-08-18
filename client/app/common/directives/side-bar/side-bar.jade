@@ -8,14 +8,14 @@ aside.main-sidebar
 		h2.h2(ng-click='vm.changeMilestone()') {{ vm.milestone.name }}
 	section
 		.sidebar-container
-			.sidebar-list__container
+			.sidebar-list__container(ng-hide='vm.tasksRecentlyCompleted.length == 0')
 				h6.h6 Recently Completed
 				p.is-right(ng-click='vm.dismissAll()') Dismiss All
 				hr
 				ul.sidebar-list.is-completed
 					div(ng-repeat='task in vm.tasksRecentlyCompleted track by task.task_id' ng-click="vm.selectTask(task)")
 						task-row(task='task' show-dismiss="true")
-			.sidebar-list__container
+			.sidebar-list__container(ng-hide='vm.tasksAssignedToMe.length == 0')
 				h6.h6 Assigned to You
 				hr
 				ul.sidebar-list
@@ -23,14 +23,24 @@ aside.main-sidebar
 						task-row(task='task' show-alert="true")
 				.messages-info(ng-if='vm.tasksAssignedToMe.length > 7' ng-hide='vm.tasksAssignedToMe.length == vm.assignedToMeLimit' ng-click='vm.assignedToMeLimit = vm.tasksAssignedToMe.length')
 					span {{ vm.tasksAssignedToMe.length - 7 }} Additional Tasks
-			.sidebar-list__container
-				h6.h6 Other Tasks
+			
+			.sidebar-list__container(ng-hide='vm.activeTasks.length == 0')
+				h6.h6 Open Tasks
 				hr
 				ul.sidebar-list.is-pending
-					div(ng-repeat='task in vm.otherTasks track by task.task_id | limitTo : vm.otherLimit' ng-click="vm.selectTask(task)")
-						task-row(task='task' hide-quick-status="true")
-				.messages-info(ng-if='vm.otherTasks.length > 7' ng-hide='vm.otherTasks.length == vm.otherLimit' ng-click='vm.otherLimit = vm.otherTasks.length')
-					span {{ vm.otherTasks.length - 7 }} Additional Tasks
+					div(ng-repeat='task in vm.activeTasks track by task.task_id | limitTo : vm.activeLimit' ng-click="vm.selectTask(task)")
+						task-row(task='task' show-alert="true")
+				.messages-info(ng-if='vm.activeTasks.length > 7' ng-hide='vm.activeTasks.length == vm.activeLimit' ng-click='vm.activeLimit = vm.activeTasks.length')
+					span {{ vm.activeTasks.length - 7 }} Additional Tasks
+
+			.sidebar-list__container(ng-hide='vm.completedTasks.length == 0')
+				h6.h6 Completed Tasks
+				hr
+				ul.sidebar-list.is-pending
+					div(ng-repeat='task in vm.completedTasks track by task.task_id | limitTo : vm.completedLimit' ng-click="vm.selectTask(task)")
+						task-row(task='task' show-alert="true")
+				.messages-info(ng-if='vm.completedTasks.length > 7' ng-hide='vm.completedTasks.length == vm.completedLimit' ng-click='vm.completedLimit = vm.completedTasks.length')
+					span {{ vm.completedTasks.length - 7 }} Additional Tasks
 
 	.sidebar__bottom-controls
 		a.control__left(ng-click="vm.logout()") Logout
