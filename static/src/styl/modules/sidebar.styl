@@ -2,7 +2,8 @@
 	span(7/10)
 	position relative
 	height 100vh
-	overflow scroll
+	overflow-x hidden
+	overflow-y scroll
 	.container
 		max-width px(768rem)
 		// +below(1700px)
@@ -29,7 +30,8 @@
 	height 100vh
 	background-color black
 	color gray
-	overflow scroll
+	overflow-x hidden
+	overflow-y scroll
 	+below(1700px)
 		span(4/10)
 	// +below(1200px)
@@ -211,3 +213,29 @@
 	.logo
 		max-width 60%
 		margin auto
+
+.sidebar__bottom-controls
+	position fixed
+	bottom 0
+	height px(34rem)
+	background-color rgba(lighten(deepblack,20%),1)
+	width 30%
+	+below(1700px)
+		width 40%
+	a:not(.button)
+		color darkgray
+		fs(1.3rem)
+		position absolute
+		top 0
+		bottom 0
+		margin auto
+		right 0
+		height px(14rem)
+		&.control__left
+			right px(110rem)
+		&.control__right
+			right px(20rem)
+	.button
+		position absolute
+		left 0
+		transform none

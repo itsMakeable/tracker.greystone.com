@@ -22,7 +22,14 @@ html.no-js(lang='')
 
 		div.hidden
 			include ./includes/symbols.svg
-		
+		.overlay.global-overlay
+			.modal
+				.is-right
+					svg(viewbox='0 0 100 100')
+						use(xlink:href='#icon_x')
+				h5.h5 This is a modal
+				hr.modal__hr
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem optio explicabo veniam sunt eaque accusantium voluptas doloremque fugit porro, magni sapiente ipsam, aperiam, esse et cum, tempora. Eligendi, dicta!
 		block content
 			//- This gets replaced by content in index.jade
 		
