@@ -7,10 +7,10 @@ require('../../node_modules/ng-file-upload/dist/ng-file-upload.js');
 import appStyles from './styl/index.styl';
 
 var server = 'http://69.164.209.184:8080';
-var local = 'http://localhost:8080';
+//var server = 'http://localhost:8080';
 
 import io from 'socket.io-client';
-var socket = io(local);
+var socket = io(server);
 
 socket.on('connect', function() {});
 socket.on('event', function(data) {});
@@ -38,7 +38,7 @@ angular.module('app', [
 			$urlRouterProvider.otherwise('/login');
 		}
 
-		DSProvider.defaults.basePath = local;
+		DSProvider.defaults.basePath = server;
 		$httpProvider.useApplyAsync(true);
 
 	})
