@@ -10,6 +10,8 @@ class SideBarController {
 		var _this = this;
 		Milestone.inject(this.project.milestones);
 
+		this.tasksRecentlyCompleted = [];
+
 		this.assignedToMeLimit = 7;
 		this.activeLimit = 7;
 		this.completedLimit = 7;

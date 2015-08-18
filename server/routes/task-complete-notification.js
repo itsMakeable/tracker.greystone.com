@@ -7,7 +7,7 @@ module.exports = function(app) {
         TaskCompleteNotification
             .where({
                 user_id: req.user.user_id,
-                task_id: Number(req.query.task_id)
+                // task_id: Number(req.query.task_id)
             })
             .fetchAll({
                 withRelated: [
@@ -17,9 +17,14 @@ module.exports = function(app) {
             })
             .then(function(model) {
                 console.log(model);
-                res.json(model.toJSON());
+                if (model) {
+                    res.json(model.toJSON());
+                } else {
+                    res.json([]);
+                }
             })
             .catch(function(err) {
+                console.log(err);
                 res.json(503, {
                     result: 'error',
                     err: err.code
