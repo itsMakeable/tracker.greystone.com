@@ -15,7 +15,10 @@ make sure line 9 in client/app/app.js is uncommented and line 10 is commented.
 (toddhlynch / JJack123)
 
 > sudo -u www-data npm install
-> sudo -u www-data gulp
+> sudo -u www-data gulp webpack
+
+The only thing you need to do with gulp is compile the client.  The server in the next line will serve the files.
+
 > sudo -u www-data node server/server.js &
 ```
 
