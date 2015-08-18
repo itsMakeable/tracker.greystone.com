@@ -132,10 +132,15 @@
 			background-color mantle
 			color white
 			svg
-				size px(20rem)
+				size px(14rem)
 				position absolute
-				top px(-5rem)
-				left px(2rem)
+				top 0
+				bottom 0
+				left 0
+				right 0
+				margin auto
+			// 	top px(-5rem)
+			// 	left px(2rem)
 			// background mantle url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yLjQgNTBsMzEuOCAzMS44IDYzLjYtNjMuNiIvPjwvc3ZnPg==')) no-repeat
 			// background-size 65%
 			// background-position 50% 50%
@@ -170,11 +175,14 @@
 		bottom 0
 		margin auto
 	&.is-active
+		.is-right
+			color gray
 		&:before
 			content ''
 			position absolute
 			right px(-22.8rem)
 			top 0
+		
 	&.is-gray
 		background-color darkergray
 		color white
@@ -183,9 +191,10 @@
 		&:before
 			content ''
 			triangle: 'right' px(24rem) darkergray
-	&:not(.is-active):hover
-		background-color rgba(deepblack,0.1)
-		transition 0.3s ease
+	&:hover
+		&:not(.is-active)
+			background-color rgba(deepblack,0.1)
+			transition 0.3s ease
 		.is-right
 			opacity 1
 			
@@ -203,6 +212,19 @@
 .sidebar-list__center
 	align(vertical)
 	text-align left
+	padding-right px(30rem)
+	width 70%
+	small em
+		overflow hidden
+		white-space nowrap
+		display block
+		
+.sidebar-list__item__overflow-container
+	overflow hidden
+	white-space nowrap
+	display block
+	text-overflow ellipsis
+			
 		
 .sidebar-list__item__indicator
 	display inline-block
@@ -230,7 +252,6 @@
 
 .sidebar__bottom-controls
 	position fixed
-	top 100%
 	bottom 0
 	height px(38rem)
 	background-color rgba(lighten(deepblack,20%),1)

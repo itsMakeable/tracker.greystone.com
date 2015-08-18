@@ -10,12 +10,11 @@ main.main-main
 				h1.h1(style='padding-bottom:0.6rem') {{ vm.task.name }}
 				h6.h6.span-dropdown__container Assigned to: 
 					span.span-dropdown(ng-click='vm.showDropdow = !vm.showDropdow')
-						span
-							span(ng-show='vm.task.user') {{ vm.task.user.first_name }} {{ vm.task.user.last_name }}
-							span(ng-show='vm.task.user == null') Nobody
-							i.icon.span-dropdown__icon
-								svg(viewbox='0 0 100 100')
-									use(xlink:href='#icon_caret')
+						span(ng-show='vm.task.user') {{ vm.task.user.first_name }} {{ vm.task.user.last_name }}
+						span(ng-show='vm.task.user == null') Nobody
+						i.icon.span-dropdown__icon
+							svg(viewbox='0 0 100 100')
+								use(xlink:href='#icon_caret')
 						ul.dropdown-list(ng-show='vm.showDropdow')
 							li(ng-repeat='user in vm.users track by user.user_id' ng-class='{"is-active": user.user_id == vm.task.user.user_id}' ng-click='vm.assignUser(user)')
 								i.icon

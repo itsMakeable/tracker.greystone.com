@@ -12,18 +12,18 @@ aside.main-sidebar
 		.sidebar-container
 			.sidebar-list__container(ng-hide='vm.tasksRecentlyCompleted.length == 0')
 				h6.h6 Recently Completed
-				p.is-right(ng-click='vm.dismissAll()') Dismiss All
+				p.is-right.is-clickable(ng-click='vm.dismissAll()') Dismiss All
 				hr
 				ul.sidebar-list.is-completed
 					div(ng-repeat='notification in vm.tasksRecentlyCompleted' ng-click="vm.selectTask(notification.task)")
 						//- hide class on active? go to task from here?
-						task-row(task='notification.task' show-dismiss="true")
+						task-row.is-clickable(task='notification.task' show-dismiss="true")
 			.sidebar-list__container(ng-hide='vm.tasksAssignedToMe.length == 0')
 				h6.h6 Assigned to You
 				hr
 				ul.sidebar-list
 					div(ng-repeat='task in vm.tasksAssignedToMe track by task.task_id | limitTo : vm.assignedToMeLimit' ng-click="vm.selectTask(task)")
-						task-row(task='task' show-alert="true")
+						task-row.is-clickable(task='task' show-alert="true")
 				.messages-info(ng-if='vm.tasksAssignedToMe.length > 7' ng-hide='vm.tasksAssignedToMe.length == vm.assignedToMeLimit' ng-click='vm.assignedToMeLimit = vm.tasksAssignedToMe.length')
 					span {{ vm.tasksAssignedToMe.length - 7 }} Additional Tasks
 			
@@ -32,7 +32,7 @@ aside.main-sidebar
 				hr
 				ul.sidebar-list.is-pending
 					div(ng-repeat='task in vm.activeTasks track by task.task_id | limitTo : vm.activeLimit' ng-click="vm.selectTask(task)")
-						task-row(task='task' show-alert="true")
+						task-row.is-clickable(task='task' show-alert="true")
 				.messages-info(ng-if='vm.activeTasks.length > 7' ng-hide='vm.activeTasks.length == vm.activeLimit' ng-click='vm.activeLimit = vm.activeTasks.length')
 					span {{ vm.activeTasks.length - 7 }} Additional Tasks
 
@@ -41,7 +41,7 @@ aside.main-sidebar
 				hr
 				ul.sidebar-list.is-pending
 					div(ng-repeat='task in vm.completedTasks track by task.task_id | limitTo : vm.completedLimit' ng-click="vm.selectTask(task)")
-						task-row(task='task' show-alert="true")
+						task-row.is-clickable(task='task' show-alert="true")
 				.messages-info(ng-if='vm.completedTasks.length > 7' ng-hide='vm.completedTasks.length == vm.completedLimit' ng-click='vm.completedLimit = vm.completedTasks.length')
 					span {{ vm.completedTasks.length - 7 }} Additional Tasks
 

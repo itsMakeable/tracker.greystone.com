@@ -3,7 +3,7 @@ li.sidebar-list__item(ui-sref="property.task({taskId: vm.task.task_id})" ui-sref
 		span.sidebar-list__item__indicator
 			svg(ng-if="vm.showDismiss" viewbox='0 0 100 100')
 				use(xlink:href='#icon_check')
-		| {{ vm.task.name }}
+		span.sidebar-list__item__overflow-container {{ vm.task.name }}
 		small(ng-if="!vm.showDismiss"): em.sidebar-small(ng-hide='vm.hideQuickStatus') {{ vm.task.quick_status }}
 		small(ng-if="vm.showDismiss"): em.sidebar-small() Approved By {{ vm.task.by.first_name }}
 	

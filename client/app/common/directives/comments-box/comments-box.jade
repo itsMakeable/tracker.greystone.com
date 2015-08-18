@@ -18,6 +18,6 @@
 			.profile-pic
 			.user-notification__box
 				textarea#textarea.user-notification__textarea(ng-model='vm.newMessage' placeholder='Type Message Here' rows='1')
-				i.icon.comment-box__submit(ng-click='vm.submitMessage()')
+				i.icon.comment-box__submit.is-clickable(ng-click='vm.submitMessage()')
 					svg(viewbox='0 0 100 100')
 						use(xlink:href='#icon_arrow')
