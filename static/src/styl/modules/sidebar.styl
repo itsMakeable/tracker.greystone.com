@@ -30,8 +30,9 @@
 	height 100vh
 	background-color black
 	color gray
-	overflow-x hidden
+	overflow-x visible
 	overflow-y scroll
+	padding-bottom px(70rem)
 	+below(1700px)
 		span(4/10)
 	// +below(1200px)
@@ -157,7 +158,8 @@
 		bottom 0
 		margin auto
 	&.is-active
-		&:after
+		.triangle-indicator
+			display none
 			content ''
 			position absolute
 			right px(-22.8rem)
@@ -167,7 +169,7 @@
 		color white
 		.sidebar-small
 			color white
-		&:after
+		.triangle-indicator
 			content ''
 			triangle: 'right' px(24rem) darkergray
 	&:hover
