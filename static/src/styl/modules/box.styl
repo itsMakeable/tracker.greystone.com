@@ -30,15 +30,23 @@
 
 .box__row
 	padding-right px(32rem)
-	background url(../svg/icon_edit.svg) no-repeat
-	background-size 22px 22px
-	background-position 100% 0%
+	// background url(../svg/icon_edit.svg) no-repeat
+	// background-size 22px 22px
+	// background-position 100% 0%
 	height px(26rem)
 	position relative
 	display inline-block
 	width auto
 	transition width t-greystone1
 	overflow hidden
+	.icon
+		size px(20rem)
+		position absolute
+		right 0
+		&.box__edit-icon--cancel
+			right px(30rem)	
+			size px(14rem)
+			top px(4rem)
 	.box__edit
 		display none !important
 	&:after
@@ -51,9 +59,9 @@
 		bottom px(4rem)
 		width 0%
 	&.is-editing
-		background url(../svg/icon_check.svg) no-repeat
-		background-size 22px 22px
-		background-position 100% 0%
+		// background url(../svg/icon_check.svg) no-repeat
+		// background-size 22px 22px
+		// background-position 100% 0%
 		width 100%
 		&:after
 			width 100%
