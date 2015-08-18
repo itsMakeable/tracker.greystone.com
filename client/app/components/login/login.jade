@@ -2,7 +2,7 @@
 	aside.main-sidebar
 		img.logo(src="app/svg/background-logo.svg", alt="")
 
-		form.login__form(name='vm.loginForm' novalidate ng-submit="vm.login()")
+		form.login__form(name='vm.loginForm' novalidate ng-submit="vm.login()" autocomplete='off' spellcheck="false")
 			
 			fieldgroup.login__fieldgroup.login__input--name
 				input.login__input(type="email" id="email" name="email" placeholder="Email" ng-model="vm.email" required)
