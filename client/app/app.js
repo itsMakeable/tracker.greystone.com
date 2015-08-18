@@ -7,7 +7,7 @@ require('../../node_modules/ng-file-upload/dist/ng-file-upload.js');
 import appStyles from './styl/index.styl';
 
 var server = 'http://69.164.209.184:8080';
-//var server = 'http://localhost:8080';
+// var server = 'http://localhost:8080';
 
 import io from 'socket.io-client';
 var socket = io(server);

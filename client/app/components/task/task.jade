@@ -29,8 +29,9 @@ main.main-main
 			hr(style='margin: 2rem 0;')
 			
 		section
+			.spacer.half
+			h5.h5 Documents
 			h4.h4 {{ vm.task.description }}
-			.spacer
 			.spacer
 			.row
 				div(ng-repeat='field in vm.task.fields track by field.field_id')

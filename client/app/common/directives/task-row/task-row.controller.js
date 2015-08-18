@@ -13,6 +13,7 @@ class TaskRowController {
 		});
 	}
 	checkEvents() {
+		console.log('CHECK_EVENTS');
 		this.Event.findAll({
 				task_id: this.task.task_id,
 				created_at: 'true'

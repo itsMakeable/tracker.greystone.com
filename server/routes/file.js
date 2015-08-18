@@ -57,7 +57,7 @@ module.exports = function(app) {
                     field_id: Number(req.body.field_id),
                     is_active: true,
                     path: file.path,
-                    created_at: new Date().getTime().getTime()
+                    created_at: new Date().getTime()
                 });
                 filesPromises.push(newFile.save().then(function(model) {
                     var file = model.toJSON();

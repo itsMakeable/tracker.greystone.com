@@ -29,6 +29,11 @@ aside.main-sidebar
 				hr
 				ul.sidebar-list.is-pending
 					div(ng-repeat='task in vm.otherTasks track by task.task_id | limitTo : vm.otherLimit' ng-click="vm.selectTask(task)")
-						task-row(task='task')
+						task-row(task='task' hide-quick-status="true")
 				.messages-info(ng-if='vm.otherTasks.length > 7' ng-hide='vm.otherTasks.length == vm.otherLimit' ng-click='vm.otherLimit = vm.otherTasks.length')
 					span {{ vm.otherTasks.length - 7 }} Additional Tasks
+
+	.sidebar__bottom-controls
+		a.button(ng-click="vm.logout()") Logout
+		a.control__left(ng-click="vm.changeProject()") Change Project
+		a.control__right(ng-click="vm.editProfile()") Edit Profile

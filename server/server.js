@@ -20,6 +20,7 @@ var knex = require('knex')({
 		database: 'tracker_greystone_com'
 	}
 });
+app.set('knex', knex);
 var bookshelf = require('bookshelf')(knex);
 
 bookshelf.plugin('registry');

@@ -30,7 +30,7 @@ let propertyModule = angular.module('property', [
 					project: (Project) => {
 						return Project.findAll({})
 							.then(projects => {
-								console.log(projects);
+								console.log(projects[0]);
 								return projects[0];
 							});
 					}

@@ -92,6 +92,15 @@ class SideBarController {
 			}
 		});
 	}
+	logout() {
+		console.log('logout');
+	}
+	changeProject() {
+		console.log('changeProject');
+	}
+	editProfile() {
+		console.log('editProfile');
+	}
 }
 
 

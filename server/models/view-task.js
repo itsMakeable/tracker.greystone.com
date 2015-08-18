@@ -1,4 +1,4 @@
-module.exports = function(bookshelf) {
+module.exports = function(bookshelf, knex) {
 
 	if (bookshelf.model('ViewTask')) {
 		return bookshelf.model('ViewTask');

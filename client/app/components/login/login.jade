@@ -13,8 +13,10 @@
 				input.login__input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password" required)
 				svg.login__input-icon(viewbox='0 0 100 100')
 					use(xlink:href='#icon_lock')
-			
 			a.button.login__button(ng-click="vm.login()") Login
+		
+		.sidebar-list__container(ng-show='vm.errorMessage')
+			p.form-error {{ vm.errorMessage }}
 	
 	main.main-main.login-hero
 		.overlay
@@ -22,13 +24,3 @@
 				h6.h6 Greystone
 				h1.h1 Loan Tracker
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur, inventore expedita, nobis veritatis debitis cumque ut tempore beatae, repudiandae recusandae pariatur placeat iusto. Sunt id, deserunt.
-
-//- form()
-//- 	div
-//- 		div(ng-messages='vm.loginForm.email.$error', ng-if='vm.loginForm.email.$dirty || vm.loginForm.$submitted')
-//- 			em.error-message(ng-message='required') Email is Required
-//- 			em.error-message(ng-message='email') Must be a valid email
-//- 	div
-//- 		div(ng-messages='vm.loginForm.password.$error', ng-if='vm.loginForm.password.$dirty || vm.loginForm.$submitted')
-//- 			em.error-message(ng-message='required') Password is Required
-//- 	button() Login

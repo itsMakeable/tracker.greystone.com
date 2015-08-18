@@ -2,6 +2,8 @@
 	.container
 		.spacer
 		.spacer
+		h5.h5 Communication
+		.spacer
 		.messages-info(ng-click='vm.loadMoreMessages()')
 			span 28 Older Messages
 		div(ng-repeat="(date, events) in vm.eventsByDate")

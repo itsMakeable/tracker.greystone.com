@@ -11,7 +11,8 @@ let taskRowComponent = function() {
 			scope: {
 				task: '=',
 				showAlert: '=',
-				showDismiss: '='
+				showDismiss: '=',
+				hideQuickStatus: '='
 			},
 			bindToController: true
 	};

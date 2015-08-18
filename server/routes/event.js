@@ -1,55 +1,52 @@
 module.exports = function(app) {
 
     var bookshelf = app.get('bookshelf');
+    var knex = app.get('knex');
     var Event = require('./../models/event')(bookshelf);
-    var ViewTask = require('./../models/view-task')(bookshelf);
+    var ViewTask = require('./../models/view-task')(bookshelf, knex);
     var sortBy = require('lodash.sortby');
 
     app.get('/api/events', function(req, res) {
         console.log('/api/events');
         console.log(req.query);
         if (req.query.created_at) {
-            new ViewTask({
+            ViewTask
+                .where({
                     user_id: req.user.user_id,
                     task_id: Number(req.query.task_id)
                 })
-                .fetch({
-                    require: true
-                })
+                .query('orderBy', 'user_view_task_id', 'desc')
+                .query('limit', 1)
+                .fetchAll()
                 .then(function(model) {
-                    console.log('ViewTask');
-                    console.log(model.toJSON());
-                    return Event.query('where', 'created_at', '>', model.toJSON().viewed_at).fetchAll();
-                })
-                .then(function(model) {
-                    console.log('Events');
-                    console.log(model);
-                    if (model && model.toJSON().length > 0) {
-                        sortBy(model.toJSON(), String);
-                        res.json(model.toJSON());
-                    } else if (model) {
-                        res.json([model]);
+                    console.log('ViewTasks');
+                    if (model) {
+                        var tasks = model.toJSON();
+                        console.log(tasks);
+                        return Event.query('where', 'created_at', '>', tasks[0].viewed_at).fetchAll();
                     } else {
-                        res.json([]);
+                        new Event({
+                                task_id: Number(req.query.task_id)
+                            })
+                            .fetchAll({})
+                            .then(function(model) {
+                                console.log(model.toJSON());
+                                res.json(model.toJSON());
+                            })
+                            .catch(function(err) {
+                                res.json(503, {
+                                    result: 'error',
+                                    err: err.code
+                                });
+                            });
                     }
 
                 })
-                .catch(ViewTask.NotFoundError, function(error) {
-                    console.log('No View Task Added Yet');
-                    new Event({
-                            task_id: Number(req.query.task_id)
-                        })
-                        .fetchAll({})
-                        .then(function(model) {
-                            console.log(model.toJSON());
-                            res.json(model.toJSON());
-                        })
-                        .catch(function(err) {
-                            res.json(503, {
-                                result: 'error',
-                                err: err.code
-                            });
-                        });
+                .then(function(model) {
+                    console.log('Events');
+                    var events = model.toJSON();
+                    console.log(events);
+                    res.json(events);
                 })
                 .catch(Event.NotFoundError, function(error) {
                     console.log('All Events Saw');

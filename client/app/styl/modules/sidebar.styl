@@ -1,30 +1,39 @@
 .main-main
 	span(7/10)
 	position relative
+	height 100vh
+	overflow-x hidden
+	overflow-y scroll
 	.container
 		max-width px(768rem)
-		+below(1700px)
-			margin-right 10%
-			padding-left 10%
-		+below(1200px)
-			margin-right 5%
+		// +below(1700px)
+		// 	margin-right 10%
+		// 	padding-left 10%
+		// +below(1200px)
+		// 	width 100%
+		// 	margin 0
 		// +below(1700px)
 		// 	width 60%
 	+below(1700px)
-		span(7/10)
+		span(6/10)
 		float right
+		padding-left 8%
+		padding-right 3%
 	// +below(1200px)
 
 .main-sidebar
 	span(3/10)
-	min-width 320px
+	// min-width 320px
 	min-height 100vh
 	top 0
 	bottom 0
+	height 100vh
 	background-color black
 	color gray
+	overflow-x hidden
+	overflow-y scroll
 	+below(1700px)
-		span(3/10)
+		span(4/10)
 	// +below(1200px)
 	// 	span(4/10)
 	hr
@@ -41,6 +50,8 @@
 		background url(unquote('../svg/triple-hr--dark.svg')) repeat-x
 		margin-top px(30rem)
 		padding-bottom px(10rem)
+		&:hover
+			color white
 		span
 			background-color black
 	.sidebar-list__item
@@ -74,7 +85,7 @@
 		padding-left 14%
 	.is-right
 		position absolute
-		right 5%
+		right 6%
 		top 0
 		bottom 0
 		margin auto
@@ -84,13 +95,18 @@
 		text-transform capitalize
 		font-family f-light
 		height px(10rem)
+		transition t-greystone1
 		svg
 			size px(10rem)
 			margin-right px(5rem)
+			transition t-greystone1
 		&:hover
 			color blue
+			svg
+				color white
 	p.is-right
 		height auto
+		opacity 1 !important
 			
 
 .sidebar-list
@@ -100,9 +116,16 @@
 		.sidebar-list__item__indicator
 			opacity 1
 			border 2px solid mantle
-			background mantle url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yLjQgNTBsMzEuOCAzMS44IDYzLjYtNjMuNiIvPjwvc3ZnPg==')) no-repeat
-			background-size 65%
-			background-position 50% 50%
+			background-color mantle
+			color white
+			svg
+				size px(20rem)
+				position absolute
+				top px(-5rem)
+				left px(2rem)
+			// background mantle url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yLjQgNTBsMzEuOCAzMS44IDYzLjYtNjMuNiIvPjwvc3ZnPg==')) no-repeat
+			// background-size 65%
+			// background-position 50% 50%
 		.sidebar-small
 			color darkgray
 	&.is-pending
@@ -120,13 +143,16 @@
 	line-height 1
 	upcase()
 	font-family f-reg
+	transition t-greystone1
+	.is-right
+		opacity 0
 	.sidebar-small
 		line-height 1.5
 		display block
 		font-family f-lightit
 	.alert-circle
 		position absolute
-		right 10%
+		right 6%
 		top 0
 		bottom 0
 		margin auto
@@ -144,6 +170,10 @@
 		&:after
 			content ''
 			triangle: 'right' px(24rem) darkergray
+	&:hover
+		background-color rgba(deepblack,0.1)
+		.is-right
+			opacity 1
 			
 	// &.is-highlighted
 	// 	&:before
@@ -158,6 +188,7 @@
 	
 .sidebar-list__center
 	align(vertical)
+	text-align left
 		
 .sidebar-list__item__indicator
 	display inline-block
@@ -173,10 +204,38 @@
 	
 .main-chart
 	width 65%
-	margin px(25rem) auto px(70rem) auto
-	+below(1700px)
-		width 88%
+	margin px(25rem) auto px(20rem) auto
+	// +below(1700px)
+	// 	width 88%
+	// +below(1200px)
+	width 100%
 .main-sidebar
 	.logo
 		max-width 60%
 		margin auto
+
+.sidebar__bottom-controls
+	position fixed
+	bottom 0
+	height px(34rem)
+	background-color rgba(lighten(deepblack,20%),1)
+	width 30%
+	+below(1700px)
+		width 40%
+	a:not(.button)
+		color darkgray
+		fs(1.3rem)
+		position absolute
+		top 0
+		bottom 0
+		margin auto
+		right 0
+		height px(14rem)
+		&.control__left
+			right px(110rem)
+		&.control__right
+			right px(20rem)
+	.button
+		position absolute
+		left 0
+		transform none
