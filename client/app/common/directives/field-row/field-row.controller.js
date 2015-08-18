@@ -2,7 +2,7 @@ class FieldRowController {
 	constructor(Upload, File, $scope) {
 		this.Upload = Upload;
 		this.File = File;
-		this.showDescription = true;
+		this.showDescription = false;
 	}
 	uploadFile(files) {
 		this.File.upload(this.field.task_id, this.field.field_id, files)

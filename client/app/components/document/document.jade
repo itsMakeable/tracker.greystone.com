@@ -1,2 +1,11 @@
-div
-	h1 {{ vm.name }}
+h1 Reset Password
+
+form(novalidate)
+	div
+		label(for="firstName") User ID
+		input(type="number" placeholder="User ID" ng-model="vm.user_id")
+	div
+		label(for="password") Password
+		input(type="password" id="password" name="password" placeholder="Password" ng-model="vm.password")
+	
+	button(ng-click="vm.updatePassword()") Update Password

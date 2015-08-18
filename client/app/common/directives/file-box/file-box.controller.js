@@ -1,25 +1,39 @@
 class FileBoxController {
-	constructor(Upload, File) {
+	constructor(Upload, File, $scope, DS) {
 		this.Upload = Upload;
+		this.DS = DS;
 		this.File = File;
-		this.editNameMode = false;
+		this.editModes = {};
+		$scope.$watch(() => this.files.length, () => {
+			console.log('WATCH');
+			console.log(this.files);
+			if (this.files) {
+				angular.forEach(this.files, file => {
+					this.editModes[file.file_id] = false;
+				});
+			}
+		});
 	}
 	editName(file) {
-		this.editNameMode = true;
+		this.editModes[file.file_id] = true;
 	}
-	cancelEdit() {
-		this.editNameMode = false;
+	cancelEdit(file) {
+		this.editModes[file.file_id] = false;
 	}
-	updateFileName(file) {
-		this.File.update(file.file_id, {
-				name: file.name
-			})
-			.then(file => {
-				console.log(file);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+	saveName(file) {
+		console.log(file);
+		if (file.name) {
+			this.File.update(file.file_id, {
+					name: file.name
+				})
+				.then(new_file => {
+					file.name = new_file.name;
+					this.editModes[file.file_id] = false;
+				})
+				.catch(error => {
+					console.log(error);
+				});
+		}
 	}
 	removeFile(file) {
 		// Probably create a new event then. onFileRemove
@@ -34,9 +48,18 @@ class FileBoxController {
 	}
 	viewFile(file) {
 		console.log('viewFile ->');
+		// If we have time i will check this to open a modal view.
+		console.log(file);
+		window.open(this.DS.defaults.basePath + '/' + file.path, '_blank');
 	}
 	downloadFile(file) {
 		console.log('downloadFile ->');
+		console.log(file);
+		var downloadLink = angular.element('<a></a>');
+		downloadLink.attr('href', this.DS.defaults.basePath + '/' + file.path);
+		downloadLink.attr('download', file.name);
+		console.log(downloadLink);
+		downloadLink[0].click();
 	}
 	replaceFile(prevFile, newFile) {
 		if (newFile) {

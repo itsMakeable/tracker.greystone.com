@@ -23,8 +23,6 @@ module.exports = function(app) {
         });
     });
 
-
-
     app.post('/auth/signin', function(req, res) {
         console.log(req.body);
         User.login(req.body.email, req.body.password)
@@ -45,10 +43,45 @@ module.exports = function(app) {
                 });
             })
             .catch(function(err) {
-                console.log(err);
                 res.json(400, {
                     error: 'Error authenticating'
                 });
+            });
+    });
+
+    app.post('/auth/reset_password', function(req, res) {
+        var user_id = req.body.user_id;
+        var password = req.body.password;
+        new User({
+                user_id: user_id
+            })
+            .fetch({
+                require: true,
+            })
+            .then(function(model) {
+                console.log(model);
+                if (!model) {
+                    res.json(400, {
+                        errorMessage: 'User not exists'
+                    });
+                } else {
+                    var passwordHash = bcrypt.hashSync(password, 10);
+                    model
+                        .save({
+                            password: passwordHash
+                        })
+                        .then(function(model) {
+                            var token = jwt.sign({
+                                user_id: model.toJSON().user_id
+                            }, app.get('SECRET'), {
+                                expiresInMinutes: 6000000 * 5
+                            });
+                            res.json({
+                                user: model.toJSON(),
+                                token: token
+                            });
+                        });
+                }
             });
     });
 

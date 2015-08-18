@@ -4,8 +4,11 @@ li.sidebar-list__item(ui-sref="property.task({taskId: vm.task.task_id})" ui-sref
 			svg(ng-if="vm.showDismiss" viewbox='0 0 100 100')
 				use(xlink:href='#icon_check')
 		| {{ vm.task.name }}
-		small: em.sidebar-small(ng-hide='vm.hideQuickStatus') {{ vm.task.quick_status }}
-	.is-right(ng-if="vm.showDismiss" ng-click='vm.dismissTask()')
+		small(ng-if="!vm.showDismiss"): em.sidebar-small(ng-hide='vm.hideQuickStatus') {{ vm.task.quick_status }}
+		small(ng-if="vm.showDismiss"): em.sidebar-small() Approved By {{ vm.task.by.first_name }}
+	
+	.is-right(ng-if="vm.showDismiss" ng-click='vm.dismissTask($event)')
 		svg(viewbox='0 0 100 100')
 			use(xlink:href='#icon_x')
+	
 	.alert-circle.is-purple(ng-if="vm.showAlert && (vm.newEvents > 0)"): span.center {{ vm.newEvents }}

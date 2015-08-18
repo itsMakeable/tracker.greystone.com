@@ -12,6 +12,10 @@ class TaskController {
 		this.showDropdow = false;
 		console.log(this.task);
 		this.bindWatchers($scope);
+
+		$scope.$watch(() => Task.lastModified(), () => {
+			User.viewTask($state.params.taskId);
+		});
 	}
 	clearUser() {
 		if (this.task.user_id) {
@@ -38,7 +42,19 @@ class TaskController {
 					console.log(error);
 				});
 		}
-
+	}
+	toggleCompletition() {
+		// show modal for confirmation
+		console.log(this.task);
+		this.Task.update(Number(this.task.task_id), {
+				is_complete: !this.task.is_complete
+			})
+			.then(task => {
+				console.log(task);
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	}
 	bindWatchers($scope) {
 		$scope.$watch(() => this.User.lastModified(), () => {

@@ -1,11 +1,13 @@
 class SideBarController {
-	constructor($scope, $state, File, Project, Milestone, Task, User) {
+	constructor($scope, $state, File, Project, Milestone, Task, User, socket, TaskRecentlyComplete) {
 		this.$state = $state;
 		this.File = File;
 		this.Project = Project;
 		this.Milestone = Milestone;
+		this.TaskRecentlyComplete = TaskRecentlyComplete;
 		this.Task = Task;
 		this.User = User;
+		var _this = this;
 		Milestone.inject(this.project.milestones);
 
 		this.assignedToMeLimit = 7;
@@ -21,6 +23,44 @@ class SideBarController {
 
 		this.filterTasks();
 		this.bindWatchers($scope);
+
+		// Right now all of them, then by project.
+		TaskRecentlyComplete.findAll({})
+			.then(notifications => {
+				console.log('notifications');
+				console.log(notifications);
+				angular.forEach(notifications, notification => {
+					notification.task.by = notification.user;
+					notification.task.task_complete_notification_id = notification.task_complete_notification_id;
+				});
+				this.tasksRecentlyCompleted = notifications;
+			})
+			.catch(error => {
+				console.log('error notifications');
+				console.log(error);
+			});
+
+
+		socket.on('TASK_NOTIFICATION', taskNotification);
+
+		function taskNotification(data) {
+			console.log('TASK_NOTIFICATION');
+			console.log(data.data);
+			data.data.task.by = data.data.user;
+			data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
+			_this.tasksRecentlyCompleted.push(data.data);
+		}
+
+		$scope.$on('NOTIFICATION_DISMISSED', (event, data) => {
+			var index = this.tasksRecentlyCompleted.map(e => e.task_complete_notification_id).indexOf(data.task_complete_notification_id);
+			console.log(index);
+			this.tasksRecentlyCompleted.splice(index, 1);
+		});
+
+
+		$scope.$on('$destroy', () => {
+			socket.removeListener('TASK_NOTIFICATION', taskNotification);
+		});
 
 		$state.go('property.task', {
 			taskId: this.milestone.tasks[0].task_id
@@ -56,6 +96,10 @@ class SideBarController {
 	}
 	dismissAll() {
 		console.log('dismissAll');
+		angular.forEach(this.tasksRecentlyCompleted, notification => {
+			this.TaskRecentlyComplete.destroy(notification.task_complete_notification_id);
+		});
+		this.tasksRecentlyCompleted = [];
 	}
 	filterTasks() {
 		console.warn('filter tasks');
@@ -69,19 +113,6 @@ class SideBarController {
 				}
 			}
 		});
-		this.tasksRecentlyCompleted = this.Task.filter({
-			where: {
-				milestone_id: {
-					'==': this.milestone.milestone_id
-				},
-				is_complete: {
-					'==': true
-				},
-				'task_complete.created_at': {
-					'>': 'Yesterday'
-				}
-			}
-		});
 		this.activeTasks = this.Task.filter({
 			where: {
 				milestone_id: {
@@ -89,6 +120,9 @@ class SideBarController {
 				},
 				user_id: {
 					'!=': this.User.getCurrentUser().user_id
+				},
+				is_complete: {
+					'==': false
 				}
 			}
 		});

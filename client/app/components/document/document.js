@@ -4,14 +4,14 @@ import template from './document.jade';
 import controller from './document.controller';
 import './document.styl';
 
-let documentModule = angular.module('document', [
+let documentModule = angular.module('resetPassword', [
 		uiRouter
 	])
 	.config(($stateProvider, $urlRouterProvider) => {
 
 		$stateProvider
-			.state('document', {
-				url: '/document',
+			.state('resetPassword', {
+				url: '/resetPassword',
 				template,
 				controller,
 				controllerAs: 'vm'

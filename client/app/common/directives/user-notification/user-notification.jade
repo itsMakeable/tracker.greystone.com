@@ -38,6 +38,12 @@ div(ng-switch="vm.event.type")
 		.user-notification__box.is-white
 			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} 
 			|  assigned task to {{ vm.event.assigned_user.first_name }} {{ vm.event.assigned_user.last_name }} at {{ vm.event.created_at | date: 'shortTime' }}
+	
+	.user-notification(ng-switch-when="CLEAR_ASSIGN")
+		.profile-pic.is-assigned
+		.user-notification__box.is-white
+			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} 
+			|  assigned task to nobody
 
 	.user-notification(ng-switch-when="COMPLETE")
 		.profile-pic.is-complete
@@ -49,4 +55,4 @@ div(ng-switch="vm.event.type")
 		.profile-pic.is-complete
 		.user-notification__box.is-white
 			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} 
-			|  marked complete at {{ vm.event.created_at | date: 'shortTime' }}
+			|  marked incomplete at {{ vm.event.created_at | date: 'shortTime' }}
