@@ -1,9 +1,7 @@
 .task__row
 	h6.h6 {{ vm.field.name }}
-		span.text-blue *
-	p: small Form 1099-MISC
-	p: small Instructions for Form 1099-MISC (HTML)
-	p: small General Instructions for Certain Information Returns (Forms 1097, 1098, 1099, 3921, 3922, 5498, and W-2G)
+		span(ng-if='vm.field.description' ng-click='vm.showDescription = !vm.showDescription').text-blue *
+	p(ng-show='vm.field.description && vm.showDescription'): small {{ vm.field.description }}
 
 	.spacer.half
 	file-box(files='vm.field.files' 
