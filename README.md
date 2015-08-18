@@ -3,10 +3,17 @@ tracker.greystone.com
 ## Dev Server Running
 
 ```
-> make sure line 9 in client/app/app.js is uncommented and line 10 is commented.
-> ssh tlynch:dev.shifteight.com   (p: jack12)
+make sure line 9 in client/app/app.js is uncommented and line 10 is commented.
+
+> ssh tlynch:dev.shifteight.com
+
+(p: jack12)
+
 > cd /opt/mean/tracker.greystone.com
-> sudo -u www-data git pull   (toddhlynch / JJack123)
+> sudo -u www-data git pull
+
+(toddhlynch / JJack123)
+
 > sudo -u www-data npm install
 > sudo -u www-data gulp
 > sudo -u www-data node server/server.js &
@@ -15,7 +22,10 @@ tracker.greystone.com
 The & in the line above makes it run in the backgroundf and keep running.  If you want to kill the process or restart, run:
 
 ```
-> ps -fade    (look down the list and find the PID of the process running node)
+> ps -fade    
+
+(look down the list and find the PID of the process running node)
+
 > sudo kill [PID]
 ```
 
