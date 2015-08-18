@@ -65,6 +65,8 @@
 	position absolute
 	top 2rem
 	right 2rem
+	+below(1024px)
+		position static
 
 .user-notification__h1
 	text-transform uppercase
@@ -126,6 +128,15 @@
 	&.is-edited
 		size px(30rem)
 		background white url(unquote('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRUFBQjIyIiBzdHJva2Utd2lkdGg9IjMuOTAxIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiPjxwYXRoIGQ9Ik02LjEgOTdIOTBNMzkuOCA3My45bC0yNiA3LjQgNy40LTI2IDUwLjItNTBjMy42LTMuNiA5LjQtMy42IDEzIDBsNS42IDUuNmMzLjYgMy42IDMuNiA5LjQgMCAxM2wtNTAuMiA1MHpNODIuNSAzMS4yTDY0IDEyLjciLz48L2c+PC9zdmc+')) 
+		background-repeat no-repeat !important
+		background-size 80% auto !important
+		background-position 50% 50% !important
+		top px(12.5rem)
+		left px(7.3rem)
+		border 5px solid white
+	&.is-incomplete
+		size px(30rem)
+		background white url(../svg/symbols/icon_incomplete.svg) 
 		background-repeat no-repeat !important
 		background-size 80% auto !important
 		background-position 50% 50% !important

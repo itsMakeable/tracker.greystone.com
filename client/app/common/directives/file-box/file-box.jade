@@ -11,13 +11,13 @@ div
 					.row.box__row(ng-class="{'is-editing': vm.editModes[file.file_id]}")
 						p.box__title {{ file.name }}
 						input.box__edit(ng-show='vm.editModes[file.file_id]' type='text' placeholder='File Name' ng-model='file.name')
-						i.icon.box__edit-icon.box__edit-icon--save(ng-if='vm.editModes[file.file_id]' ng-click='vm.saveName(file)')
+						i.icon.box__edit-icon.box__edit-icon--save.is-clickable(ng-if='vm.editModes[file.file_id]' ng-click='vm.saveName(file)')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_check')
-						i.icon.box__edit-icon.box__edit-icon--cancel(ng-if='vm.editModes[file.file_id]' ng-click='vm.cancelEdit(file)')
+						i.icon.box__edit-icon.box__edit-icon--cancel.is-clickable(ng-if='vm.editModes[file.file_id]' ng-click='vm.cancelEdit(file)')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_x')
-						i.icon.box__edit-icon.box__edit-icon--edit(ng-if='!vm.editModes[file.file_id]' ng-click='vm.editModes[file.file_id] = !vm.editModes[file.file_id]')
+						i.icon.box__edit-icon.box__edit-icon--edit.is-clickable(ng-if='!vm.editModes[file.file_id]' ng-click='vm.editModes[file.file_id] = !vm.editModes[file.file_id]')
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_edit')
 

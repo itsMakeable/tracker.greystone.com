@@ -39,12 +39,14 @@ body.login-page
 		fs(2.2rem)
 	p
 		display inline-block
-		width px(500rem)
-		max-width 90%
+		width px(360rem)
 		align(horizontal)
-		fs(1.6rem)
+		fs(1.75rem)
 		text-align center
 		font-family f-light
+		+below(400px)
+			fs(1.6rem)
+			width px(310rem)
 		
 .login__form
 	margin-top px(50rem)
@@ -64,16 +66,13 @@ input.login__input
 		border-bottom 1px solid rasberry
 	&:placeholder
 		color darkgray
-	
-	
-// .login__input--name
-// 	background
-// .login__input--password
+
 .login__fieldgroup
 	height px(70rem)
 	margin 0 auto
 	width 70%
 	display block
+	
 .login__input
 	background-color darkgray
 	width 100%
