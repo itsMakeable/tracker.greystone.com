@@ -52,7 +52,7 @@ div(ng-switch="vm.event.type")
 			|  marked complete at {{ vm.event.created_at | date: 'shortTime' }}
 
 	.user-notification(ng-switch-when="INCOMPLETE")
-		.profile-pic.is-complete
+		.profile-pic.is-incomplete
 		.user-notification__box.is-white
 			p {{ vm.event.user.first_name }} {{ vm.event.user.last_name }} 
 			|  marked incomplete at {{ vm.event.created_at | date: 'shortTime' }}
