@@ -43,6 +43,7 @@ class SideBarController {
 						'task.milestone_id': this.milestone.milestone_id
 					}
 				});
+				this.filterTasks();
 			})
 			.catch(error => {
 				console.log('error notifications');
@@ -64,6 +65,7 @@ class SideBarController {
 						'task.milestone_id': _this.milestone.milestone_id
 					}
 				});
+				_this.filterTasks();
 			}
 		}
 
@@ -76,6 +78,7 @@ class SideBarController {
 					}
 				});
 				this.tasksRecentlyCompleted.splice(index, 1);
+				this.filterTasks();
 			}
 		});
 
@@ -86,6 +89,7 @@ class SideBarController {
 					'task.milestone_id': this.milestone.milestone_id
 				}
 			});
+			this.filterTasks();
 		});
 
 		$scope.$on('$destroy', () => {
