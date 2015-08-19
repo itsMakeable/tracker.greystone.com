@@ -214,7 +214,7 @@ module.exports = function(app) {
                     console.log(fileInformation);
                     ext = fileInformation.ext;
                     return model.save({
-                        name: req.body.name + ext
+                        name: req.body.name
                     }, {
                         patch: true
                     });

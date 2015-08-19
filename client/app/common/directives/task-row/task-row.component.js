@@ -12,7 +12,8 @@ let taskRowComponent = function() {
 				task: '=',
 				showAlert: '=',
 				showDismiss: '=',
-				hideQuickStatus: '='
+				hideQuickStatus: '=',
+				showCheckmark: '='
 			},
 			bindToController: true
 	};
