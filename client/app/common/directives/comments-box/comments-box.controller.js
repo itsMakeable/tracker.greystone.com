@@ -1,12 +1,13 @@
 import groupBy from 'lodash.groupby';
 
 class CommentsBoxController {
-	constructor(socket, $scope, Event, $filter, Task, $rootScope, $timeout) {
+	constructor(socket, $scope, Event, $filter, Task, $rootScope, $timeout, User) {
 		this.textareaFunction();
 		var _this = this;
 		this.$rootScope = $rootScope;
 		this.$timeout = $timeout;
 		this.$filter = $filter;
+		this.user = User.getCurrentUser();
 		this.Event = Event;
 		socket.on('NEW_EVENT', test);
 

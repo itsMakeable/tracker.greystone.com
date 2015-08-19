@@ -1,7 +1,8 @@
 class PropertyController {
-	constructor(File, project, User, $scope) {
+	constructor(File, project, User, $scope, fromLogin) {
 		this.File = File;
 		this.project = project;
+		this.fromLogin = fromLogin;
 		User.findAll({})
 			.then(users => {
 				console.log(users);

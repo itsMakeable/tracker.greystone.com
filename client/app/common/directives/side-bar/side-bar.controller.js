@@ -78,9 +78,25 @@ class SideBarController {
 			socket.removeListener('TASK_NOTIFICATION', taskNotification);
 		});
 
-		$state.go('property.task', {
-			taskId: this.milestone.tasks[0].task_id
-		});
+		console.log('From Login: ' + this.fromLogin);
+		console.log(!this.fromLogin);
+		console.log(this.milestone);
+		console.log(this.milestone.tasks[0].task_id);
+		Task.inject(this.milestone.tasks);
+
+		if (!this.fromLogin) {
+			$state.go('property.task', {
+				taskId: this.milestone.tasks[0].task_id,
+				fromLogin: this.fromLogin
+			});
+		} else {
+			$state.go('property.task', {
+				taskId: null,
+				fromLogin: this.fromLogin
+			});
+		}
+
+
 	}
 	bindWatchers($scope) {
 		$scope.$watch(() => this.Task.lastModified(), () => {
@@ -137,6 +153,9 @@ class SideBarController {
 				},
 				user_id: {
 					'==': this.User.getCurrentUser().user_id
+				},
+				is_complete: {
+					'!=': true
 				}
 			}
 		});

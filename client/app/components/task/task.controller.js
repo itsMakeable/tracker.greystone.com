@@ -8,6 +8,8 @@ class TaskController {
 		this.User = User;
 		this.$rootScope = $rootScope;
 
+		console.warn(task);
+
 		this.project = Project.filter({})[0];
 		this.task = task;
 		this.showDropdow = false;

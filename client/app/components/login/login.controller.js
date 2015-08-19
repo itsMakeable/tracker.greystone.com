@@ -10,7 +10,9 @@ class LoginController {
 			console.log(this.password);
 			this.User.signin(this.email, this.password)
 				.then(() => {
-					this.$state.go('property');
+					this.$state.go('property', {
+						fromLogin: true
+					});
 				})
 				.catch(() => {
 					this.errorMessage = 'Invalid Login';
