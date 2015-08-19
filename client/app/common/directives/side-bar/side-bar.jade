@@ -2,11 +2,11 @@ aside.main-sidebar
 	.main-sidebar__underlay
 
 	.spacer
-	//- .spacer
+	.spacer
 	header.main-header
 		h1.h1 {{ vm.project.name }}
-		//- figure(ng-click='vm.changeMilestone()')
-		//- 	img.main-chart(src="app/svg/chart.svg", alt="")
+		figure(ng-click='vm.changeMilestone()')
+			project-chart(project-id='vm.project.project_id')
 		h2.h2.is-clickable(ng-click='vm.changeMilestone()') {{ vm.milestone.name }}
 	section
 		.sidebar-container
