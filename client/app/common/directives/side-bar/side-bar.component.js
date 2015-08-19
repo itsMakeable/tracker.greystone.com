@@ -10,7 +10,8 @@ let sideBarComponent = function() {
 		restrict: 'E',
 			controllerAs: 'vm',
 			scope: {
-				project: '='
+				project: '=',
+				fromLogin: '='
 			},
 			bindToController: true
 	};

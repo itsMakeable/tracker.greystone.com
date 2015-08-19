@@ -28,8 +28,15 @@ let taskModule = angular.module('task', [
 							});
 					},
 					task: ($stateParams, Task, $q, User) => {
-						User.viewTask($stateParams.taskId);
-						return $q.when(Task.get($stateParams.taskId));
+						console.log('task');
+						console.log($stateParams.hasOwnProperty('taskId'));
+						console.log($stateParams);
+						if ($stateParams.hasOwnProperty('taskId')) {
+							User.viewTask($stateParams.taskId);
+							return $q.when(Task.get(Number($stateParams.taskId)));
+						} else {
+							return $q.when(null);
+						}
 					}
 				}
 			});

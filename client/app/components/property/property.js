@@ -12,6 +12,9 @@ let propertyModule = angular.module('property', [
 		$stateProvider
 			.state('property', {
 				url: '/property',
+				params: {
+					fromLogin: false
+				},
 				template,
 				controller,
 				controllerAs: 'vm',
@@ -33,6 +36,9 @@ let propertyModule = angular.module('property', [
 								console.log(projects[0]);
 								return projects[0];
 							});
+					},
+					fromLogin: ($q, $stateParams) => {
+						return $q.when($stateParams.fromLogin);
 					}
 				}
 			});

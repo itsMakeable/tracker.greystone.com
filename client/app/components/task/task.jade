@@ -1,6 +1,7 @@
 main#mainContent.main-main
 	//- img.top-bar-chart(src="app/svg/bar-chart.svg", alt="")
-	.container
+	h1.h1.center.fadein(style='top:40%;' ng-if='!vm.task.task_id') Welcome!
+	.container(ng-if='vm.task.task_id')
 		.spacer
 		.spacer
 		.spacer
@@ -12,8 +13,8 @@ main#mainContent.main-main
 				h1.h1(style='padding-bottom:0.6rem') {{ vm.task.name }}
 				h6.h6.span-dropdown__container Assigned to: 
 					span.span-dropdown(ng-click='vm.showDropdow = !vm.showDropdow')
-						span(ng-show='vm.task.user') {{ vm.task.user.first_name }} {{ vm.task.user.last_name }}
-						span(ng-show='vm.task.user == null') Nobody
+						span(ng-show='vm.task.user.user_id') {{ vm.task.user.first_name }} {{ vm.task.user.last_name }}
+						span(ng-show='!vm.task.user.user_id') Nobody
 						i.icon.span-dropdown__icon
 							svg(viewbox='0 0 100 100')
 								use(xlink:href='#icon_caret')
@@ -43,7 +44,7 @@ main#mainContent.main-main
 					.spacer
 		.spacer
 		.spacer
-	comments-box(task-id='vm.task.task_id')
+	comments-box(ng-if='vm.task.task_id' task-id='vm.task.task_id')
 						
 
 
