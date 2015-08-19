@@ -6,6 +6,8 @@ main#mainContent.main-main
 		.spacer
 		header.task-header
 			.task-box__circle(ng-click='vm.toggleCompletition()' ng-class='{"is-checked": vm.task.is_complete}')
+				svg(viewbox='0 0 100 100')
+					use(xlink:href='#icon_checkmark')
 			.inline-block
 				h1.h1(style='padding-bottom:0.6rem') {{ vm.task.name }}
 				h6.h6.span-dropdown__container Assigned to: 
