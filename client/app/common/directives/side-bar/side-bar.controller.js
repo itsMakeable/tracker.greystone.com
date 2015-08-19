@@ -97,7 +97,7 @@ class SideBarController {
 		var task_id;
 		this.milestone = this.Milestone.get(Number(milestoneId));
 		this.filterTasks();
-		this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+		this.tasksRecentlyCompleted = this.TaskRecentlyComplete.filter({
 			where: {
 				'task.milestone_id': this.milestone.milestone_id
 			}
