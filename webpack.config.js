@@ -23,7 +23,7 @@ module.exports = {
 			loader: 'raw'
 		}, {
 			test: /\.styl$/,
-			loader: 'style!css!postcss-loader!stylus'
+			loader: 'style!css!stylus'
 		}, {
 			test: /\.jade$/,
 			loader: "jade-loader"
@@ -55,6 +55,5 @@ module.exports = {
 	},
 	stylus: {
 		use: [nib(), axis(), rupture(), jeet()]
-	},
-	postcss: [autoprefixer()]
+	}
 };
