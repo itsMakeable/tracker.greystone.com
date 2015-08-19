@@ -39,7 +39,7 @@ aside.main-sidebar
 			.sidebar-list__container(ng-hide='vm.completedTasks.length == 0')
 				h6.h6 Completed Tasks
 				hr
-				ul.sidebar-list.is-pending
+				ul.sidebar-list.was-completed
 					div(ng-repeat='task in vm.completedTasks track by task.task_id | limitTo : vm.completedLimit' ng-click="vm.selectTask(task)")
 						task-row.is-clickable(task='task' show-alert="true")
 				.messages-info(ng-if='vm.completedTasks.length > 7' ng-hide='vm.completedTasks.length == vm.completedLimit' ng-click='vm.completedLimit = vm.completedTasks.length')
