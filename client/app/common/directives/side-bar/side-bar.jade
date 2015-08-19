@@ -17,7 +17,7 @@ aside#sideBar.main-sidebar
 				ul.sidebar-list.is-completed
 					div(ng-repeat='notification in vm.tasksRecentlyCompleted' ng-click="vm.selectTask(notification.task.task_id)")
 						//- hide class on active? go to task from here?
-						task-row.is-clickable(task='notification.task' show-dismiss="true")
+						task-row.is-clickable(task='notification.task' show-dismiss="true" show-checkmark='true')
 			.sidebar-list__container(ng-hide='vm.tasksAssignedToMe.length == 0')
 				h6.h6 Assigned to You
 				hr
@@ -41,7 +41,7 @@ aside#sideBar.main-sidebar
 				hr
 				ul.sidebar-list.was-completed
 					div(ng-repeat='task in vm.completedTasks | limitTo : vm.completedLimit track by task.task_id ' ng-click="vm.selectTask(task.task_id)")
-						task-row.is-clickable(task='task' show-alert="true")
+						task-row.is-clickable(task='task' show-alert="true" show-checkmark='true')
 				.messages-info(ng-if='vm.completedTasks.length > 7' ng-hide='vm.completedTasks.length == vm.completedLimit' ng-click='vm.completedLimit = vm.completedTasks.length')
 					span {{ vm.completedTasks.length - 7 }} Additional Tasks
 
