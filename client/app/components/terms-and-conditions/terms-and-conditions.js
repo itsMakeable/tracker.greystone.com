@@ -14,7 +14,27 @@ let termsAndConditionsModule = angular.module('termsAndConditions', [
 				url: '/termsAndConditions',
 				template,
 				controller,
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				resolve: {
+					authentication: (User, $q) => {
+						return User.checkLogin()
+							.then(() => {
+								return true;
+							})
+							.catch(() => {
+								return $q.reject({
+									notAuthenticated: true
+								});
+							});
+					},
+					project: (Project) => {
+						return Project.findAll({})
+							.then(projects => {
+								console.log(projects[0]);
+								return projects[0];
+							});
+					}
+				}
 			});
 	});
 export default termsAndConditionsModule;

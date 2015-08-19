@@ -29,13 +29,18 @@ class SideBarController {
 		// Right now all of them, then by project.
 		TaskRecentlyComplete.findAll({})
 			.then(notifications => {
-				console.log('notifications');
+				console.warn('notifications');
 				console.log(notifications);
 				angular.forEach(notifications, notification => {
 					notification.task.by = notification.user;
 					notification.task.task_complete_notification_id = notification.task_complete_notification_id;
 				});
-				this.tasksRecentlyCompleted = notifications;
+				TaskRecentlyComplete.inject(notifications);
+				this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+					where: {
+						'task.milestone_id': this.milestone.milestone_id
+					}
+				});
 			})
 			.catch(error => {
 				console.log('error notifications');
@@ -50,15 +55,22 @@ class SideBarController {
 			console.log(data.data);
 			data.data.task.by = data.data.user;
 			data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
-			_this.tasksRecentlyCompleted.push(data.data);
+			TaskRecentlyComplete.inject(notifications);
+			_this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+				where: {
+					'task.milestone_id': _this.milestone.milestone_id
+				}
+			});
 		}
 
 		$scope.$on('NOTIFICATION_DISMISSED', (event, data) => {
-			var index = this.tasksRecentlyCompleted.map(e => e.task_complete_notification_id).indexOf(data.task_complete_notification_id);
-			console.log(index);
-			this.tasksRecentlyCompleted.splice(index, 1);
+			TaskRecentlyComplete.eject(data.task_complete_notification_id);
+			this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+				where: {
+					'task.milestone_id': this.milestone.milestone_id
+				}
+			});
 		});
-
 
 		$scope.$on('$destroy', () => {
 			socket.removeListener('TASK_NOTIFICATION', taskNotification);
@@ -72,28 +84,39 @@ class SideBarController {
 		$scope.$watch(() => this.Task.lastModified(), () => {
 			this.filterTasks();
 		});
+
+		$scope.$watch(() => this.TaskRecentlyComplete.lastModified(), () => {
+			this.filterTasks();
+		});
 	}
-	changeMilestone() {
+	selectMilestone(milestoneId) {
+		console.log(milestoneId);
+		this.assignedToMeLimit = 7;
+		this.activeLimit = 7;
+		this.completedLimit = 7;
 		var task_id;
-		if (this.currentMilestoneIndex < this.project.milestones.length - 1) {
-			this.currentMilestoneIndex++;
-		} else {
-			this.currentMilestoneIndex = 0;
-		}
-		this.milestone = this.project.milestones[this.currentMilestoneIndex];
+		this.milestone = this.Milestone.get(Number(milestoneId));
 		this.filterTasks();
+		this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+			where: {
+				'task.milestone_id': this.milestone.milestone_id
+			}
+		});
 		if (this.tasksAssignedToMe[0]) {
 			task_id = this.tasksAssignedToMe[0].task_id;
-		} else {
+		} else if (this.activeTasks[0]) {
 			task_id = this.activeTasks[0].task_id;
+		} else {
+			task_id = this.completedTasks[0].task_id;
 		}
 		this.$state.go('property.task', {
 			taskId: task_id
 		});
 	}
-	selectTask(task) {
+	selectTask(task_id) {
+		console.log(task_id);
 		this.$state.go('property.task', {
-			taskId: task.task_id
+			taskId: task_id
 		});
 	}
 	dismissAll() {
@@ -124,10 +147,11 @@ class SideBarController {
 					'!=': this.User.getCurrentUser().user_id
 				},
 				is_complete: {
-					'==': false
+					'!=': true
 				}
 			}
 		});
+		var task_ids = this.tasksRecentlyCompleted.map(e => e.task_id);
 		this.completedTasks = this.Task.filter({
 			where: {
 				milestone_id: {
@@ -135,9 +159,13 @@ class SideBarController {
 				},
 				is_complete: {
 					'==': true
+				},
+				task_id: {
+					notIn: task_ids
 				}
 			}
 		});
+		console.log(this.completedTasks);
 	}
 	logout() {
 		this.User.logout();

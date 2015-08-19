@@ -1,5 +1,5 @@
 class TaskRowController {
-	constructor($state, Event, $scope, User, TaskRecentlyComplete, $rootScope) {
+	constructor($state, Event, $scope, User, TaskRecentlyComplete, $rootScope, socket) {
 		this.$state = $state;
 		this.newEvents = 0;
 		this.Event = Event;
@@ -7,10 +7,12 @@ class TaskRowController {
 		this.TaskRecentlyComplete = TaskRecentlyComplete;
 		this.$rootScope = $rootScope;
 
-		$scope.$watch(() => Event.lastModified(), () => {
-			this.checkEvents();
-		});
+		this.checkEvents();
 
+		socket.on('NEW_EVENT', this.checkEvents.bind(this));
+		$scope.$on('$destroy', () => {
+			socket.removeListener('NEW_EVENT', this.checkEvents.bind(this));
+		});
 		$scope.$on('CHECK_EVENTS', () => {
 			this.checkEvents();
 		});
@@ -33,14 +35,8 @@ class TaskRowController {
 		this.Event.findAll({
 				task_id: this.task.task_id,
 				created_at: 'true'
-			}, {
-				bypassCache: true,
-				cacheResponse: false,
 			})
 			.then(events => {
-				console.log('EVENTS For TASK: ' + this.task.task_id);
-				console.log(events.length);
-				console.log(this.$state);
 				if (this.$state.params.taskId == this.task.task_id) {
 					this.newEvents = 0;
 				} else {
@@ -53,7 +49,6 @@ class TaskRowController {
 	}
 	selectTask() {
 		console.log('Select Task');
-		console.log($state.params.taskId);
 		this.User.viewTask($state.params.taskId);
 		this.$state.go('property.task', {
 			taskId: this.task.task_id

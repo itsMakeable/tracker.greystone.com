@@ -17,21 +17,21 @@ module.exports = function(app) {
                 })
                 .query('orderBy', 'user_view_task_id', 'desc')
                 .query('limit', 1)
-                .fetchAll()
+                .fetch({})
                 .then(function(model) {
                     // console.log('ViewTasks');
-                    if (model.length > 0) {
-                        var tasks = model.toJSON();
+                    if (model) {
+                        var task = model.toJSON();
                         // console.log(tasks);
                         // filter task_id
                         return Event
-                            .query('where', 'created_at', '>', tasks[0].viewed_at)
+                            .query('where', 'created_at', '>', task.viewed_at)
                             .query('where', 'task_id', '=', Number(req.query.task_id))
-                            .fetchAll();
+                            .fetchAll({});
                     } else {
-                        return new Event({
-                            task_id: Number(req.query.task_id)
-                        }).fetchAll({});
+                        return Event
+                            .query('where', 'task_id', '=', Number(req.query.task_id))
+                            .fetchAll({});
                     }
                 })
                 .then(function(model) {
@@ -49,14 +49,15 @@ module.exports = function(app) {
                     res.json([]);
                 })
                 .catch(function(err) {
-                    // console.log(err);
+                    console.log(err);
                     res.json(503, {
                         result: 'error',
                         err: err.code
                     });
                 });
         } else {
-            new Event({
+            Event
+                .where({
                     task_id: Number(req.query.task_id)
                 })
                 .fetchAll({
@@ -68,12 +69,17 @@ module.exports = function(app) {
                     ]
                 })
                 .then(function(model) {
-                    res.json(model.toJSON());
+                    if (model) {
+                        res.json(model.toJSON());
+                    } else {
+                        res.json([]);
+                    }
                 })
                 .catch(function(err) {
+                    console.log(err);
                     res.json(503, {
                         result: 'error',
-                        err: err.code
+                        err: err
                     });
                 });
         }

@@ -35,13 +35,14 @@ class ProjectChartController {
 			if (this.$state.params.taskId) {
 				console.log('Task changed');
 				this.state.task_id = this.$state.params.taskId;
+				this.draw();
 			}
 		});
 	}
 	draw() {
 		this.summarize();
-		var element = this.prep();
-		this.render(element);
+		this.prep();
+		this.render();
 	}
 	summarize() {
 		this.summary.milestones = [];
@@ -52,39 +53,34 @@ class ProjectChartController {
 			for (var j = 0; j < milestone.tasks.length; j++) {
 				var task = milestone.tasks[j];
 				effort = effort + task.effort;
-				if (task.is_complete) {
+				if (task.is_complete === 1 || task.is_complete === true) {
 					complete_effort = complete_effort + task.effort;
 				}
 			}
-			this.summary.milestones[i] = [];
-			this.summary.milestones[i].effort = effort;
-			this.summary.milestones[i].complete_effort = complete_effort;
+			this.summary.milestones[i] = {
+				effort: effort,
+				complete_effort: complete_effort
+			};
 		}
 	}
 	prep() {
 		this.elements = [];
-		var angle = 0;
+		var angle;
 		var degrees_for_collapsed, degrees_for_active;
 		var element;
-
 		if (this.config.show_milestones) {
 			degrees_for_collapsed = ((this.x_project.milestones.length - 1) * this.config.collapsed_milestone_degree) + (2 * this.config.collapsed_milestone_padding_degree);
 			degrees_for_active = (360 - degrees_for_collapsed);
+			angle = 0;
 		} else {
 			degrees_for_collapsed = 0;
 			degrees_for_active = (360 - 8);
+			angle = 4;
 		}
-
-		angle = 4;
-
 
 		for (var i = 0; i < this.x_project.milestones.length; i++) {
 			var milestone = this.x_project.milestones[i];
-			console.log('milestone');
-			console.log(milestone);
 			var milestone_total_effort = this.summary.milestones[i].effort;
-			console.log('TOTAL effort: ' + milestone_total_effort);
-			console.log(this.state.milestone_id);
 			if (milestone.milestone_id == this.state.milestone_id) {
 
 				if (this.config.show_milestones) {
@@ -92,6 +88,7 @@ class ProjectChartController {
 						angle = angle + this.config.collapsed_milestone_padding_degree;
 					}
 				} else {
+					// Store prev and nex milestone id.
 					if (i > 0) {
 						this.summary.prev_milestone_id = this.x_project.milestones[i - 1].milestone_id;
 					} else {
@@ -118,9 +115,6 @@ class ProjectChartController {
 					complete_effort: this.summary.milestones[i].complete_effort,
 				};
 
-				console.log('Element');
-				console.log(element);
-
 				for (var j = 0; j < milestone.tasks.length; j++) {
 					var task = milestone.tasks[j];
 					var degrees_for_task = (degrees_for_active * (task.effort / milestone_total_effort));
@@ -133,8 +127,6 @@ class ProjectChartController {
 						user_id: task.user_id,
 						task_id: task.task_id
 					};
-					console.log('TASK');
-					console.log(task_element);
 
 					angle = angle + degrees_for_task;
 					element.sub_elements.push(task_element);
@@ -178,38 +170,29 @@ class ProjectChartController {
 
 		return this.x_project.milestones[0];
 	}
-	render(element) {
-		console.log('render');
-		console.log(element);
+	render() {
 		this.chartElement.innerHTML = "";
-
-		var date = new Date(element.target_date);
-		var month = date.getMonth() + 1;
-		var day = date.getDate();
-		var year = date.getFullYear() - 2000;
-		var formattedTime = month + '/' + day + '/' + year;
-
-		this.drawMilestoneText(formattedTime, element.target);
 		var color = 0;
 
-		console.log(this.elements.length);
-		console.log('elements for lopp');
 		for (var j = 0; j < this.elements.length; j++) {
-			console.log('currentElement');
+
 			var currentElement = this.elements[j];
-			console.log(currentElement);
 
 			if (currentElement.type == "ACTIVE_MILESTONE") {
 
 				//drawWedge(element.startAngle,element.endAngle, 100, "#336699", "#6699CC");
 
+				var date = new Date(currentElement.target_date);
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var year = date.getFullYear() - 2000;
+				var formattedTime = month + '/' + day + '/' + year;
+
+				this.drawMilestoneText(formattedTime, currentElement.target);
+
 				for (var k = 0; k < currentElement.sub_elements.length; k++) {
 
 					var task_element = currentElement.sub_elements[k];
-					console.log('task_element');
-					console.log(task_element);
-					console.log(this.state.task_id);
-					console.log(this.user_id);
 					var width, c, f;
 					if (task_element.type == "TASK") {
 
@@ -282,12 +265,18 @@ class ProjectChartController {
 		var id = event.target.getAttribute('id');
 		if (id) {
 			var res = id.split("_");
+			console.log(res);
 			if (res[0] == "milestone") {
 				this.state.milestone_id = res[1];
+				this.onMilestoneSelected({
+					$milestoneId: res[1]
+				});
 			} else if (res[0] == "task") {
 				this.state.task_id = res[1];
+				this.onTaskSelected({
+					$taskId: res[1]
+				});
 			}
-
 			this.draw();
 		}
 	}
