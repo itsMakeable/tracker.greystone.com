@@ -15,7 +15,7 @@
 					user-notification(event='event')
 				
 		.user-notification.is-comment-box
-			.profile-pic
+			.profile-pic(style='background-image:url(/app/assets/img/user_profile_photos/{{ vm.user.profile_photo_path }})')
 			.user-notification__box
 				textarea#textarea.user-notification__textarea(ng-model='vm.newMessage' placeholder='Type Message Here' rows='1')
 				i.icon.comment-box__submit.is-clickable(ng-click='vm.submitMessage()')
