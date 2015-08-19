@@ -18,7 +18,7 @@ main.main-main
 						ul.dropdown-list(ng-show='vm.showDropdow')
 							li(ng-repeat='user in vm.users track by user.user_id' ng-class='{"is-active": user.user_id == vm.task.user.user_id}' ng-click='vm.assignUser(user)')
 								i.icon
-									.profile-pic
+									.profile-pic(style='background-image:url(/app/assets/img/user_profile_photos/{{ user.profile_photo_path }})')
 								span.inline-block {{ user.first_name }} {{ user.last_name }}
 							li(ng-click='vm.clearUser()')
 								i.icon.clear-assignee

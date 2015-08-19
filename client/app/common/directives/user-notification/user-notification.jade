@@ -1,6 +1,6 @@
 div(ng-switch="vm.event.type")
 	.user-notification.has-padding(ng-switch-when="MESSAGE")
-		.profile-pic
+		.profile-pic(style='background-image:url(/app/assets/img/user_profile_photos/{{ vm.event.user.profile_photo_path }})')
 		.user-notification__box
 			p.user-notification__top-right {{ vm.event.created_at | date: 'shortTime' }}
 			p.user-notification__h1 {{ vm.event.user.first_name }} {{ vm.event.user.last_name }}
