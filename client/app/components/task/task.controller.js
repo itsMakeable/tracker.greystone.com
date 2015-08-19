@@ -1,11 +1,12 @@
 class TaskController {
-	constructor(Project, $state, task, Task, $scope, Upload, File, User) {
+	constructor(Project, $state, task, Task, $scope, Upload, File, User, $rootScope) {
 		this.Upload = Upload;
 		this.$state = $state;
 		this.Project = Project;
 		this.Task = Task;
 		this.File = File;
 		this.User = User;
+		this.$rootScope = $rootScope;
 
 		this.project = Project.filter({})[0];
 		this.task = task;
@@ -16,6 +17,8 @@ class TaskController {
 		$scope.$watch(() => Task.lastModified(), () => {
 			User.viewTask($state.params.taskId);
 		});
+
+		$rootScope.$broadcast('UPDATE_HEIGHT');
 	}
 	clearUser() {
 		if (this.task.user_id) {
@@ -36,6 +39,9 @@ class TaskController {
 					user_id: user.user_id
 				})
 				.then(task => {
+					this.$rootScope.$broadcast('TASK_ASSIGN', {
+						task: task
+					});
 					console.log(task);
 				})
 				.catch(error => {
@@ -50,6 +56,9 @@ class TaskController {
 				is_complete: !this.task.is_complete
 			})
 			.then(task => {
+				this.$rootScope.$broadcast('TASK_COMPLETE', {
+					task: task
+				});
 				console.log(task);
 			})
 			.catch(error => {

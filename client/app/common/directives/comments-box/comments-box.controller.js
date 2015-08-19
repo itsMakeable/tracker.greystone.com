@@ -1,9 +1,11 @@
 import groupBy from 'lodash.groupby';
 
 class CommentsBoxController {
-	constructor(socket, $scope, Event, $filter, Task) {
+	constructor(socket, $scope, Event, $filter, Task, $rootScope, $timeout) {
 		this.textareaFunction();
 		var _this = this;
+		this.$rootScope = $rootScope;
+		this.$timeout = $timeout;
 		this.$filter = $filter;
 		this.Event = Event;
 		socket.on('NEW_EVENT', test);
@@ -20,6 +22,9 @@ class CommentsBoxController {
 				});
 				console.log('Events by date');
 				console.log(this.eventsByDate);
+				this.$timeout(() => {
+					this.$rootScope.$broadcast('UPDATE_HEIGHT');
+				}, 500);
 			})
 			.catch(error => {
 				console.log(error);
@@ -50,6 +55,9 @@ class CommentsBoxController {
 			});
 			console.log('Events by date');
 			console.log(this.eventsByDate);
+			this.$timeout(() => {
+				this.$rootScope.$broadcast('UPDATE_HEIGHT');
+			}, 500);
 		});
 
 		$scope.$on('$destroy', () => {

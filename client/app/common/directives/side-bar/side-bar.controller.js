@@ -1,6 +1,8 @@
 class SideBarController {
-	constructor($scope, $state, File, Project, Milestone, Task, User, socket, TaskRecentlyComplete) {
+	constructor($scope, $state, File, Project, Milestone, Task, User, socket, TaskRecentlyComplete, $rootScope, $timeout) {
 		this.$state = $state;
+		this.$rootScope = $rootScope;
+		this.$timeout = $timeout;
 		this.File = File;
 		this.Project = Project;
 		this.Milestone = Milestone;
@@ -55,7 +57,7 @@ class SideBarController {
 			console.log(data.data);
 			data.data.task.by = data.data.user;
 			data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
-			TaskRecentlyComplete.inject(notifications);
+			TaskRecentlyComplete.inject(data.data);
 			_this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
 				where: {
 					'task.milestone_id': _this.milestone.milestone_id
@@ -166,6 +168,9 @@ class SideBarController {
 			}
 		});
 		console.log(this.completedTasks);
+		this.$timeout(() => {
+			this.$rootScope.$broadcast('UPDATE_HEIGHT');
+		}, 500);
 	}
 	logout() {
 		this.User.logout();

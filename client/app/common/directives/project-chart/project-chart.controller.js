@@ -38,6 +38,41 @@ class ProjectChartController {
 				this.draw();
 			}
 		});
+
+		$scope.$on('TASK_ASSIGN', (event, data) => {
+			console.log('TASK_ASSIGN');
+			console.log(data);
+			Project.findAll({})
+				.then(projects => {
+					console.warn('PROJECT');
+					console.log(projects[0]);
+					this.x_project = projects[0];
+					var milestone_index = this.x_project.milestones.map(e => Number(e.milestone_id)).indexOf(Number(data.task.milestone_id));
+					console.log(milestone_index);
+					var task_index = this.x_project.milestones[milestone_index].tasks.map(e => Number(e.task_id)).indexOf(Number(data.task.task_id));
+					console.log(task_index);
+					this.x_project.milestones[milestone_index].tasks[task_index] = data.task;
+					this.draw();
+				});
+		});
+
+		$scope.$on('TASK_COMPLETE', (event, data) => {
+			console.log('TASK_COMPLETE');
+			console.log(data);
+			Project.findAll({})
+				.then(projects => {
+					console.warn('PROJECT');
+					console.log(projects[0]);
+					this.x_project = projects[0];
+					var milestone_index = this.x_project.milestones.map(e => Number(e.milestone_id)).indexOf(Number(data.task.milestone_id));
+					console.log(milestone_index);
+					var task_index = this.x_project.milestones[milestone_index].tasks.map(e => Number(e.task_id)).indexOf(Number(data.task.task_id));
+					console.log(task_index);
+					this.x_project.milestones[milestone_index].tasks[task_index] = data.task;
+					this.draw();
+				});
+		});
+
 	}
 	draw() {
 		this.summarize();
@@ -53,7 +88,7 @@ class ProjectChartController {
 			for (var j = 0; j < milestone.tasks.length; j++) {
 				var task = milestone.tasks[j];
 				effort = effort + task.effort;
-				if (task.is_complete === 1 || task.is_complete === true) {
+				if (task.is_complete === 1 || task.is_complete === true || task.is_complete === 'true') {
 					complete_effort = complete_effort + task.effort;
 				}
 			}
@@ -196,7 +231,7 @@ class ProjectChartController {
 					var width, c, f;
 					if (task_element.type == "TASK") {
 
-						if (task_element.is_complete) {
+						if (task_element.is_complete === 1 || task_element.is_complete === true || task_element.is_complete === 'true') {
 							c = "#3c3c3c";
 							f = "#829794";
 						} else if (task_element.user_id == this.user_id) {
@@ -377,7 +412,7 @@ class ProjectChartController {
 		var a = "";
 		a = a + '<circle cx="' + this.config.centerX + '" cy="' + this.config.centerY + '" r="' + (this.config.radius - 3) + '" stroke="#3c3c3c" stroke-width="0" fill="#3c3c3c" />';
 		//a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY - 33) + '" fill="#D4D4D4" font-family="\'Avenir-Light\'" font-size="14px">' + line1 + '</text>';
-		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 0) + '" fill="#FFFFFF" font-family="\'AvenirNextCondensed-Regular\'" font-size="36px">' + date + '</text>';
+		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 0) + '" fill="#FFFFFF" font-family="\'AvenirNextLTPro-Regular\'" font-size="36px">' + date + '</text>';
 		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 23) + '" fill="#D4D4D4" font-family="\'Avenir-Light\'" font-size="13px">' + line2 + '</text>';
 		this.chartElement.innerHTML = this.chartElement.innerHTML + a;
 	}
