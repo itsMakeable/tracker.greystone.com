@@ -5,9 +5,9 @@ aside.main-sidebar
 	.spacer
 	header.main-header
 		h1.h1 {{ vm.project.name }}
-		figure(ng-click='vm.changeMilestone()')
+		figure
 			project-chart(project-id='vm.project.project_id')
-		h2.h2.is-clickable(ng-click='vm.changeMilestone()') {{ vm.milestone.name }}
+		h2.h2.is-clickable {{ vm.milestone.name }}
 	section
 		.sidebar-container
 			.sidebar-list__container(ng-hide='vm.tasksRecentlyCompleted.length == 0')
