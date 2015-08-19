@@ -4,6 +4,7 @@ module.exports = function(app) {
     var Task = require('./../models/task')(bookshelf);
     var Event = require('./../models/event')(bookshelf);
     var TaskCompleteNotification = require('./../models/task-complete-notification')(bookshelf);
+    var User = require('./../models/user')(bookshelf);
 
     app.get('/api/tasks', function(req, res) {
         Task.fetchAll({
@@ -127,22 +128,58 @@ module.exports = function(app) {
                                 data: model.toJSON()
                             });
                         });
-                    if (newEventOptions.type == 'COMPLETE') {
-                        var newNotification = new TaskCompleteNotification({
-                            created_at: new Date().getTime(),
-                            user_id: req.user.user_id,
-                            task_id: Number(req.params.id)
-                        });
-                        newNotification.save()
+
+                    if (req.body.is_complete) {
+                        console.log('CREATE NOTIFICATIONS');
+                        new User({})
+                            .fetchAll()
                             .then(function(model) {
-                                return model.load(['user', 'task.user']);
-                            })
-                            .then(function(model) {
-                                req.io.emit('TASK_NOTIFICATION', {
-                                    data: model.toJSON()
+                                console.log('USERS');
+                                var users = model.toJSON();
+                                console.log(users);
+                                users.forEach(function(user) {
+                                    var newNotification = new TaskCompleteNotification({
+                                        created_at: new Date().getTime(),
+                                        user_id: req.user.user_id, // who completed.
+                                        task_id: Number(req.params.id),
+                                        to_user_id: user.user_id // to whom the notification
+                                    });
+                                    newNotification.save()
+                                        .then(function(model) {
+                                            return model.load(['user', 'task.user']);
+                                        })
+                                        .then(function(model) {
+                                            req.io.emit('TASK_NOTIFICATION', {
+                                                data: model.toJSON()
+                                            });
+                                        })
+                                        .catch(function(error) {
+                                            console.log(error);
+                                        });
                                 });
                             });
+                    } else {
+                        console.log('REMOVE ALL NOTIFICATIONS');
+                        console.log(Number(req.query.task_id));
+                        TaskCompleteNotification
+                            .where({
+                                task_id: Number(req.params.id)
+                            })
+                            .fetchAll({})
+                            .then(function(collection) {
+                                console.log(collection);
+                                if (collection.length > 0) {
+                                    collection.forEach(function(model) {
+                                        console.log(model);
+                                        model.destroy();
+                                    });
+                                }
+                            })
+                            .catch(function(error) {
+                                console.log(error);
+                            });
                     }
+
                     return model.load(['user']);
                 })
                 .then(function(model) {

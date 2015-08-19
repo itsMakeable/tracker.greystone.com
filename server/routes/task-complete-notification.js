@@ -6,7 +6,7 @@ module.exports = function(app) {
     app.get('/api/task-complete-notifications', function(req, res) {
         TaskCompleteNotification
             .where({
-                user_id: req.user.user_id,
+                to_user_id: req.user.user_id,
                 // task_id: Number(req.query.task_id)
             })
             .fetchAll({

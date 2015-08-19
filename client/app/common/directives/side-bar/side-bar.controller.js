@@ -55,15 +55,29 @@ class SideBarController {
 		function taskNotification(data) {
 			console.log('TASK_NOTIFICATION');
 			console.log(data.data);
-			data.data.task.by = data.data.user;
-			data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
-			TaskRecentlyComplete.inject(data.data);
-			_this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
-				where: {
-					'task.milestone_id': _this.milestone.milestone_id
-				}
-			});
+			if (data.data.to_user_id == User.getCurrentUser().user_id) {
+				data.data.task.by = data.data.user;
+				data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
+				TaskRecentlyComplete.inject(data.data);
+				_this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
+					where: {
+						'task.milestone_id': _this.milestone.milestone_id
+					}
+				});
+			}
 		}
+
+		$scope.$on('TASK_COMPLETE', (event, data) => {
+			if (!data.task.is_complete) {
+				var index = null;
+				angular.forEach(this.tasksRecentlyCompleted, (notification, key) => {
+					if (notification.task_id == data.task.task_id) {
+						index = key;
+					}
+				});
+				this.tasksRecentlyCompleted.splice(index, 1);
+			}
+		});
 
 		$scope.$on('NOTIFICATION_DISMISSED', (event, data) => {
 			TaskRecentlyComplete.eject(data.task_complete_notification_id);
