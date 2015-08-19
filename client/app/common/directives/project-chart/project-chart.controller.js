@@ -412,8 +412,8 @@ class ProjectChartController {
 		var a = "";
 		a = a + '<circle cx="' + this.config.centerX + '" cy="' + this.config.centerY + '" r="' + (this.config.radius - 3) + '" stroke="#3c3c3c" stroke-width="0" fill="#3c3c3c" />';
 		//a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY - 33) + '" fill="#D4D4D4" font-family="\'Avenir-Light\'" font-size="14px">' + line1 + '</text>';
-		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 0) + '" fill="#FFFFFF" font-family="\'AvenirNextLTPro-Regular\'" font-size="36px">' + date + '</text>';
-		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 23) + '" fill="#D4D4D4" font-family="\'Avenir-Light\'" font-size="13px">' + line2 + '</text>';
+		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 0) + '" fill="#FFFFFF" font-family="\'AvenirNextLTPro-Regular\'" font-size="30px">' + date + '</text>';
+		a = a + '<text text-anchor="middle" x="' + this.config.centerX + '" y="' + (this.config.centerY + 23) + '" fill="#D4D4D4" font-family="\'AvenirNextLTPro-Regular\'" font-size="12px">' + line2 + '</text>';
 		this.chartElement.innerHTML = this.chartElement.innerHTML + a;
 	}
 }
