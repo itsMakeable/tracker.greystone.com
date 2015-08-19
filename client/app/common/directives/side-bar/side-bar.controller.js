@@ -148,12 +148,14 @@ class SideBarController {
 		this.$state.go('property.task', {
 			taskId: task_id
 		});
+		this.filterTasks();
 	}
 	selectTask(task_id) {
 		console.log(task_id);
 		this.$state.go('property.task', {
 			taskId: task_id
 		});
+		this.filterTasks();
 	}
 	dismissAll() {
 		console.log('dismissAll');
@@ -161,6 +163,7 @@ class SideBarController {
 			this.TaskRecentlyComplete.destroy(notification.task_complete_notification_id);
 		});
 		this.tasksRecentlyCompleted = [];
+		this.filterTasks();
 	}
 	filterTasks() {
 		console.warn('filter tasks');
