@@ -1,6 +1,7 @@
 main#mainContent.main-main
 	//- img.top-bar-chart(src="app/svg/bar-chart.svg", alt="")
-	h1.h1.center.fadein(style='top:40%;' ng-if='!vm.task.task_id') Welcome!
+	.h1__welcome-container(ng-if='!vm.task.task_id')
+		h1.h1.fadein Welcome!
 	.container(ng-if='vm.task.task_id')
 		.spacer
 		.spacer
