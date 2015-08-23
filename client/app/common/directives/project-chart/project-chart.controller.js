@@ -1,15 +1,11 @@
 class ProjectChartController {
 	constructor(Project, $scope, $element, User, $state) {
-		console.log($element);
 		this.state = {};
 		this.chartElement = $element.children()[0];
-		console.log(this.chartElement);
 		this.$state = $state;
 		var idWatcher = $scope.$watch(() => this.projectId, () => {
 			if (this.projectId) {
 				this.x_project = Project.get(this.projectId);
-				console.log('Project');
-				console.log(this.x_project);
 				this.user_id = User.getCurrentUser().user_id;
 				this.config = {
 					startAngle: -90,
@@ -31,48 +27,35 @@ class ProjectChartController {
 				idWatcher();
 			}
 		});
-		var taskWatcher = $scope.$watch(() => this.$state.params.taskId, () => {
+
+		$scope.$watch(() => this.$state.params.taskId, () => {
 			if (this.$state.params.taskId) {
-				console.log('Task changed');
 				this.state.task_id = this.$state.params.taskId;
 				this.draw();
 			}
 		});
 
 		$scope.$on('TASK_ASSIGN', (event, data) => {
-			console.log('TASK_ASSIGN');
-			console.log(data);
 			Project.findAll({})
 				.then(projects => {
-					console.warn('PROJECT');
-					console.log(projects[0]);
 					this.x_project = projects[0];
 					var milestone_index = this.x_project.milestones.map(e => Number(e.milestone_id)).indexOf(Number(data.task.milestone_id));
-					console.log(milestone_index);
 					var task_index = this.x_project.milestones[milestone_index].tasks.map(e => Number(e.task_id)).indexOf(Number(data.task.task_id));
-					console.log(task_index);
 					this.x_project.milestones[milestone_index].tasks[task_index] = data.task;
 					this.draw();
 				});
 		});
 
 		$scope.$on('TASK_COMPLETE', (event, data) => {
-			console.log('TASK_COMPLETE');
-			console.log(data);
 			Project.findAll({})
 				.then(projects => {
-					console.warn('PROJECT');
-					console.log(projects[0]);
 					this.x_project = projects[0];
 					var milestone_index = this.x_project.milestones.map(e => Number(e.milestone_id)).indexOf(Number(data.task.milestone_id));
-					console.log(milestone_index);
 					var task_index = this.x_project.milestones[milestone_index].tasks.map(e => Number(e.task_id)).indexOf(Number(data.task.task_id));
-					console.log(task_index);
 					this.x_project.milestones[milestone_index].tasks[task_index] = data.task;
 					this.draw();
 				});
 		});
-
 	}
 	draw() {
 		this.summarize();
@@ -116,7 +99,7 @@ class ProjectChartController {
 		for (var i = 0; i < this.x_project.milestones.length; i++) {
 			var milestone = this.x_project.milestones[i];
 			var milestone_total_effort = this.summary.milestones[i].effort;
-			if (milestone.milestone_id == this.state.milestone_id) {
+			if (Number(milestone.milestone_id) === Number(this.state.milestone_id)) {
 
 				if (this.config.show_milestones) {
 					if (i > 0) {
@@ -195,7 +178,7 @@ class ProjectChartController {
 						milestone_id: milestone.milestone_id,
 						effort: this.summary.milestones[i].effort,
 						complete_effort: this.summary.milestones[i].complete_effort,
-						last: nm == this.state.milestone_id
+						last: Number(nm) === Number(this.state.milestone_id)
 					};
 					this.elements.push(element);
 					angle = angle + this.config.collapsed_milestone_degree;
@@ -207,13 +190,12 @@ class ProjectChartController {
 	}
 	render() {
 		this.chartElement.innerHTML = "";
-		var color = 0;
 
 		for (var j = 0; j < this.elements.length; j++) {
 
 			var currentElement = this.elements[j];
 
-			if (currentElement.type == "ACTIVE_MILESTONE") {
+			if (currentElement.type === "ACTIVE_MILESTONE") {
 
 				//drawWedge(element.startAngle,element.endAngle, 100, "#336699", "#6699CC");
 
@@ -229,12 +211,12 @@ class ProjectChartController {
 
 					var task_element = currentElement.sub_elements[k];
 					var width, c, f;
-					if (task_element.type == "TASK") {
+					if (task_element.type === "TASK") {
 
 						if (task_element.is_complete === 1 || task_element.is_complete === true || task_element.is_complete === 'true') {
 							c = "#3c3c3c";
 							f = "#829794";
-						} else if (task_element.user_id == this.user_id) {
+						} else if (Number(task_element.user_id) === Number(this.user_id)) {
 							c = "#3c3c3c";
 							f = "#eaaa1f";
 						} else {
@@ -242,7 +224,7 @@ class ProjectChartController {
 							f = "#555252";
 						}
 
-						if (task_element.task_id != this.state.task_id) {
+						if (task_element.task_id !== this.state.task_id) {
 							width = this.config.width;
 						} else {
 							width = this.config.width + this.config.bumpWidth;
@@ -271,7 +253,7 @@ class ProjectChartController {
 			}
 
 
-			if (currentElement.type == "INACTIVE_MILESTONE") {
+			if (currentElement.type === "INACTIVE_MILESTONE") {
 
 				this.drawWedge(currentElement.startAngle, currentElement.endAngle, this.config.width, "#3c3d3c", "#555252", "milestone", "milestone_" + currentElement.milestone_id);
 				if ((currentElement.complete_effort / currentElement.effort) > 0.03) {
@@ -301,12 +283,12 @@ class ProjectChartController {
 		if (id) {
 			var res = id.split("_");
 			console.log(res);
-			if (res[0] == "milestone") {
+			if (res[0] === "milestone") {
 				this.state.milestone_id = res[1];
 				this.onMilestoneSelected({
 					$milestoneId: res[1]
 				});
-			} else if (res[0] == "task") {
+			} else if (res[0] === "task") {
 				this.state.task_id = res[1];
 				this.onTaskSelected({
 					$taskId: res[1]
@@ -331,7 +313,7 @@ class ProjectChartController {
 		newpath.setAttribute('stroke-width', '3');
 		newpath.setAttribute('stroke-miterlimit', '10');
 		newpath.setAttribute('class', 'milestone');
-		if (direction == "prev") {
+		if (direction === "prev") {
 			newpath.setAttribute('points', ' 20,140 4,160 20,180 ');
 		} else {
 			newpath.setAttribute('points', ' 300,140 316,160 300,180 ');
