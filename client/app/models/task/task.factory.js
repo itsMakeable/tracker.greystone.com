@@ -1,4 +1,5 @@
-let TaskFactory = function(DS) {
+// jshint unused: false
+let TaskFactory = function(DS, Field) {
 
 	let taskResource = DS.defineResource({
 		name: 'task',
@@ -11,6 +12,14 @@ let TaskFactory = function(DS) {
 			}
 			resource.inject(task);
 			cb(null, data);
+		},
+		relations: {
+			hasMany: {
+				field: {
+					localField: 'fields',
+					foreignKey: 'task_id'
+				}
+			}
 		}
 	});
 
