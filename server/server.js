@@ -7,7 +7,6 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var expressJwt = require('express-jwt');
-var jwt = require('jsonwebtoken');
 
 var SECRET = 'shhhhhhared-secret';
 

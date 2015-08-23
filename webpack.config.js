@@ -2,8 +2,6 @@ var nib = require('nib');
 var axis = require('axis');
 var rupture = require('rupture');
 var jeet = require('jeet');
-// var autoprefixer = require('autoprefixer-stylus');
-var autoprefixer = require('autoprefixer-core');
 
 module.exports = {
 	devtool: 'sourcemap',
