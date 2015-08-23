@@ -13,7 +13,7 @@
     "bcryptjs": "^2.2.1",
     "bluebird": "^2.9.34",
     "body-parser": "^1.13.3",
-    "bookshelf": "^0.8.1",
+    "bookshelf": "^0.8.2",
     "bookshelf-secure-password": "^1.0.0",
     "bootstrap": "^3.3.5",
     "bootstrap-webpack": "0.0.3",
