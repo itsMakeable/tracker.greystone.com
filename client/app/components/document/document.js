@@ -7,7 +7,7 @@ import './document.styl';
 let documentModule = angular.module('resetPassword', [
 		uiRouter
 	])
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 
 		$stateProvider
 			.state('resetPassword', {

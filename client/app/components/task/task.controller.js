@@ -7,36 +7,24 @@ class TaskController {
 		this.File = File;
 		this.User = User;
 		this.$rootScope = $rootScope;
-
-		console.warn(task);
-
 		this.project = Project.filter({})[0];
-		this.task = task;
+		if (task) {
+			this.task = Task.get(task.task_id);
+		}
 		this.showDropdow = false;
-		console.log(this.task);
 		this.bindWatchers($scope);
-
-		$scope.$watch(() => Task.lastModified(), () => {
-			User.viewTask($state.params.taskId);
-		});
 
 		$rootScope.$broadcast('UPDATE_HEIGHT');
 	}
 	clearUser() {
 		if (this.task.user_id) {
 			this.Task.update(Number(this.task.task_id), {
-					user_id: null
-				})
-				.then(task => {
-					console.log(task);
-				})
-				.catch(error => {
-					console.log(error);
-				});
+				user_id: null
+			});
 		}
 	}
 	assignUser(user) {
-		if (this.task.user_id != user.user_id) {
+		if (this.task.user_id !== user.user_id) {
 			this.Task.update(Number(this.task.task_id), {
 					user_id: user.user_id
 				})
@@ -44,7 +32,6 @@ class TaskController {
 					this.$rootScope.$broadcast('TASK_ASSIGN', {
 						task: task
 					});
-					console.log(task);
 				})
 				.catch(error => {
 					console.log(error);
@@ -52,8 +39,6 @@ class TaskController {
 		}
 	}
 	toggleCompletition() {
-		// show modal for confirmation
-		console.log(this.task);
 		this.Task.update(Number(this.task.task_id), {
 				is_complete: !this.task.is_complete
 			})
@@ -61,7 +46,6 @@ class TaskController {
 				this.$rootScope.$broadcast('TASK_COMPLETE', {
 					task: task
 				});
-				console.log(task);
 			})
 			.catch(error => {
 				console.log(error);
@@ -70,6 +54,10 @@ class TaskController {
 	bindWatchers($scope) {
 		$scope.$watch(() => this.User.lastModified(), () => {
 			this.users = this.User.filter();
+		});
+
+		$scope.$watch(() => this.Task.lastModified(), () => {
+			this.User.viewTask(this.$state.params.taskId);
 		});
 	}
 }

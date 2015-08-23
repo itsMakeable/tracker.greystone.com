@@ -7,7 +7,7 @@ import './terms-and-conditions.styl';
 let termsAndConditionsModule = angular.module('termsAndConditions', [
 		uiRouter
 	])
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 
 		$stateProvider
 			.state('termsAndConditions', {

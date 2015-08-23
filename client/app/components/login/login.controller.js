@@ -4,10 +4,7 @@ class LoginController {
 		this.$state = $state;
 	}
 	login() {
-		console.log(this.loginForm);
 		if (this.loginForm.$valid) {
-			console.log(this.email);
-			console.log(this.password);
 			this.User.signin(this.email, this.password)
 				.then(() => {
 					this.$state.go('property', {

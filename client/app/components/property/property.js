@@ -7,7 +7,7 @@ import './property.styl';
 let propertyModule = angular.module('property', [
 		uiRouter
 	])
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 
 		$stateProvider
 			.state('property', {
@@ -43,4 +43,5 @@ let propertyModule = angular.module('property', [
 				}
 			});
 	});
+
 export default propertyModule;
