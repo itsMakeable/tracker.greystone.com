@@ -1,8 +1,19 @@
 {
-  "esnext": true,
-  "node": true,
-  "globals": {
-    "angular": true,
-    "console": true
-  }
+	"esnext": true,
+	"bitwise": true,
+	"node": true,
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"freeze": true,
+	"latedef": true,
+	"nocomma": true,
+	"undef": true,
+	"unused": true,
+	"globals": {
+		"angular": true,
+		"console": true,
+		"window": true,
+		"document": true
+	}
 }
