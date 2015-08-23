@@ -1,5 +1,5 @@
 class FieldRowController {
-	constructor(Upload, File, $scope) {
+	constructor(Upload, File) {
 		this.Upload = Upload;
 		this.File = File;
 		this.showDescription = false;
