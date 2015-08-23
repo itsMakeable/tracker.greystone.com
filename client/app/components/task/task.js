@@ -7,7 +7,7 @@ import './task.styl';
 let taskModule = angular.module('task', [
 		uiRouter
 	])
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 
 		$stateProvider
 			.state('property.task', {
@@ -28,12 +28,14 @@ let taskModule = angular.module('task', [
 							});
 					},
 					task: ($stateParams, Task, $q, User) => {
-						console.log('task');
-						console.log($stateParams.hasOwnProperty('taskId'));
-						console.log($stateParams);
 						if ($stateParams.hasOwnProperty('taskId')) {
-							User.viewTask($stateParams.taskId);
-							return $q.when(Task.get(Number($stateParams.taskId)));
+							return Task.find($stateParams.taskId, {
+									bypassCache: true,
+								})
+								.then(task => {
+									console.log(task);
+									return task;
+								});
 						} else {
 							return $q.when(null);
 						}
