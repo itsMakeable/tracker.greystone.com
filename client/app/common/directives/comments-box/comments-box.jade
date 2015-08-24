@@ -17,7 +17,9 @@
 		.user-notification.is-comment-box
 			.profile-pic(style='background-image:url(/app/assets/img/user_profile_photos/{{ vm.user.profile_photo_path }})')
 			.user-notification__box
-				textarea#textarea.user-notification__textarea(ng-model='vm.newMessage' placeholder='Type Message Here' rows='2')
+				textarea#textarea.user-notification__textarea(ng-model='vm.newMessage' placeholder='Type Message Here' rows='3')
 				i.icon.comment-box__submit.is-clickable(ng-click='vm.submitMessage()')
 					svg(viewbox='0 0 100 100')
 						use(xlink:href='#icon_arrow')
+			.button.is-mantle(ng-click='vm.submitMessage()') Submit
+			.button.button--ghost(ng-click='vm.submitMessage()') Cancel

@@ -3,7 +3,7 @@
 	position relative	
 	color darkgray
 	font-family f-reg
-	overflow hidden
+	// overflow hidden
 	padding 0 0 px(5rem) 0
 	background url(../svg/vr.svg) no-repeat
 	background-position 25px 0
@@ -39,9 +39,18 @@
 		
 .user-notification.is-comment-box
 	padding-top px(20rem)
+	.profile-pic
+		top -0.75rem
 	.user-notification__box
-		background-color mantle
+		background-color white
+		border 1px solid mantle
+		// background-color mantle
 		color white
+		padding px(0rem)
+	.button
+		left 54px
+		top 20px
+		// float right
 	hr
 		border-color white
 	
@@ -80,12 +89,16 @@
 		color yellow
 
 .user-notification__textarea
-	width calc(100% - 100px)
+	// width calc(100% - 100px)
 	background-color transparent
 	overflow: auto
 	color white
+	background-color white
+	padding px(8rem)
+	color mantle
+	// font-family f-reg
 	&::placeholder
-		color white
+		color mantle
 
 .profile-pic
 	border-radius 50%
