@@ -26,7 +26,21 @@ module.exports = function(app) {
     });
 
     app.get('/api/tasks/:id', function(req, res) {
-
+        new Task({
+                task_id: Number(req.params.id)
+            })
+            .fetch({
+                require: true
+            })
+            .then(function(model) {
+                res.json(model.toJSON());
+            })
+            .catch(function(err) {
+                res.json(503, {
+                    result: 'error',
+                    err: err.code
+                });
+            });
     });
 
     app.post('/api/tasks', function(req, res) {
