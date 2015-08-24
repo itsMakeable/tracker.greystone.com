@@ -7,26 +7,24 @@ module.exports = function(app) {
     var sortBy = require('lodash.sortby');
 
     app.get('/api/events', function(req, res) {
-        // console.log('/api/events');
-        // console.log(req.query);
         if (req.query.created_at) {
             ViewTask
-                .where({
-                    user_id: req.user.user_id,
-                    task_id: Number(req.query.task_id)
+                .query({
+                    where: {
+                        task_id: Number(req.query.task_id),
+                        user_id: Number(req.user.user_id)
+                    }
                 })
-                .query('orderBy', 'user_view_task_id', 'desc')
                 .query('limit', 1)
-                .fetch({})
+                .fetch()
                 .then(function(model) {
-                    // console.log('ViewTasks');
                     if (model) {
-                        var task = model.toJSON();
-                        // console.log(tasks);
-                        // filter task_id
+                        var viewTask = model.toJSON();
+                        console.log('Viewed Tasks for: ' + req.query.task_id);
+                        console.log(viewTask);
                         return Event
-                            .query('where', 'created_at', '>', task.viewed_at)
                             .query('where', 'task_id', '=', Number(req.query.task_id))
+                            .query('where', 'created_at', '>', viewTask.viewed_at)
                             .fetchAll({});
                     } else {
                         return Event
@@ -35,8 +33,6 @@ module.exports = function(app) {
                     }
                 })
                 .then(function(model) {
-                    // console.log('Events');
-                    // console.log(model);
                     if (model && model.length > 0) {
                         var events = model.toJSON();
                         res.json(events);
@@ -45,7 +41,6 @@ module.exports = function(app) {
                     }
                 })
                 .catch(Event.NotFoundError, function(error) {
-                    // console.log('All Events Saw');
                     res.json([]);
                 })
                 .catch(function(err) {
@@ -76,7 +71,6 @@ module.exports = function(app) {
                     }
                 })
                 .catch(function(err) {
-                    console.log(err);
                     res.json(503, {
                         result: 'error',
                         err: err
