@@ -57,6 +57,7 @@ class CommentsBoxController {
 		var _this = this;
 
 		function onNewEvent(data) {
+			console.log(data);
 			var task = _this.Task.get(_this.taskId);
 			if (data.data.type === 'ASSIGN_USER') {
 				task.user = data.data.assigned_user;
