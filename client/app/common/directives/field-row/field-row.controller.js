@@ -7,8 +7,6 @@ class FieldRowController {
 	uploadFile(files) {
 		this.File.upload(this.field.task_id, this.field.field_id, files)
 			.then(files => {
-				console.log(files);
-				console.log(this.field.files);
 				this.field.files.push.apply(this.field.files, files);
 			});
 	}

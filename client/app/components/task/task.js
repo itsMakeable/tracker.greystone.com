@@ -27,8 +27,8 @@ let taskModule = angular.module('task', [
 								});
 							});
 					},
-					task: ($stateParams, Task, $q, User) => {
-						if ($stateParams.hasOwnProperty('taskId')) {
+					task: ($stateParams, Task, $q) => {
+						if ($stateParams.taskId !== '') {
 							return Task.find($stateParams.taskId, {
 									bypassCache: true,
 								})

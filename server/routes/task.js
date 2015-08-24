@@ -20,7 +20,7 @@ module.exports = function(app) {
             .catch(function(err) {
                 res.json(503, {
                     result: 'error',
-                    err: err.code
+                    err: err
                 });
             });
     });

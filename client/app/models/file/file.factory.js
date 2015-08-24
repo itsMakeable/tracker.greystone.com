@@ -8,7 +8,6 @@ let FileFactory = function(DS, Upload, $q) {
 
 	fileResource.upload = function(task_id, field_id, files) {
 		var deferred = $q.defer();
-		console.log(files);
 		Upload.upload({
 				url: DS.defaults.basePath + this.endpoint,
 				method: 'POST',
@@ -20,16 +19,13 @@ let FileFactory = function(DS, Upload, $q) {
 			})
 			.progress(evt => {
 				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-				console.log(progressPercentage);
 				deferred.notify(progressPercentage);
 			})
 			.success((data, status, headers, config) => {
-				console.log(data);
 				this.inject(data);
 				deferred.resolve(data);
 			})
 			.error((data, status, headers, config) => {
-				console.log(data);
 				deferred.reject(data);
 			});
 
@@ -48,16 +44,13 @@ let FileFactory = function(DS, Upload, $q) {
 			})
 			.progress(evt => {
 				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-				console.log(progressPercentage);
 				deferred.notify(progressPercentage);
 			})
 			.success((data, status, headers, config) => {
-				console.log(data);
 				this.inject(data);
 				deferred.resolve(data);
 			})
 			.error((data, status, headers, config) => {
-				console.log(data);
 				deferred.reject(data);
 			});
 

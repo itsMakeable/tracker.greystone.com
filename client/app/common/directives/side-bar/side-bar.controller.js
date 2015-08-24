@@ -26,7 +26,6 @@ class SideBarController {
 		// Right now all of them, then by project.
 		TaskRecentlyComplete.findAll({})
 			.catch(error => {
-				console.log('error notifications');
 				console.log(error);
 			});
 
@@ -47,14 +46,12 @@ class SideBarController {
 		}
 	}
 	taskNotification(data) {
-		console.log('Task Notification');
 		if (data.data.to_user_id === this.User.getCurrentUser().user_id) {
 			var toDismiss = this.TaskRecentlyComplete.filter({
 				where: {
 					task_id: data.data.task_id
 				}
 			});
-			console.log(toDismiss);
 			if (toDismiss && toDismiss[0]) {
 				this.TaskRecentlyComplete.eject(toDismiss[0].task_complete_notification_id);
 			}

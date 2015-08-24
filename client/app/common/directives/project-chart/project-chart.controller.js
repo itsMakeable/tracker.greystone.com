@@ -224,7 +224,7 @@ class ProjectChartController {
 							f = "#555252";
 						}
 
-						if (task_element.task_id !== this.state.task_id) {
+						if (Number(task_element.task_id) !== Number(this.state.task_id)) {
 							width = this.config.width;
 						} else {
 							width = this.config.width + this.config.bumpWidth;
@@ -278,11 +278,9 @@ class ProjectChartController {
 		}
 	}
 	wedgeclick(event) {
-		console.log(event);
 		var id = event.target.getAttribute('id');
 		if (id) {
 			var res = id.split("_");
-			console.log(res);
 			if (res[0] === "milestone") {
 				this.state.milestone_id = res[1];
 				this.onMilestoneSelected({
