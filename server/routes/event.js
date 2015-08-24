@@ -25,11 +25,25 @@ module.exports = function(app) {
                         return Event
                             .query('where', 'task_id', '=', Number(req.query.task_id))
                             .query('where', 'created_at', '>', viewTask.viewed_at)
-                            .fetchAll({});
+                            .fetchAll({
+                                withRelated: [
+                                    'assigned_user',
+                                    'user',
+                                    'file',
+                                    'file.field'
+                                ]
+                            });
                     } else {
                         return Event
                             .query('where', 'task_id', '=', Number(req.query.task_id))
-                            .fetchAll({});
+                            .fetchAll({
+                                withRelated: [
+                                    'assigned_user',
+                                    'user',
+                                    'file',
+                                    'file.field'
+                                ]
+                            });
                     }
                 })
                 .then(function(model) {
