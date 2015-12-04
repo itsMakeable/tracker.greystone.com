@@ -52,7 +52,7 @@ gulp.task 'browser-sync', ->
 		# proxy: 'localhost:3000'
 		port: 8088
 		open: false
-		tunnel: false
+		tunnel: true
 		ghostMode: false
 		online: true
 		logConnections: true
