@@ -26,7 +26,6 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 	userResource.signup = function(user) {
 		return $http.post(DS.defaults.basePath + '/auth/signup', user)
 			.then(response => {
-				console.log(response);
 				LocalStorage.set('auth_token', response.data.token);
 				this.setCurrentUser(response.data.user);
 				return response.data;
@@ -43,13 +42,11 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 				password,
 			})
 			.then(response => {
-				console.log(response);
 				LocalStorage.set('auth_token', response.data.token);
 				this.setCurrentUser(response.data.user);
 				return response.data;
 			})
 			.catch(response => {
-				console.log(response);
 				return $q.reject(response.data);
 			});
 	};
@@ -59,18 +56,14 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 				token: LocalStorage.get('auth_token'),
 			})
 			.then(response => {
-				console.log(response);
 				if (!response.data.success) {
 					return $q.reject(response.data.message);
 				} else {
-					console.log('is logged in');
 					return response.data.decoded.user_id;
 				}
 
 			})
 			.catch(response => {
-				console.log(response);
-				console.log('is NOT logged in');
 				return $q.reject(response);
 			});
 	};
@@ -85,11 +78,9 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 				password: password
 			})
 			.then(response => {
-				console.log(response);
 				return response.data;
 			})
 			.catch(response => {
-				console.log(response);
 				return $q.reject(response);
 			});
 	};
@@ -99,12 +90,10 @@ let UserFactory = function(DS, $http, LocalStorage, $q, $rootScope) {
 				task_id: task_id,
 			})
 			.then(response => {
-				console.log(response);
 				$rootScope.$broadcast('CHECK_EVENTS');
 				return response.data;
 			})
 			.catch(response => {
-				console.log(response);
 				return $q.reject(response);
 			});
 	};

@@ -1,3 +1,4 @@
+// jshint unused: false
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMessages from 'angular-messages';
@@ -13,7 +14,7 @@ import io from 'socket.io-client';
 var socket = io(server);
 
 socket.on('connect', function() {});
-socket.on('event', function(data) {});
+socket.on('event', function() {});
 socket.on('disconnect', function() {});
 
 import Common from './common/common';
@@ -38,6 +39,10 @@ angular.module('app', [
 			$urlRouterProvider.otherwise('/login');
 		}
 
+		// angular.extend(DSHttpAdapterProvider.defaults, {
+		// 	log: false
+		// });
+
 		DSProvider.defaults.basePath = server;
 		$httpProvider.useApplyAsync(true);
 
@@ -52,7 +57,6 @@ angular.module('app', [
 		});
 
 		$rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
-			console.log($state.current);
 			$rootScope.current = $state.current;
 		});
 

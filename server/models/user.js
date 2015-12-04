@@ -20,8 +20,6 @@ module.exports = function(bookshelf) {
 						require: true
 					})
 					.tap(function(user) {
-						var salt = bcrypt.genSaltSync(10);
-						var passwordHash = bcrypt.hashSync(password, salt);
 						var result = bcrypt.compareSync(password, user.get('password'));
 						if (result) {
 							return result;

@@ -6,7 +6,6 @@ import ProjectChart from './project-chart/project-chart';
 import SideBar from './side-bar/side-bar';
 import TaskRow from './task-row/task-row';
 import UserNotification from './user-notification/user-notification';
-import EqualHeight from './equalheight';
 
 let directivesModule = angular.module('directives.common', [
 	CommentsBox.name,
@@ -16,7 +15,6 @@ let directivesModule = angular.module('directives.common', [
 	SideBar.name,
 	TaskRow.name,
 	UserNotification.name,
-	EqualHeight.name
 ]);
 
 export default directivesModule;

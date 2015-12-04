@@ -20,13 +20,27 @@ module.exports = function(app) {
             .catch(function(err) {
                 res.json(503, {
                     result: 'error',
-                    err: err.code
+                    err: err
                 });
             });
     });
 
     app.get('/api/tasks/:id', function(req, res) {
-
+        new Task({
+                task_id: Number(req.params.id)
+            })
+            .fetch({
+                require: true
+            })
+            .then(function(model) {
+                res.json(model.toJSON());
+            })
+            .catch(function(err) {
+                res.json(503, {
+                    result: 'error',
+                    err: err.code
+                });
+            });
     });
 
     app.post('/api/tasks', function(req, res) {
@@ -34,10 +48,6 @@ module.exports = function(app) {
     });
 
     app.put('/api/tasks/:id', function(req, res) {
-        // Create Event for clear assing and for assigning other user.
-        console.log(req.body);
-        console.log(req.body.hasOwnProperty('user_id'));
-        console.log(req.body.hasOwnProperty('is_complete'));
         if (req.body.hasOwnProperty('user_id')) {
             var prev_user = null;
             new Task({
@@ -87,7 +97,6 @@ module.exports = function(app) {
                     res.json(task);
                 })
                 .catch(function(error) {
-                    console.log(error);
                     res.json(503, {
                         result: 'error',
                         error: error.code
@@ -130,19 +139,16 @@ module.exports = function(app) {
                         });
 
                     if (req.body.is_complete) {
-                        console.log('CREATE NOTIFICATIONS');
                         new User({})
                             .fetchAll()
                             .then(function(model) {
-                                console.log('USERS');
                                 var users = model.toJSON();
-                                console.log(users);
                                 users.forEach(function(user) {
                                     var newNotification = new TaskCompleteNotification({
                                         created_at: new Date().getTime(),
-                                        user_id: req.user.user_id, // who completed.
+                                        user_id: req.user.user_id,
                                         task_id: Number(req.params.id),
-                                        to_user_id: user.user_id // to whom the notification
+                                        to_user_id: user.user_id
                                     });
                                     newNotification.save()
                                         .then(function(model) {
@@ -159,18 +165,14 @@ module.exports = function(app) {
                                 });
                             });
                     } else {
-                        console.log('REMOVE ALL NOTIFICATIONS');
-                        console.log(Number(req.query.task_id));
                         TaskCompleteNotification
                             .where({
                                 task_id: Number(req.params.id)
                             })
                             .fetchAll({})
                             .then(function(collection) {
-                                console.log(collection);
                                 if (collection.length > 0) {
                                     collection.forEach(function(model) {
-                                        console.log(model);
                                         model.destroy();
                                     });
                                 }
@@ -187,7 +189,6 @@ module.exports = function(app) {
                     res.json(task);
                 })
                 .catch(function(error) {
-                    console.log(error);
                     res.json(503, {
                         result: 'error',
                         error: error.code

@@ -2,7 +2,6 @@ class AboutController {
 	constructor(User, $scope, Upload) {
 		this.User = User;
 		this.Upload = Upload;
-		console.log(Upload);
 		$scope.$watch(() => this.file, file => {
 			this.upload(this.file);
 		});

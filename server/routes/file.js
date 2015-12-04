@@ -20,7 +20,7 @@ module.exports = function(app) {
     var upload = multer({
         storage: storage,
         limits: {
-            fileSize: 1024 * 1024 * 16 /* 16MB (bytes)*/
+            fileSize: 1024 * 1024 * 16
         }
     });
 
@@ -42,7 +42,6 @@ module.exports = function(app) {
     });
 
     app.post('/api/files', upload.array('file', 3), function(req, res) {
-        console.log(req.files);
         if (!req.body.field_id || !req.body.task_id) {
             res.json(503, {
                 result: 'error',
@@ -83,7 +82,6 @@ module.exports = function(app) {
             });
             Promise.all(filesPromises)
                 .then(function(files) {
-                    console.log(files);
                     res.json(files);
                 })
                 .catch(function(error) {
@@ -101,14 +99,8 @@ module.exports = function(app) {
 
     });
 
-    // should also be able to upload a new file here for replacing an
-    // existing one. 
     app.put('/api/files/:id', upload.single('file'), function(req, res) {
-
         if (req.file) {
-            // for updating a file, set the current file_id to update,
-            // set it to is_active false and create the new one and set
-            // active.
             if (!req.body.field_id) {
                 res.json(503, {
                     result: 'error',
@@ -132,7 +124,6 @@ module.exports = function(app) {
                         });
                     })
                     .then(function(model) {
-                        console.log(prevFile);
                         var newEvent = new Event({
                             type: 'DELETE_FILE',
                             created_at: new Date().getTime(),
@@ -185,7 +176,6 @@ module.exports = function(app) {
                         res.json(model.toJSON());
                     })
                     .catch(function(error) {
-                        console.log(error);
                         res.json(503, {
                             result: 'error',
                             error: error.code
@@ -194,7 +184,6 @@ module.exports = function(app) {
             }
 
         } else if (req.body.name) {
-            // for renaming a file is just a change in the name.
             var old_file_name = null;
             var ext = null;
             var prev_file = null;
@@ -207,11 +196,8 @@ module.exports = function(app) {
                 })
                 .then(function(model) {
                     prev_file = model.toJSON();
-                    console.log(prev_file);
                     old_file_name = prev_file.name;
-                    console.log(old_file_name);
                     var fileInformation = path.parse(old_file_name);
-                    console.log(fileInformation);
                     ext = fileInformation.ext;
                     return model.save({
                         name: req.body.name
@@ -221,7 +207,6 @@ module.exports = function(app) {
                 })
                 .then(function(model) {
                     var file = model.toJSON();
-                    console.log(file);
                     var newEvent = new Event({
                         type: 'CHANGE_FILE_NAME',
                         created_at: new Date().getTime(),
@@ -246,7 +231,6 @@ module.exports = function(app) {
                     res.json(model.toJSON());
                 })
                 .catch(function(error) {
-                    console.log(error);
                     res.json(503, {
                         result: 'error',
                         error: error.code
@@ -260,7 +244,6 @@ module.exports = function(app) {
         }
     });
 
-    // deleting a file is setting is_active to false.
     app.delete('/api/files/:id', function(req, res) {
         var file = null;
         new File({
@@ -279,7 +262,6 @@ module.exports = function(app) {
                 });
             })
             .then(function(model) {
-                console.log(model.toJSON());
                 var newEvent = new Event({
                     type: 'DELETE_FILE',
                     created_at: new Date().getTime(),
@@ -299,7 +281,6 @@ module.exports = function(app) {
                 res.json(model.toJSON());
             })
             .catch(function(error) {
-                console.log(error);
                 res.json(503, {
                     result: 'error',
                     error: error.code

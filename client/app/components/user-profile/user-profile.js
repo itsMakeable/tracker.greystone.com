@@ -7,7 +7,7 @@ import './user-profile.styl';
 let userProfileModule = angular.module('userProfile', [
 		uiRouter
 	])
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 
 		$stateProvider
 			.state('userProfile', {

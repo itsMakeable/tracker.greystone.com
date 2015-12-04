@@ -23,16 +23,32 @@ module.exports = function(app) {
     });
 
     app.post('/api/users/view_task', function(req, res) {
-        var currentTimestamp = new Date().getTime();
-        console.log(currentTimestamp);
-        var viewTask = new ViewTask({
-            user_id: req.user.user_id,
-            task_id: Number(req.body.task_id),
-            viewed_at: Number(currentTimestamp)
-        });
-        viewTask.save()
+        ViewTask
+            .where({
+                task_id: Number(req.body.task_id),
+                user_id: req.user.user_id,
+            })
+            .fetch()
             .then(function(model) {
-                console.log(model);
+                var currentTimestamp = new Date().getTime();
+                if (model) {
+                    console.log('Already a ViewTask for: ' + req.body.task_id);
+                    return model.save({
+                        viewed_at: Number(currentTimestamp)
+                    }, {
+                        patch: true
+                    });
+                } else {
+                    console.log('Create New View Task');
+                    var viewTask = new ViewTask({
+                        user_id: req.user.user_id,
+                        task_id: Number(req.body.task_id),
+                        viewed_at: Number(currentTimestamp)
+                    });
+                    return viewTask.save();
+                }
+            })
+            .then(function(model) {
                 res.json(model.toJSON());
             })
             .catch(function(err) {

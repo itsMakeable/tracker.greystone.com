@@ -7,7 +7,7 @@ class SignUpController {
 	submit() {
 		if (this.signUpForm.$valid) {
 			this.User.signup(this.userModel)
-				.then(data => {
+				.then(() => {
 					this.$state.go('property');
 				})
 				.catch(data => {

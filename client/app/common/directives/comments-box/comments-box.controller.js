@@ -3,13 +3,16 @@ import groupBy from 'lodash.groupby';
 class CommentsBoxController {
 	constructor(socket, $scope, Event, $filter, Task, $rootScope, $timeout, User) {
 		this.textareaFunction();
-		var _this = this;
 		this.$rootScope = $rootScope;
 		this.$timeout = $timeout;
 		this.$filter = $filter;
 		this.user = User.getCurrentUser();
 		this.Event = Event;
-		socket.on('NEW_EVENT', test);
+		this.Task = Task;
+		this.socket = socket;
+
+		this.bindWatchers($scope);
+		this.bindEvents($scope);
 
 		Event.findAll({
 				task_id: this.taskId,
@@ -18,11 +21,10 @@ class CommentsBoxController {
 			})
 			.then(events => {
 				this.events = events;
-				this.eventsByDate = groupBy(this.events, event => {
+				var eventsByDate = groupBy(this.events, event => {
 					return this.$filter('date')(event.created_at, 'longDate');
 				});
-				console.log('Events by date');
-				console.log(this.eventsByDate);
+				this.eventsByDate = eventsByDate;
 				this.$timeout(() => {
 					this.$rootScope.$broadcast('UPDATE_HEIGHT');
 				}, 500);
@@ -31,21 +33,12 @@ class CommentsBoxController {
 				console.log(error);
 			});
 
-		function test(data) {
-			console.log('NEW_EVENT');
-			console.log(data.data);
-			var task = Task.get(_this.taskId);
-			if (data.data.type == 'ASSIGN_USER') {
-				task.user = data.data.assigned_user;
-			} else if (data.data.type == 'CLEAR_ASSIGN') {
-				delete task.user;
-			}
-			Task.inject(task);
-			Event.inject(data.data);
-		}
+	}
+	bindWatchers($scope) {
 
-		$scope.$watch(() => Event.lastModified(), () => {
-			this.eventsByDate = groupBy(this.Event.filter({
+
+		$scope.$watch(() => this.Event.lastModified(), () => {
+			var eventsByDate = groupBy(this.Event.filter({
 				where: {
 					task_id: {
 						'==': this.taskId
@@ -54,15 +47,31 @@ class CommentsBoxController {
 			}), event => {
 				return this.$filter('date')(event.created_at, 'longDate');
 			});
-			console.log('Events by date');
-			console.log(this.eventsByDate);
+			this.eventsByDate = eventsByDate;
 			this.$timeout(() => {
 				this.$rootScope.$broadcast('UPDATE_HEIGHT');
 			}, 500);
 		});
+	}
+	bindEvents($scope) {
+		var _this = this;
+
+		function onNewEvent(data) {
+			console.log(data);
+			var task = _this.Task.get(_this.taskId);
+			if (data.data.type === 'ASSIGN_USER') {
+				task.user = data.data.assigned_user;
+			} else if (data.data.type === 'CLEAR_ASSIGN') {
+				delete task.user;
+			}
+			_this.Task.inject(task);
+			_this.Event.inject(data.data);
+		}
+
+		this.socket.on('NEW_EVENT', onNewEvent);
 
 		$scope.$on('$destroy', () => {
-			socket.removeListener('NEW_EVENT', test);
+			this.socket.removeListener('NEW_EVENT', onNewEvent);
 		});
 	}
 	submitMessage() {
@@ -71,7 +80,7 @@ class CommentsBoxController {
 					message: this.newMessage,
 					task_id: this.taskId
 				})
-				.then(event => {
+				.then(() => {
 					this.newMessage = '';
 				})
 				.catch(error => {
@@ -82,9 +91,9 @@ class CommentsBoxController {
 	textareaFunction() {
 		var heightLimit, textarea;
 		textarea = document.getElementById('textarea');
-		heightLimit = 200; /* Maximum height: 200px */
+		heightLimit = 200;
 		textarea.oninput = function() {
-			textarea.style.height = ''; /* Reset the height */
+			textarea.style.height = '';
 			textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + 'px';
 		};
 

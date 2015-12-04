@@ -9,124 +9,97 @@ class SideBarController {
 		this.TaskRecentlyComplete = TaskRecentlyComplete;
 		this.Task = Task;
 		this.User = User;
-		var _this = this;
-		Milestone.inject(this.project.milestones);
+		this.socket = socket;
 
 		this.tasksRecentlyCompleted = [];
-
 		this.assignedToMeLimit = 7;
 		this.activeLimit = 7;
 		this.completedLimit = 7;
-
-		angular.forEach(this.project.milestones, milestone => {
-			Task.inject(milestone.tasks);
-		});
 
 		this.milestone = Milestone.get(this.project.milestones[0].milestone_id);
 		this.currentMilestoneIndex = 0;
 
 		this.filterTasks();
 		this.bindWatchers($scope);
+		this.bindEvents($scope);
 
 		// Right now all of them, then by project.
 		TaskRecentlyComplete.findAll({})
-			.then(notifications => {
-				console.warn('notifications');
-				console.log(notifications);
-				angular.forEach(notifications, notification => {
-					notification.task.by = notification.user;
-					notification.task.task_complete_notification_id = notification.task_complete_notification_id;
-				});
-				TaskRecentlyComplete.inject(notifications);
-				this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
-					where: {
-						'task.milestone_id': this.milestone.milestone_id
-					}
-				});
-				this.filterTasks();
-			})
 			.catch(error => {
-				console.log('error notifications');
 				console.log(error);
 			});
 
-
-		socket.on('TASK_NOTIFICATION', taskNotification);
-
-		function taskNotification(data) {
-			console.log('TASK_NOTIFICATION');
-			console.log(data.data);
-			if (data.data.to_user_id == User.getCurrentUser().user_id) {
-				data.data.task.by = data.data.user;
-				data.data.task.task_complete_notification_id = data.data.task_complete_notification_id;
-				TaskRecentlyComplete.inject(data.data);
-				_this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
-					where: {
-						'task.milestone_id': _this.milestone.milestone_id
-					}
-				});
-				_this.filterTasks();
-			}
-		}
-
-		$scope.$on('TASK_COMPLETE', (event, data) => {
-			if (!data.task.is_complete) {
-				var index = null;
-				angular.forEach(this.tasksRecentlyCompleted, (notification, key) => {
-					if (notification.task_id == data.task.task_id) {
-						index = key;
-					}
-				});
-				this.tasksRecentlyCompleted.splice(index, 1);
-				this.filterTasks();
-			}
-		});
-
-		$scope.$on('NOTIFICATION_DISMISSED', (event, data) => {
-			TaskRecentlyComplete.eject(data.task_complete_notification_id);
-			this.tasksRecentlyCompleted = TaskRecentlyComplete.filter({
-				where: {
-					'task.milestone_id': this.milestone.milestone_id
-				}
-			});
-			this.filterTasks();
-		});
-
-		$scope.$on('$destroy', () => {
-			socket.removeListener('TASK_NOTIFICATION', taskNotification);
-		});
-
-		console.log('From Login: ' + this.fromLogin);
-		console.log(!this.fromLogin);
-		console.log(this.milestone);
-		console.log(this.milestone.tasks[0].task_id);
-		Task.inject(this.milestone.tasks);
-
 		if (!this.fromLogin) {
-			$state.go('property.task', {
-				taskId: this.milestone.tasks[0].task_id,
-				fromLogin: this.fromLogin
-			});
+			User.viewTask(this.milestone.tasks[0].task_id)
+				.then(() => {
+					$state.go('property.task', {
+						taskId: this.milestone.tasks[0].task_id,
+						fromLogin: this.fromLogin
+					});
+				});
+
 		} else {
 			$state.go('property.task', {
 				taskId: null,
 				fromLogin: this.fromLogin
 			});
 		}
-
-
+	}
+	taskNotification(data) {
+		if (data.data.to_user_id === this.User.getCurrentUser().user_id) {
+			var toDismiss = this.TaskRecentlyComplete.filter({
+				where: {
+					task_id: data.data.task_id
+				}
+			});
+			if (toDismiss && toDismiss[0]) {
+				this.TaskRecentlyComplete.eject(toDismiss[0].task_complete_notification_id);
+			}
+			this.TaskRecentlyComplete.inject(data.data);
+		}
 	}
 	bindWatchers($scope) {
+		this.socket.on('TASK_NOTIFICATION', this.taskNotification.bind(this));
+
 		$scope.$watch(() => this.Task.lastModified(), () => {
 			this.filterTasks();
 		});
 
 		$scope.$watch(() => this.TaskRecentlyComplete.lastModified(), () => {
+			this.tasksRecentlyCompleted = this.TaskRecentlyComplete.filter({
+				where: {
+					'task.milestone_id': this.milestone.milestone_id
+				}
+			});
 			this.filterTasks();
 		});
 	}
+	bindEvents($scope) {
+		$scope.$on('$destroy', () => {
+			this.socket.removeListener('TASK_NOTIFICATION', this.taskNotification.bind(this));
+		});
+
+		$scope.$on('NOTIFICATION_DISMISSED', (event, data) => {
+			this.TaskRecentlyComplete.eject(data.task_complete_notification_id);
+		});
+
+		$scope.$on('TASK_COMPLETE', (event, data) => {
+			if (!data.task.is_complete) {
+				var index = null;
+				var currentNotification;
+				angular.forEach(this.tasksRecentlyCompleted, (notification, key) => {
+					if (notification.task_id === data.task.task_id) {
+						index = key;
+						currentNotification = notification;
+					}
+				});
+				this.TaskRecentlyComplete.eject(currentNotification.task_complete_notification_id);
+				this.tasksRecentlyCompleted.splice(index, 1);
+				this.filterTasks();
+			}
+		});
+	}
 	selectMilestone(milestoneId) {
-		console.log(milestoneId);
 		this.assignedToMeLimit = 7;
 		this.activeLimit = 7;
 		this.completedLimit = 7;
@@ -151,14 +124,12 @@ class SideBarController {
 		this.filterTasks();
 	}
 	selectTask(task_id) {
-		console.log(task_id);
 		this.$state.go('property.task', {
 			taskId: task_id
 		});
 		this.filterTasks();
 	}
 	dismissAll() {
-		console.log('dismissAll');
 		angular.forEach(this.tasksRecentlyCompleted, notification => {
 			this.TaskRecentlyComplete.destroy(notification.task_complete_notification_id);
 		});
@@ -166,7 +137,7 @@ class SideBarController {
 		this.filterTasks();
 	}
 	filterTasks() {
-		console.warn('filter tasks');
+		var task_ids = this.tasksRecentlyCompleted.map(e => e.task_id);
 		this.tasksAssignedToMe = this.Task.filter({
 			where: {
 				milestone_id: {
@@ -177,6 +148,9 @@ class SideBarController {
 				},
 				is_complete: {
 					'!=': true
+				},
+				task_id: {
+					notIn: task_ids
 				}
 			}
 		});
@@ -193,7 +167,7 @@ class SideBarController {
 				}
 			}
 		});
-		var task_ids = this.tasksRecentlyCompleted.map(e => e.task_id);
+
 		this.completedTasks = this.Task.filter({
 			where: {
 				milestone_id: {
@@ -207,7 +181,6 @@ class SideBarController {
 				}
 			}
 		});
-		console.log(this.completedTasks);
 		this.$timeout(() => {
 			this.$rootScope.$broadcast('UPDATE_HEIGHT');
 		}, 500);
@@ -215,12 +188,6 @@ class SideBarController {
 	logout() {
 		this.User.logout();
 		this.$state.go('login');
-	}
-	changeProject() {
-		console.log('changeProject');
-	}
-	editProfile() {
-		console.log('editProfile');
 	}
 }
 

@@ -6,7 +6,6 @@ class MilestoneController {
 		this.project = Project.filter({})[0];
 	}
 	goToTask(task) {
-		this.Task.inject(task);
 		this.$state.go('task', {
 			taskId: task.task_id
 		});

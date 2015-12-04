@@ -24,7 +24,6 @@ module.exports = function(app) {
     });
 
     app.post('/auth/signin', function(req, res) {
-        console.log(req.body);
         User.login(req.body.email, req.body.password)
             .then(function(user) {
                 var token = jwt.sign({
@@ -59,7 +58,6 @@ module.exports = function(app) {
                 require: true,
             })
             .then(function(model) {
-                console.log(model);
                 if (!model) {
                     res.json(400, {
                         errorMessage: 'User not exists'
@@ -93,7 +91,6 @@ module.exports = function(app) {
             })
             .fetch()
             .then(function(model) {
-                console.log(model);
                 if (model) {
                     res.json(400, {
                         errorMessage: 'Email already exists'

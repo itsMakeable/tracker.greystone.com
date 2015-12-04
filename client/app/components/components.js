@@ -1,5 +1,4 @@
 import angular from 'angular';
-
 import About from './about/about';
 import Document from './document/document';
 import Home from './home/home';
@@ -13,8 +12,6 @@ import SignUp from './sign-up/sign-up';
 import Task from './task/task';
 import TermsAndConditions from './terms-and-conditions/terms-and-conditions';
 import UserProfile from './user-profile/user-profile';
-
-console.log(Milestone.name);
 
 let componentModule = angular.module('app.components', [
 	About.name,
