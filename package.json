@@ -19,7 +19,7 @@
     "bootstrap-webpack": "0.0.3",
     "express": "^4.13.3",
     "express-jwt": "^3.0.1",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "js-data": "^2.3.0",
     "js-data-angular": "^3.0.0",
     "jsonwebtoken": "^5.0.4",
