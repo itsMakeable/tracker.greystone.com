@@ -9,7 +9,7 @@
     "angular-toastr": "^1.4.1",
     "angular-ui-bootstrap": "^0.13.1",
     "angular-ui-router": "^0.2.14",
-    "bcrypt": "^0.8.4",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.2.1",
     "bluebird": "^2.9.34",
     "body-parser": "^1.13.3",
